@@ -1,36 +1,41 @@
 /* HEADER */
+/* class명은 snake-case로 작성하기 */
+/* flex-grow 활용하기 */
+/* ::before를 이용한 hover효과 구현 */
+/* background-color: transparent; */
 #header {
+  width: 100%;
+  background-color: #fff;
   border-bottom: 1px solid #eeeeee;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
 }
 #header .inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   height: 100px;
 }
-#header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#header .logo a {
+  display: block;
+  padding: 10px 0;
+  margin-bottom: 10px;
 }
-#header li {
-  float: left;
-}
-#header .logo {
-  margin: auto 0;
-  margin-right: 20px;
-}
-#header .logo a img {
+#header .logo img {
   width: 160px;
 }
 #header .category {
-  margin: auto 0;
+  flex-grow: 2;
+  padding-left: 70px;
 }
 #header .category li {
-  font-size: 16px;
+  font-size: 18px;
   margin: auto 0;
   border: 0;
   float: left;
-  margin-right: 20px;
+  margin-right: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -38,55 +43,90 @@
   text-decoration: none;
   color: inherit;
   transition: all 0.3s;
-  padding: 30px 0; /* 마우스 클릭되는 범위 넓어지도록 위,아래 패딩값 줌 */
+  padding: 30px 0;
+  position: relative;
 }
-
+#header .category ul li a::before {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: brown;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+  transition: 0.4s;
+}
 #header .category ul li a:hover {
   color: brown;
-  text-decoration: underline;
   text-decoration-style: solid;
-  text-decoration-color: brown;
 }
-#header .headerRight {
-  margin: auto 0;
+#header .category ul li a:hover::before {
+  width: 110%;
 }
-#header .headerRight ul {
-  margin: auto 0;
+#header .header-right {
+  display: flex;
+  align-items: center;
 }
-#header .headerRight ul li {
-  margin: auto 10px;
-}
-#header .headerRight ul li a {
-  text-decoration: none;
-  color: inherit;
-  height: 50px;
-  font-size: 13px;
-  /* font-size 13px로 줄임 */
-}
-#header .headerImg {
-  margin: 6px auto;
-}
-#header input {
+#header .header-right .search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 280px;
   height: 48px;
   border-radius: 24px;
-  border: none;
-  text-align: right;
-  padding-right: 50px;
-  background: url('../asset/images/search.png') no-repeat;
-  background-position: 93% center;
   background-color: #f6f6f6;
-  background-size: 26px;
-  font-size: 18px;
+  margin-right: 30px;
+  padding: 0 10px;
 }
-#header .searchBtn {
-  background-color: #fff;
+#header .header-right .search-form input {
+  flex-grow: 1;
+  text-align: right;
+  border-radius: 24px 0 0 24px;
+  background-color: transparent;
   border: none;
+  font-size: 18px;
+  transition: 0.3s;
+  outline: none;
+  margin-right: 10px;
+}
+#header .header-right .search-form input:focus {
+  height: 70%;
+}
+#header .header-right .search-form .search-btn {
   width: 30px;
   height: 30px;
-  padding: 0;
-  margin-left: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../img/search.png');
+  border: none;
+  cursor: pointer;
 }
-#header .loginform {
-  float: right;
+#header .header-right .search-form .search-btn:hover {
+  width: 32px;
+  height: 32px;
+}
+#header .header-right ul {
+  display: flex;
+}
+#header .header-right ul li a {
+  display: block;
+  font-size: 13px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+}
+#header .header-right ul li a:hover {
+  color: brown;
+}
+#header .header-right .header-img {
+  margin: 6px auto;
+  transition: 0.3s;
+}
+#header .header-right ul li a:hover .header-img {
+  margin-bottom: 10px;
 }

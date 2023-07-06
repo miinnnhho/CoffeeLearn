@@ -3,8 +3,232 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Coffee Learn" />
+    <meta property="og:site_name" content="Coffee Learn" />
+    <meta property="og:description" content="커피런에서, 커피의 맛을 배우다." />
+    <meta property="og:image" content="./assets/img/coffeeLearn_seo.png" />
     <title>커피런</title>
+    <link rel="icon" href="./favicon.png" />
+    <!--reset -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- GSAP & ScrollToPlugin -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
+      integrity="sha512-v/m68W+vaGN/6igoyFpd4GlQzu0jx9/n5gr2PKq5vif+RObyGKHse384YHrOULaxZ810XhlHUrmB3U8UnPB19Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- ScrollMagic -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- css-->
+    <link rel="stylesheet" href="./assets/css/common.css" />
+    <link rel="stylesheet" href="./assets/css/totop.css" />
+    <link rel="stylesheet" href="./assets/css/gift.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- JS -->
+    <script defer src="./assets/js/youtube.js"></script>
+    <script defer src="./assets/js/totop.js"></script>
+    <script defer src="./assets/js/gift.js"></script>
+    <script defer src="./assets/js/main.js"></script>
   </head>
   <body>
+    <header id="header">
+      <div class="inner">
+        <h1 class="logo">
+          <a href="" alt="img "><img src="./assets/img/logo.png" /></a>
+        </h1>
+        <div class="category">
+          <ul>
+            <li><a href="#">상품전체</a></li>
+            <li><a href="#">원두추천</a></li>
+            <li><a href="#">선물세트</a></li>
+          </ul>
+        </div>
+        <div class="header-right">
+          <form class="search-form">
+            <input type="text" maxlength="10" />
+            <button type="submit" class="search-btn"></button>
+          </form>
+          <ul>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/img/login.png"
+                  style="width: 24px; height: 24px; display: block"
+                  class="header-img"
+                />
+                <span>로그인</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/img/mypage.png"
+                  style="width: 24px; height: 24px; display: block"
+                  class="header-img"
+                />
+                <span>마이페이지</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/img/pocket.png"
+                  style="width: 24px; height: 24px; display: block"
+                  class="header-img"
+                />
+                <span>장바구니</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- SECTION : VISUAL-->
+    <section class="visual">
+      <div class="youtube--area">
+        <div id="player"></div>
+      </div>
+      <div class="youtube--cover"></div>
+    </section>
+
+    <!-- 원두 추천 -->
+    <section class="pick">
+      <div class="inner">
+        <h2>추천 원두 PICK!</h2>
+        <div class="swiper pick-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="javascript:void(0)" class="btn on">첫구매 추천</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0)" class="btn">달콤 쌉싸름</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0)" class="btn">고소함, 구수함</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0)" class="btn">묵직, 달콤한 여운</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0)" class="btn">은은하고 편안한</a></div>
+            <div class="swiper-slide"><a href="javascript:void(0)" class="btn">상큼한 산미와 향</a></div>
+          </div>
+        </div>
+        <ul class="main-ul">
+          <li class="main-list"></li>
+          <li class="main-list"></li>
+          <li class="main-list"></li>
+          <li class="main-list"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 블렌드 커피만 모았어요! -->
+    <section class="blend">
+      <div class="inner">
+        <h2>블렌드 커피만 모았어요!</h2>
+        <ul class="main-ul">
+          <li class="main-list"></li>
+          <li class="main-list"></li>
+          <li class="main-list"></li>
+          <li class="main-list"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 배너 -->
+    <section class="banner">
+      <div class="inner">
+        <a href="#">
+          <h3>커피런에서 다양한 커피를 만나보세요</h3>
+          <div>
+            <p>전체 상품 보기</p>
+            <span class="material-icons">arrow_forward</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 나라별 커피 -->
+    <section class="country">
+      <div class="inner">
+        <h2>나라별 커피원두</h2>
+        <ul class="country-ul">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="gift">
+      <div class="swiper gift-swiper">
+        <h2>소중한 사람에게 선물하세요!</h2>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/img/gift_01.jpg" alt="추천상품1" /></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/img/gift_02.jpg" alt="추천상품2" /></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/img/gift_03.jpg" alt="추천상품3" /></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/img/gift_04.jpg" alt="추천상품4" /></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/img/gift_05.jpg" alt="추천상품5" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-prev">
+        <span class="material-icons">arrow_back_ios</span>
+      </div>
+      <div class="swiper-next">
+        <span class="material-icons">arrow_forward_ios</span>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+      <div class="inner">
+        <div class="footer-content">
+          <ul>
+            <li><a href="#">1:1문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
+            <li><a href="#">회원약관</a></li>
+            <li><a href="#">관리자로그인</a></li>
+          </ul>
+        </div>
+        <div class="footer-address">
+          주소: 서울특별시 성동구 아차산로 17길 48 | 통신판매업신고: 제 20310-서울성동-01584 | 국민은행 27324-05-365841
+          (주) 커피런 | 개인정보관리책임자: 이혜진
+        </div>
+        <div class="footer-copyright">Copyright 커피런 Co., Ltd. All rights reserved.</div>
+      </div>
+    </footer>
+    <div id="to-top">
+      <div class="material-icons">arrow_upward</div>
+    </div>
   </body>
 </html>
