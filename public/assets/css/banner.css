@@ -1,0 +1,24 @@
+/*banner*/
+
+.banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 60px;
+}
+.banner h1 {
+	margin-bottom: 40px;
+	font-size: 40px;
+	font-weight: bold;
+}
+.banner .box {
+	width: 1280px;
+	height: 250px;
+	border-radius: 20px;
+}
+
+.banner img {
+	border-radius: 20px;
+}
