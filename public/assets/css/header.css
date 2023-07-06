@@ -1,0 +1,92 @@
+/* HEADER */
+#header {
+  border-bottom: 1px solid #eeeeee;
+}
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+#header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header li {
+  float: left;
+}
+#header .logo {
+  margin: auto 0;
+  margin-right: 20px;
+}
+#header .logo a img {
+  width: 160px;
+}
+#header .category {
+  margin: auto 0;
+}
+#header .category li {
+  font-size: 16px;
+  margin: auto 0;
+  border: 0;
+  float: left;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#header .category ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  padding: 30px 0; /* 마우스 클릭되는 범위 넓어지도록 위,아래 패딩값 줌 */
+}
+
+#header .category ul li a:hover {
+  color: brown;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: brown;
+}
+#header .headerRight {
+  margin: auto 0;
+}
+#header .headerRight ul {
+  margin: auto 0;
+}
+#header .headerRight ul li {
+  margin: auto 10px;
+}
+#header .headerRight ul li a {
+  text-decoration: none;
+  color: inherit;
+  height: 50px;
+  font-size: 13px;
+  /* font-size 13px로 줄임 */
+}
+#header .headerImg {
+  margin: 6px auto;
+}
+#header input {
+  width: 280px;
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  text-align: right;
+  padding-right: 50px;
+  background: url('../asset/images/search.png') no-repeat;
+  background-position: 93% center;
+  background-color: #f6f6f6;
+  background-size: 26px;
+  font-size: 18px;
+}
+#header .searchBtn {
+  background-color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-left: 20px;
+}
+#header .loginform {
+  float: right;
+}
