@@ -8,7 +8,7 @@
 /*sidemenu*/
 
 .side_menu {
-	width: 250px;
+	width: 300px;
 	height: 500px;
 
 	justify-content: flex-start;
@@ -26,18 +26,43 @@
 
 .side_menu_border {
 	width: 210px;
-	border: 1px solid #000;
+	border: 1px solid #ddd;
 }
 
 .menu {
 	padding-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.menu a:hover {
+	color: #288341;
+}
+
+.menu .material-symbols-outlined {
+	margin: 0;
+	margin-top: 20px;
+}
+
+.menu .menu_1 {
+	width: 210px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 17px;
+}
+
+.menu .menu_2 {
+	width: 210px;
+	margin-left: 10px;
+	font-size: 17px;
+	margin-top: 10px;
 }
 
 /*container*/
 
 .inner .container {
 	line-height: 50px;
-	margin-left: 95px;
+	margin-left: 50px;
 }
 
 .container .product_num {
@@ -48,46 +73,41 @@
 
 .container .select_box {
 	flex: none;
-	margin-left: 500px;
-}
-
-.container #reco {
-	width: 100px;
-	height: 30px;
-	font-size: 14px;
-	border-radius: 5px;
-	border-color: #ccc;
+	margin-left: 550px;
 }
 
 .container #order {
-	width: 100px;
+	width: 130px;
 	height: 30px;
+	text-align: center;
 	font-size: 14px;
 	border-radius: 5px;
 	border-color: #ccc;
 }
 
 .select_box .option {
-	border-radius: none;
+	border-radius: 0px;
 }
 
 .container_border {
 	width: 960px;
-	border: 1px solid #000;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	margin-top: 10px;
 }
 
-#main_container {
+#container_main {
 	height: 1600px;
 }
 
 .container_box {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-
-	flex-wrap: wrap;
-	width: 100%;
+	display: grid;
+	grid-template-columns: 310px 310px 310px;
+	justify-content: space-between;
+	grid-template-rows: repeat(auto, 528px);
+	width: 920px;
+	column-gap: 20px;
+	row-gap: 20px;
 }
 
 /*type1*/
@@ -95,8 +115,7 @@
 .product_type1 {
 	width: 300px;
 	height: 528px;
-
-	margin: 15px 12px 5px 12px;
+	justify-content: center;
 }
 
 .product1_img {
@@ -108,7 +127,8 @@
 
 .product1_name {
 	font-size: 20px;
-	line-height: 24px;
+	line-height: 30px;
+	padding-top: 20px;
 }
 
 .product1_keyword {
@@ -137,7 +157,7 @@
 .product_type2 {
 	width: 300px;
 	height: 528px;
-	margin: 15px 12px 5px 12px;
+	justify-content: center;
 }
 
 .product2_img {
@@ -148,7 +168,8 @@
 
 .product2_name {
 	font-size: 20px;
-	line-height: 24px;
+	line-height: 30px;
+	padding-top: 20px;
 }
 
 .product2_discount {
@@ -177,7 +198,7 @@
 .product_type3 {
 	width: 300px;
 	height: 528px;
-	margin: 15px 12px 5px 12px;
+	justify-content: center;
 }
 
 .product3_img {
@@ -188,7 +209,8 @@
 
 .product3_name {
 	font-size: 20px;
-	line-height: 24px;
+	line-height: 30px;
+	padding-top: 20px;
 }
 
 .product_type3 .discount {

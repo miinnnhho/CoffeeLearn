@@ -48,7 +48,7 @@
   <!--banner-->
 
   <div class="banner">
-    <h1>커피런 상품 보기</h1>
+    <h1>전체보기</h1>
     <div class="box">
       <img src="/public/assets/img/banner.png" alt="banner">
     </div>
@@ -59,50 +59,63 @@
   <!--main-->
 
   <container class="items">
+    <!--items가 전체 main 부분에서 제일 부모 요소 -->
+
+
     <div class="inner">
+
+
 
       <!--side menu-->
 
       <div class="side_menu">
-        <h3>커피런 상품 보기</h3>
+        <h3>카테고리</h3>
         <div class="side_menu_border"></div>
-        <ul class="menu">
-          <li class="menu_1">상품 전체보기</li>
-          <li class="menu_2">취향 존중 원두 PICK</li>
-          <li class="menu_3">블랜드 커피</li>
-          <li class="menu_4">나라별 커피</li>
-          <li class="menu_5">선물 세트</li>
+        <div class="menu">
 
+          <a href="#">
+            <span class="material-symbols-outlined">forward</span>
+            <span class="menu_1">추천원두 모아보기</span>
+          </a>
 
-        </ul>
+          <a href="#">
+            <span class="material-symbols-outlined">forward</span>
+
+            <span class="menu_2">선물세트 모아보기</span>
+          </a>
+
+        </div>
       </div>
+
+
 
       <!--container-->
 
       <div class="container">
 
-        <span class="product_num">총 000개의 상품이 있습니다.</span>
-        <span class="select_box">
-          <select name="reco" id="reco">
-            <option value="recommendation">추천순</option>
-            <option value="popularity">인기순</option>
-            <option value="registration">등록순</option>
-          </select>
-          <select name="order" id="order">
-            <option value="30개씩보기">30개씩보기</option>
-            <option value="20개씩보기">20개씩보기</option>
-            <option value="10개씩보기">10개씩보기</option>
-          </select>
-        </span>
+        <div class="container_head">
+          <span class="product_num">총 000개의 상품이 있습니다.</span>
+          <span class="select_box">
+            <select name="order" id="order">
+              <option value="30개씩보기">30개씩보기</option>
+              <option value="20개씩보기">20개씩보기</option>
+              <option value="10개씩보기">10개씩보기</option>
+            </select>
+          </span>
 
-        <div class="container_border"></div>
+          <div class="container_border"></div>
+        </div>
 
-        <div class="main_container" id="main_container">
+
+
+
+        <div class="container_main" id="container_main">
 
           <div class="container_box">
 
 
             <!--type1-->
+
             <div class="product_type1">
               <div> <img class="product1_img" src="/public/assets/img/product1.jpg" alt=""></div>
               <p class="product1_name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
@@ -126,7 +139,9 @@
             </div>
 
 
+
             <!--type2-->
+
             <div class="product_type2">
               <div> <img class="product2_img" src="/public/assets/img/product2.jpg" alt=""></div>
               <p class="product2_name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
@@ -152,6 +167,7 @@
 
 
             <!--type3-->
+
             <div class="product_type3">
               <div> <img class="product3_img" src="/public/assets/img/product3.png" alt=""></div>
               <p class="product3_name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
@@ -176,12 +192,12 @@
 
 
           </div>
-
         </div>
 
       </div>
     </div>
   </container>
+
 
 
 
