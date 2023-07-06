@@ -22,10 +22,10 @@
 #header .logo a img {
   width: 160px;
 }
-#header .category {
+.category {
   margin: auto 0;
 }
-#header .category li {
+.category li {
   font-size: 16px;
   margin: auto 0;
   border: 0;
@@ -34,59 +34,61 @@
   display: flex;
   flex-direction: column;
 }
-#header .category ul li a {
+.category ul li a {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s;
   padding: 30px 0; /* 마우스 클릭되는 범위 넓어지도록 위,아래 패딩값 줌 */
 }
 
-#header .category ul li a:hover {
+.category ul li a:hover {
   color: brown;
   text-decoration: underline;
   text-decoration-style: solid;
   text-decoration-color: brown;
 }
-#header .headerRight {
+.headerRight {
   margin: auto 0;
 }
-#header .headerRight ul {
+.headerRight ul {
   margin: auto 0;
 }
-#header .headerRight ul li {
+.headerRight ul li {
   margin: auto 10px;
 }
-#header .headerRight ul li a {
+.headerRight ul li a {
   text-decoration: none;
   color: inherit;
   height: 50px;
   font-size: 13px;
   /* font-size 13px로 줄임 */
 }
-#header .headerImg {
+.headerImg {
   margin: 6px auto;
+  /* 마진 6px으로 수정 (간격조정) */
 }
-#header input {
-  width: 280px;
+.headerRight input {
+  width: 228px;
   height: 48px;
   border-radius: 24px;
   border: none;
   text-align: right;
   padding-right: 50px;
-  background: url('../asset/images/search.png') no-repeat;
-  background-position: 93% center;
   background-color: #f6f6f6;
-  background-size: 26px;
-  font-size: 18px;
 }
-#header .searchBtn {
-  background-color: #fff;
+.btn_search {
+  width: 25px;
+  height: 25px;
+  background-color: #f6f6f600;
+  cursor: pointer;
   border: none;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin-left: 20px;
+  background-image: url(../img/search.png);
+  background-size: 25px 25px;
+  background-repeat: none;
+  position: relative;
+  left: -40px;
+  bottom: -7px;
 }
-#header .loginform {
+.loginform {
   float: right;
 }
