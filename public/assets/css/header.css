@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
+  width: 1280px;
+  margin: 0 auto;
 }
 #header ul {
   list-style: none;
@@ -73,7 +75,7 @@
   border: none;
   text-align: right;
   padding-right: 50px;
-  background: url('../asset/images/search.png') no-repeat;
+  background: url('./img/search.png') no-repeat;
   background-position: 93% center;
   background-color: #f6f6f6;
   background-size: 26px;

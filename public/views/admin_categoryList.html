@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CoffeeLearn</title>
+        <!-- Link -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+        <link rel="stylesheet" href="../assets/css/admin_categoryList.css" />
+        <link rel="icon" href="../favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- JS -->
+        <script defer src="../assets/js/header.js"></script>
+        <script defer src="../assets/js/admin_nav.js"></script>
+    </head>
+    <body>
+        <header></header>
+        <div id="content-wrap">
+            <!--왼쪽 네비게이션 -->
+            <nav class="left-nav"></nav>
+
+            <!-- 오른쪽 컨텐츠영역 -->
+            <div id="content-box">
+                <!-- 내역 박스 -->
+                <div class="product-box">
+                    <p>카테고리 관리</p>
+                    <div class="button-box">
+                        <button>카테고리 추가</button>
+                    </div>
+                </div>
+
+                <!-- 리스트 -->
+                <div class="order-list">
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 14%">번호</th>
+                                <th style="width: 14%">카테고리</th>
+                                <th>설명</th>
+                                <th style="width: 14%">카테고리 삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="category-number">1</td>
+                                <td class="category-name">
+                                  <a href="#">커피</a></td>
+                                <td class="category-description">당신의 입맛에 맞는 원두를 찾아보세요!</td>
+                                <td class="category-delete"><button>삭제</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer></footer>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+body {
+    font-family: "Noto Sans KR", sans-serif;
+  }
+  
+  #content-wrap {
+    width: 1280px;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 오른쪽 컨텐츠 */
+  #content-box {
+    width: 976px;
+  }
+  
+  .order-stepbox > p {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .order-step {
+    width: 976px;
+    height: 115px;
+    padding: 20px 143px 30px 143px;
+    background-color: honeydew;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .order-step li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .order-step li p {
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+  .order-step li span {
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  
+  /* 리스트 부분 */
+  
+  .order-table{
+      margin-top: 60px;
+      background-color: #fafafa;
+      width: 100%;
+  }
+  thead{
+      height: 30px;
+  }
+  thead tr th{
+      border-top: 1px solid #222222;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+  }
+  tbody tr td{
+      background-color:white;
+      height: 60px;
+      border-top: 1px solid #D6D6D6;
+      border-bottom: 1px solid #D6D6D6;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+  }
+  .option{
+      color:#767676;
+      font-size: 12px;
+  }
+  .order-item{
+      padding: 0 0 0 10px;
+  }
+  .order-item p{
+      text-align: left;
+  }
+  .item-name{
+    margin-bottom: 4px;
+  }
+  .order-status select{
+      height:32px;
+  }
+  .refund-request button{
+      height: 32px;
+  }
