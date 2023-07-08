@@ -4,7 +4,7 @@ body {
   
   #contentWrap {
     width: 1280px;
-    margin: 100px auto 0;
+    margin: 60px auto 0;
     display: flex;
     justify-content: space-between;
   }
@@ -90,3 +90,4 @@ body {
   .refund-request button{
       height: 32px;
   }
+ 

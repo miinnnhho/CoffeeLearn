@@ -7,6 +7,7 @@
         <!-- Link -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
         <link rel="stylesheet" href="/public/assets/css/admin_additem.css" />
+        <link rel="stylesheet" href="/public/assets/css/admin_nav.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -15,13 +16,42 @@
         />
 
         <!-- JS -->
-        <script defer src="/public/assets/js/admin_nav.js"></script>
     </head>
     <body>
         <header></header>
         <div id="contentWrap">
             <!--왼쪽 네비게이션 -->
-            <nav class="left-nav"></nav>
+            <nav class="left-nav">
+                <ul>
+                    <li>
+                        <span>상품관리</span>
+                        <ul class="depth1">
+                            <li>
+                                <a href="/views/admin_itemList.html">상품리스트 관리</a>
+                            </li>
+                            <li>
+                                <a href="/views/admin_categoryList.html">카테고리 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>주문 관리</span>
+                        <ul class="depth1">
+                            <li>
+                                <a href="/views/admin_orderList.html">주문 내역 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>사용자관리</span>
+                        <ul class="depth1">
+                            <li>
+                                <a href="">사용자리스트 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
             <!-- 오른쪽 컨텐츠영역 -->
             <div id="contentBox">
@@ -30,7 +60,7 @@
                     <p>상품 추가</p>
                 </div>
                 <!-- 인풋 폼 -->
-                <form class="add-item-form">
+                <form class="add-item-form" method="get">
                     <ul>
                         <li>
                             <label>카테고리 선택</label>
@@ -88,6 +118,9 @@
                             </select>
                         </li>
                     </ul>
+                    <div class="add-item-button">
+                        <button type="submit">저장하기</button>
+                    </div>
                 </form>
             </div>
         </div>
