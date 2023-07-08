@@ -5,15 +5,15 @@ import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
 
-const dirname = fileURLToPath(new URL('.', import.meta.url));
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(dirname, 'public')));
-app.set('views', path.join(dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
-app.engine('.html', ejs.express);
+app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
 
