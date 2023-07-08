@@ -1,8 +1,3 @@
-@import './header.css';
-@import './footer.css';
-@import './totop.css';
-@import './variables.css';
-
 /* COMMON */
 body {
   width: 100%;
@@ -12,6 +7,7 @@ body {
   line-height: 1.4;
   color: #333;
   padding-top: 100px;
+  box-sizing: border-box;
 }
 a {
   text-decoration: none;
@@ -27,11 +23,13 @@ img {
 
 /* INNER */
 .inner {
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box;
 }
+
 
 /* BUTTON 스타일링 */
 .btn {
@@ -63,4 +61,210 @@ img {
 .btn.btn--brown:hover {
   color: #fff;
   background-color: #2e170d;
+}
+
+/* HEADER */
+#header {
+  width: 100%;
+  height: 100px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+#header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+#header .logo a {
+  display: block;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+#header .logo a img {
+  width: 160px;
+}
+#header .nav {
+  flex-grow: 2;
+}
+#navList {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20px; 
+}
+#navList li {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 18px;
+}
+#navList li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#navList li a::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: brown;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+#header .nav ul li.on a,
+#header .nav ul li a:hover {
+  color: brown;
+  font-weight: 500;
+  text-decoration-style: solid;
+}
+#header .nav ul li.on a::before,
+#header .nav ul li a:hover::before {
+  width: 80%;
+}
+#header .header-right {
+  display: flex;
+  align-items: center;
+}
+#header .header-right .search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #f6f6f6;
+  margin: 0 30px;
+}
+#header .header-right .search-form input {
+  width: 200px;
+  text-align: right;
+  border-radius: 24px 0 0 24px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  transition: 0.3s;
+  outline: none;
+  padding: 10px 0px;
+}
+#header .header-right .search-form input:focus {
+  height: 70%;
+}
+#header .header-right .search-form .search-btn {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('/assets/img/search.png');
+  border: none;
+  cursor: pointer;
+}
+#header .header-right .icon-menu {
+  display: flex;
+}
+#header .header-right .icon-menu li a {
+  display: block;
+  font-size: 13px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+}
+#header .header-right .icon-menu li a:hover {
+  color: brown;
+}
+#header .header-right .header-img {
+  margin: 6px auto;
+  transition: 0.3s;
+}
+#header .header-right ul li a:hover .header-img {
+  margin-bottom: 10px;
+}
+
+/* items-header */
+#header.items-header #navList {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 180px;
+  margin-right: 20px;
+}
+#header.admin-header #navList {
+  display: none;
+}
+#header.admin-header .basket-nav {
+  display: none;
+}
+#header.admin-header .search-form,
+#header.items-header .search-form {
+  display: none;
+}
+
+#footer {
+  border-top: 1px solid #eeeeee;
+  padding: 30px 0;
+  background-color: #ffffff;
+}
+#footer .inner {
+  margin: auto;
+}
+#footer .footer-content ul {
+  display: flex;
+  width: 1280px;
+}
+#footer div ul li a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+.footer-text {
+  margin: 20px 0;
+}
+.footer-address,
+.footer-copyright {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #999;
+}
+.footer-address {
+  margin-top: 20px;
+}
+
+/* body 높이가 화면 높이를 초과할 때 */
+#footer.footer-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+/*SCROLL TO TOP*/
+#to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
