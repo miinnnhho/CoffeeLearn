@@ -27,7 +27,8 @@ img {
 
 /* INNER */
 .inner {
-  width: 1280px;
+  width: 100%;
+  max-width: 1280%;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box;

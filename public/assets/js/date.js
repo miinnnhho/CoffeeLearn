@@ -1,22 +1,23 @@
 const userId = document.getElementById("id");
 const userPw = document.getElementById("pw");
-// const userPwCheck = document.getElementById("pw_check").value;
-const userAddress = document.getElementById("address");
+const userPwCheck = document.getElementById("pwCheck");
 const userName = document.getElementById("name");
-const userPhone_number = document.getElementById("phone_number");
-const detailedAddress = document.getElementById("detailed_address");
-const submitbtn = document.querySelector(".btn1");
+const userPhone_number = document.getElementById("phoneNumber");
+const userAddress = document.getElementById("address");
+const userdetailedAddress = document.getElementById("detailedAddress");
+const submitBtn = document.querySelector(".btn1");
 
-submitbtn.addEventListener("click", register);
+submitBtn.addEventListener("click", register);
 
 function register() {
   const req = {
-    user_id: userId.value,
+    id: userId.value,
     password: userPw.value,
+    passwordCheck: userPwCheck.value,
     name: userName.value,
     phone: userPhone_number.value,
     addr: userAddress.value,
-    detailedAddress: detailedAddress.value,
+    detail_addr: userdetailedAddress.value,
 
   };
   console.log(req);
@@ -30,7 +31,7 @@ function register() {
 //     .then((res) => res.json())
 //     .then((res) => {
 //       if (res.success) {
-//         location.href = "/login"; //성공하면 login으로 이동
+//         location.href = "/"; //성공하면 finish_signup으로 이동
 //       } else {
 //         alert(res.msg);
 //       }

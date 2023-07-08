@@ -15,11 +15,11 @@ body::before {
   left: 0;
   background-color: (0, 0, 0, 0.7);
 }
-.login_form {
+.login-form {
   position: relative;
   z-index: 2;
 }
-.login_form h1 {
+.login-form h1 {
   /*margin-bottom: 60px; */
   color: #000;
   font-size: 30px;
@@ -30,21 +30,21 @@ body::before {
   text-align: center;
   margin-bottom: 40px;
 }
-.int_area {
+.int-area {
   width: 400px;
   position: relative;
   margin-top: 20px;
 }
-.div_phone {
+.div-phone {
   width: 400px;
   position: relative;
   margin-top: 0px;
 }
 
-.int_area:first-child {
+.int-area:first-child {
   margin-top: 0;
 }
-.int_area input {
+.int-area input {
   width: 100%;
   padding: 20px 10px 10px;
   background-color: transparent;
@@ -54,7 +54,7 @@ body::before {
   color: black;
   outline: none;
 }
-.int_area label {
+.int-area label {
   position: absolute;
   left: 10px;
   top: 15px;
@@ -62,7 +62,7 @@ body::before {
   color: #999;
   transition: top 0.5s ease;
 }
-.int_area label.warning {
+.int-area label.warning {
   color: red !important;
   animation: warning 0.3s ease;
   animation-iteration-count: 3;
@@ -84,13 +84,13 @@ body::before {
   }
 }
 
-.int_area input:focus + label,
-.int_area input:valid + label {
+.int-area input:focus + label,
+.int-area input:valid + label {
   top: 0;
   font-size: 13px;
   color: #2e170d;
 }
-.btn_area {
+.btn-area {
   margin-top: 30px;
 }
 /* 로그인 버튼 */
@@ -140,6 +140,7 @@ body::before {
   text-decoration: none;
 }
 
+/* 검사 class -> 필요없으면 지우기 */
 .pw_checking {
   margin-top: 10px;
   width: 100%;
@@ -160,6 +161,7 @@ body::before {
   width: none;
 }
 
+/* *표시한 글씨 */
 .required-asterisk {
   color: red;
 }
