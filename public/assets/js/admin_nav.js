@@ -1,4 +1,4 @@
-fetch('../views/admin_nav.html')
+fetch('/views/admin_nav.html')
 .then(function(response) {
   if (response.ok) {
     return response.text();
