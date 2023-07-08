@@ -1,0 +1,170 @@
+/*top*/
+
+.top {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 60px;
+}
+
+.top h1 {
+	margin-bottom: 40px;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.top_box {
+	width: 1280px;
+	height: 20px;
+	text-align: center;
+}
+
+.top_box span {
+	font-size: 18px;
+}
+
+/*filter_coffee*/
+
+.filter_coffee {
+	width: 300px;
+	height: 450px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	line-height: 35px;
+}
+
+.filter_coffee h3 {
+	font-size: 26px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.filter_coffee_border {
+	width: 270px;
+	border: 1px solid #ddd;
+	margin: 5px 0;
+}
+
+.filter span:nth-child(1) {
+	font-size: 18px;
+	width: 100px;
+}
+
+.material-symbols-outlined {
+	margin-left: 120px;
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+	color: #ccc;
+}
+
+.filter span:nth-child(3) {
+	color: #ccc;
+	font-size: 18px;
+}
+
+.filter_tast1 div {
+	width: 270px;
+	height: 44px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	font-size: 17px;
+	text-align: left;
+	line-height: 45px;
+}
+
+.filter_tast1 div:nth-child(1) {
+	margin-top: 10px;
+}
+
+.hover-element div:hover {
+	border: solid #288341;
+}
+
+#option1,
+#option2,
+#option3,
+#option4,
+#option5 {
+	transform: scale(1.2);
+	margin-left: 15px;
+}
+
+input[type='radio']:hover {
+	background-color: #288341;
+}
+
+.filter_tast1 div label {
+	font-size: 17px;
+	padding: 15px;
+}
+
+/*filter_madein*/
+
+.filter_madein {
+	width: 300px;
+	height: 500px;
+
+	display: flex;
+
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	line-height: 35px;
+}
+
+.filter_madein_border {
+	width: 270px;
+	border: 1px solid #ddd;
+	margin: 10px 0;
+}
+
+#option1,
+#option2,
+#option3,
+#option4 {
+	transform: scale(1.2);
+	margin-left: 15px;
+}
+
+.filter_tast2 div {
+	width: 270px;
+	height: 44px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	font-size: 17px;
+	text-align: left;
+	line-height: 45px;
+}
+
+.filter_tast2 div:nth-child(1) {
+	margin-top: 10px;
+}
+
+.filter_tast2 div label {
+	font-size: 17px;
+	padding: 15px;
+}
+
+.madein span:nth-child(1) {
+	font-size: 18px;
+	width: 100px;
+}
+
+.madein .material-symbols-outlined {
+	margin-left: 140px;
+	color: #ccc;
+}
+
+.madein span:nth-child(3) {
+	color: #ccc;
+	font-size: 18px;
+}
