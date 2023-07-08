@@ -1,0 +1,155 @@
+.sub_menu_mypage {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.container {
+  display: flex;
+  margin-left: 220px;
+}
+.mypage_h2 {
+  color: #000;
+  font-size: 30px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 60px;
+}
+h3 {
+  color: #000;
+  font-size: 16px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+#MainLi {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 30px;
+  list-style: none;
+}
+.title {
+  color: #000;
+  font-size: 16px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.sub_depth1 {
+  list-style: none;
+  color: #000;
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* border-top: 2px solid; */
+}
+.sub_depth1 li {
+  margin-bottom: 10px;
+}
+hr {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 100px solid;
+  border-right: 100px solid;
+}
+.active {
+  text-decoration-line: none;
+  color: #000;
+}
+.container #NameBox {
+  background-color: #faf9f6;
+  width: 580px;
+  height: 40px;
+  padding: 30px;
+  align-items: center;
+  gap: 140px;
+  border-radius: 10px;
+  border: 10px;
+  margin-top: 100px;
+  margin-left: 66px;
+  display: table-cell;
+  vertical-align: middle;
+}
+#NameBox .Name {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#NameBox .Text {
+  font-size: 12px;
+}
+
+#order {
+  /* display: flex; */
+  /* margin: 0 0 95px 0; */
+  font-size: 0;
+  border: 1px solid #dddddd;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 10px;
+  width: 580px;
+  height: 40px;
+  padding: 30px;
+  margin-left: -30px;
+}
+ol {
+  list-style: none;
+}
+.order_li_first {
+  display: inline-flex;
+  flex-direction: column;
+  width: 10%;
+  min-width: 66px;
+  padding: 0 10px 0 30px;
+  font-size: 13px;
+  text-align: center;
+}
+.order_li {
+  display: inline-flex;
+  flex-direction: column;
+  width: 10%;
+  min-width: 66px;
+  padding: 0 10px 0 30px;
+  font-size: 13px;
+  background: url(./img/mypage_arrow.png) no-repeat top 9px left 7px;
+  text-align: center;
+}
+strong {
+  display: inline-block;
+
+  color: #222222;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+b {
+  display: block;
+  padding: 0 0 15px 0;
+  font-size: 15px;
+  color: #666666;
+  font-weight: 400;
+}
+.order_h2 {
+  color: #000;
+  font-size: 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 90px;
+  margin-left: -30px;
+}
