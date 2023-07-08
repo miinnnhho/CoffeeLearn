@@ -1,53 +1,40 @@
-body {
-  font-family: "Noto Sans KR", sans-serif;
+.order-inner {
+    margin-left: 0px;
 }
-.container {
-  display: flex;
-  margin: auto;
-  justify-content: space-around;
+.complete-box {
+    width: 380px;
+    height: 370px;
+    /* border: 1px solid; */
+    margin: 0 auto;
+    margin-top: 170px;
 }
-.boxinner {
-  width: 1280px;
-  margin: 0 auto;
-  position: relative;
+.three-coffee {
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 24px;
 }
-.orderinner {
-  margin-left: 0px;
+.complete-p {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
-.completeBox {
-  width: 380px;
-  height: 370px;
-  /* border: 1px solid; */
-  margin: 0 auto;
-  margin-top: 170px;
-}
-.three_coffee {
-  width: 100px;
-  margin: 0 auto;
-  margin-top: 24px;
-}
-.completeP {
-  color: #000;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-.completeBtn {
-  display: flex;
-  width: 300px;
-  height: 50px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  background: #ffdb7e;
-  border: none;
-  margin: auto;
-  cursor: pointer;
-  font-size: 14px;
+.complete-btn {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #ffdb7e;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+    font-size: 14px;
 }

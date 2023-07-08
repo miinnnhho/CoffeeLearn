@@ -5,7 +5,7 @@ let orderList;
 
 function getProducts() {
   return new Promise((resolve, reject) => {
-    fetch("/assets/order_list.json")
+    fetch("/assets/data/order_list.json")
       .then((response) => response.json())
       .then((data) => {
         orderList = data;
