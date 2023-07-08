@@ -1,0 +1,62 @@
+@import './header.css';
+@import './footer.css';
+@import './totop.css';
+
+/* COMMON */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+img {
+  display: block;
+}
+::selection {
+  background: #288341;
+  color: #fff;
+}
+
+/* INNER */
+.inner {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* BUTTON 스타일링 */
+.btn {
+  width: 160px;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: #f6f6f6;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: 0.4s;
+}
+.btn.on {
+  background-color: #288341;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #288341;
+  color: #fff;
+}
+.btn.btn--brown {
+  color: #2e170d;
+  border-color: #2e170d;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #2e170d;
+}
