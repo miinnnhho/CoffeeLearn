@@ -2,14 +2,14 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-#content-wrap {
+#contentWrap {
     width: 1280px;
     margin: 100px auto 0;
     display: flex;
     justify-content: space-between;
 }
 /* 오른쪽 컨텐츠 */
-#content-box {
+#contentBox {
     width: 976px;
 }
 .product-box > p {
