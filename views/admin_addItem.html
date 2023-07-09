@@ -14,8 +14,8 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
         />
-
         <!-- JS -->
+        <script defer src="/public/assets/js/additem.js"></script>
     </head>
     <body>
         <header></header>
@@ -64,61 +64,67 @@
                     <ul>
                         <li>
                             <label>카테고리 선택</label>
-                            <select autofocus>
-                                <option value="1">커피</option>
-                                <option value="2">선물세트</option>
+                            <select class="select-categogy">
+                                <option value="">카테고리 선택</option>
+                                <option value="커피">커피</option>
+                                <option value="선물세트">선물세트</option>
                             </select>
                         </li>
                         <li>
-                            <label>상세 선택1</label>
-                            <select>
-                                <option value="1">맛별</option>
-                                <option value="2">나라별</option>
+                            <label>맛선택</label>
+                            <select class="select-taste" disabled>
+                                <option value="">선택하세요</option>
+                                <option value="달콤/쌉싸름">달콤/쌉싸름</option>
+                                <option value="고소함/구수함">고소함/구수함</option>
+                                <option value="묵직하고 달콤한 여운">묵직하고 달콤한 여운</option>
+                                <option value="은은하고 편안함">은은하고 편안함</option>
+                                <option value="상큼한 산미와 향">상큼한 산미와 향</option>
                             </select>
                         </li>
                         <li>
-                            <label>상세 선택2</label>
-                            <select>
-                                <option value="1">달콤/쌉싸름</option>
-                                <option value="1">고소함/구수함</option>
-                                <option value="1">묵직하고 달콤한 여운</option>
-                                <option value="1">은은하고 편안한</option>
-                                <option value="1">상큼한 산미와 향</option>
+                            <label>원산지선택</label>
+                            <select class="select-origin" disabled>
+                                <option value="">선택하세요</option>
+                                <option value="아시아/태평양">아시아/태평양</option>
+                                <option value="중남미">중남미</option>
+                                <option value="아프리카">아프리카</option>
+                                <option value="블렌드">블렌드</option>
                             </select>
                         </li>
+
                         <li>
                             <label>상품명</label>
-                            <input type="text" />
+                            <input type="text" class="input-name"/>
                         </li>
                         <li>
                             <label>가격</label>
-                            <input type="number" />
+                            <input type="number" class="input-price" />
                         </li>
                         <li>
                             <label>수량</label>
-                            <input type="number" />
+                            <input type="number" class="input-amount" />
                         </li>
                         <li>
                             <label>이미지</label>
-                            <input type="file" />
+                            <input type="file" class="input-main-img" />
+                        </li>
+                        <li>
+                            <label>설명(이미지)</label>
+                            <input type="file" class="input-sub-img" />
                         </li>
                         <li>
                             <label>설명</label>
-                            <input type="text" size="500" />
-                        </li>
-                        <li>
-                            <label>원산지</label>
-                            <input type="text" />
+                            <input type="text" class="input-description"/>
                         </li>
                         <li>
                             <label>상품노출</label>
-                            <select>
-                                <option value="">예</option>
-                                <option value="">아니오</option>
+                            <select class="select-show">
+                                <option value="예">예</option>
+                                <option value="아니오">아니오</option>
                             </select>
                         </li>
                     </ul>
-                    <div class="add-item-button">
+                    <div class="submit-button">
                         <button type="submit">저장하기</button>
                     </div>
                 </form>
