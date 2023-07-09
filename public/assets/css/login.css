@@ -68,8 +68,9 @@ body::before {
   animation-iteration-count: 3;
 }
 
+/* 오류시 글씨 흔들림 */
 
-@keyframes warning {
+/* @keyframes warning {
   0% {
     transform: translateX(-8px);
   }
@@ -82,7 +83,7 @@ body::before {
   75% {
     transform: translateX(8px);
   }
-}
+} */
 
 .int-area input:focus + label,
 .int-area input:valid + label {
