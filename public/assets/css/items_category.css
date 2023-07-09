@@ -15,19 +15,19 @@
 	font-weight: bold;
 }
 
-.top_box {
+.top-box {
 	width: 1280px;
 	height: 20px;
 	text-align: center;
 }
 
-.top_box span {
+.top-box span {
 	font-size: 18px;
 }
 
-/*filter_coffee*/
+/*filter-coffee*/
 
-.filter_coffee {
+.filter-coffee {
 	width: 300px;
 	height: 450px;
 
@@ -35,18 +35,17 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-
 	line-height: 35px;
 }
 
-.filter_coffee h3 {
+.filter-coffee h3 {
 	font-size: 26px;
 	padding-top: 15px;
 	padding-bottom: 10px;
 	font-weight: bold;
 }
 
-.filter_coffee_border {
+.filter-coffee-border {
 	width: 270px;
 	border: 1px solid #ddd;
 	margin: 5px 0;
@@ -68,7 +67,7 @@
 	font-size: 18px;
 }
 
-.filter_tast1 div {
+.filter-tast1 div {
 	width: 270px;
 	height: 44px;
 	border: 1px solid #ddd;
@@ -79,7 +78,7 @@
 	line-height: 45px;
 }
 
-.filter_tast1 div:nth-child(1) {
+.filter-tast1 div:nth-child(1) {
 	margin-top: 10px;
 }
 
@@ -100,27 +99,24 @@ input[type='radio']:hover {
 	background-color: #288341;
 }
 
-.filter_tast1 div label {
+.filter-tast1 div label {
 	font-size: 17px;
 	padding: 15px;
 }
 
-/*filter_madein*/
+/*filter-madein*/
 
-.filter_madein {
+.filter-madein {
 	width: 300px;
 	height: 500px;
-
 	display: flex;
-
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-
 	line-height: 35px;
 }
 
-.filter_madein_border {
+.filter-madein-border {
 	width: 270px;
 	border: 1px solid #ddd;
 	margin: 10px 0;
@@ -134,7 +130,7 @@ input[type='radio']:hover {
 	margin-left: 15px;
 }
 
-.filter_tast2 div {
+.filter-tast2 div {
 	width: 270px;
 	height: 44px;
 	border: 1px solid #ddd;
@@ -145,11 +141,11 @@ input[type='radio']:hover {
 	line-height: 45px;
 }
 
-.filter_tast2 div:nth-child(1) {
+.filter-tast2 div:nth-child(1) {
 	margin-top: 10px;
 }
 
-.filter_tast2 div label {
+.filter-tast2 div label {
 	font-size: 17px;
 	padding: 15px;
 }
