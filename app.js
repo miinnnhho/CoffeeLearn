@@ -4,6 +4,7 @@ import ejs from 'ejs';
 import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
+import addItemRouter from './routes/additem.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -16,6 +17,7 @@ app.set('view engine', 'html');
 app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
+app.use('/additem', addItemRouter);
 
 app.listen(PORT, () => {
   console.log(`✅ Server listening on port ${PORT}`);

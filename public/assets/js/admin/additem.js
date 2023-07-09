@@ -49,7 +49,7 @@ async function addProduct(e) {
         name,
         price,
         amount,
-        mainImg,
+        mainImage:mainImg,
         subImg,
         description,
         show,

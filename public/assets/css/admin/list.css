@@ -9,10 +9,10 @@ body {
     justify-content: space-between;
 }
 /* 오른쪽 컨텐츠 */
-#contentBox {
+#rightBox {
     width: 976px;
 }
-.item-box > p {
+.title-box > p {
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 20px;
@@ -25,14 +25,18 @@ body {
     width: 100px;
     height: 36px;
     font-weight: 700;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 /* 리스트 부분 */
-
-.order-table {
+a{
+    color: black;
+}
+.product-table,.category-table {
     margin-top: 20px;
     background-color: #fafafa;
     width: 100%;
+    border-spacing: 0;
 }
 thead {
     height: 30px;
@@ -52,6 +56,7 @@ tbody tr td {
     vertical-align: middle;
     font-size: 14px;
 }
-.item-name a {
-    color: black;
+
+.delete-button{
+    font-family: "Noto Sans KR", sans-serif;
 }

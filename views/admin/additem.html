@@ -3,21 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CoffeeLearn</title>
-        <!-- Link -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-        <link rel="stylesheet" href="/public/assets/css/admin_additem.css" />
-        <link rel="stylesheet" href="/public/assets/css/admin_nav.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
-        <!-- JS -->
-        <script defer src="/public/assets/js/additem.js"></script>
+        <%- include('components/head.html') -%>
+        <link rel="stylesheet" href="/public/assets/css/admin/additem.css" />
+        <link rel="stylesheet" href="/public/assets/css/admin/nav.css" />
+        <script defer src="/public/assets/js/admin/additem.js"></script>
     </head>
     <body>
+        <%- include('components/header.html') -%>
         <div id="contentWrap">
             <!--왼쪽 네비게이션 -->
             <nav class="left-nav">
@@ -26,10 +18,10 @@
                         <span>상품관리</span>
                         <ul class="depth1">
                             <li>
-                                <a href="/views/admin_itemList.html">상품리스트 관리</a>
+                                <a href="/views/admin/itemlist.html">상품리스트 관리</a>
                             </li>
                             <li>
-                                <a href="/views/admin_categoryList.html">카테고리 관리</a>
+                                <a href="/views/admin/categorylist.html">카테고리 관리</a>
                             </li>
                         </ul>
                     </li>
@@ -37,7 +29,7 @@
                         <span>주문 관리</span>
                         <ul class="depth1">
                             <li>
-                                <a href="/views/admin_orderList.html">주문 내역 관리</a>
+                                <a href="/views/admin/orderlist.html">주문 내역 관리</a>
                             </li>
                         </ul>
                     </li>
@@ -124,10 +116,12 @@
                         </li>
                     </ul>
                     <div class="submit-button">
-                        <button type="submit">저장하기</button>
+                        <button><a href="/views/admin/itemlist.html">목록으로</a></button>
+                        <button type="submit" class="save-button">저장하기</button>
                     </div>
                 </form>
             </div>
         </div>
+        <%- include('components/footer.html') -%>
     </body>
 </html>

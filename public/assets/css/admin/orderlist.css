@@ -9,13 +9,14 @@ body {
     justify-content: space-between;
   }
   /* 오른쪽 컨텐츠 */
-  #contentBox {
+  #rigthBox {
     width: 976px;
   }
   
-  .order-stepbox > p {
+  .order-stepbox li > p {
     font-weight: 600;
     font-size: 20px;
+    margin: 0;
   }
   .order-step {
     width: 976px;
@@ -52,6 +53,7 @@ body {
       margin-top: 60px;
       background-color: #fafafa;
       width: 100%;
+      border-spacing: 0;
   }
   thead{
       height: 30px;
@@ -86,8 +88,10 @@ body {
   }
   .order-status select{
       height:32px;
+      font-family: "Noto Sans KR", sans-serif;
   }
   .refund-request button{
       height: 32px;
+      font-family: "Noto Sans KR", sans-serif;
   }
  
