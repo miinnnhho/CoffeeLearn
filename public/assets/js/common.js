@@ -10,7 +10,7 @@ function setHeaderClass() {
   const searchParams = new URLSearchParams(window.location.search);
   const header = document.getElementById('header');
 
-  if (path.includes('/item') || path.includes('/admin') || searchParams.toString() !== '') {
+  if (path.includes('/items') || path.includes('/admin') || searchParams.toString() !== '') {
     const className = path.substr(1).split('?')[0] + '-header';
     header.classList.add(className);
   }
@@ -57,9 +57,3 @@ async function setNav() {
     console.error('Error fetching data:', error);
   }
 }
-
-// 페이지 로드 시 호출
-window.onload = function () {
-  setHeaderClass();
-  setNav();
-};

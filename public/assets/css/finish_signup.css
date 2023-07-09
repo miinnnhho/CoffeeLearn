@@ -1,8 +1,8 @@
-#Main {
+#main {
   text-align: center;
   margin-top: 300px;
 }
-#Text {
+#text {
   color: #000;
   font-size: 20px;
   font-family: Inter;
@@ -11,7 +11,7 @@
   line-height: normal;
   margin-top: 60px;
 }
-#LoginButton {
+#loginButton {
   width: 300px;
   height: 50px;
   background: #ffdb7e;
