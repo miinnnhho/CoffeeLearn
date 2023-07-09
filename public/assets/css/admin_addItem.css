@@ -36,12 +36,12 @@ select,input {
     box-sizing: border-box;
     font-family:'Noto Sans KR', sans-serif;
 }
-.add-item-button {
+.submit-button{
     width: 470px;
     text-align: right;
     margin-top: 20px;
 }
-.add-item-button button {
+.submit-button button {
     width: 100px;
     height: 40px;
     font-size: 14px;

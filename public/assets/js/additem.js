@@ -1,7 +1,7 @@
+//카테고리별 선택사항 비활성화 처리
 const category = document.querySelector('.select-categogy');
-console.log(category.value)
+console.log(category.value);
 
-// Select tag에 변화가 있을 때
 category.addEventListener('change', () => {
     const tasteField = document.querySelector('.select-taste');
     const originField = document.querySelector('.select-origin');
@@ -15,6 +15,7 @@ category.addEventListener('change', () => {
     }
 });
 
+// 입력된 내용 서버로 전송
 const selectCategogy = document.querySelector('.select-categogy');
 const selectTaste = document.querySelector('.select-taste');
 const selectOrigin = document.querySelector('.select-origin');
@@ -27,38 +28,44 @@ const inputDescription = document.querySelector('.input-description');
 const selectShow = document.querySelector('.select-show');
 const submitButton = document.querySelector('submit-button');
 
-submitButton.addEventListener('submit', async(e)=>{
+async function addProduct(e) {
+    e.preventDefault();
+
     const category = selectCategogy.value;
     const taste = selectTaste.value;
     const origin = selectOrigin.value;
     const name = inputName.value;
-    const price =inputPrice.value;
+    const price = inputPrice.value;
     const amount = inputAmounut.value;
-    const img1 = inputMainImg.value;
-    const img2 = inputSubImg.value;
-    const description= inputDescription.value;
+    const mainImg = inputMainImg.value;
+    const subImg = inputSubImg.value;
+    const description = inputDescription.value;
     const show = selectShow.value;
 
     const product = {
-        category,
+        Category:category,
         taste,
         origin,
         name,
         price,
         amount,
-        img1,
-        img2,
+        mainImg,
+        subImg,
         description,
-        show
-    }
+        show,
+    };
 
     const dataJson = JSON.stringify(product);
 
-    const apiUrl =  ``
+    const apiUrl = 'http://localhost:3000/admin/product/add';
 
     const res = await fetch(apiUrl, {
         method: 'POST',
         body: dataJson,
-      });
-})
+    });
 
+    const result = await res.json();
+    console.log(result);
+}
+
+submitButton.addEventListener('submit', addProduct);
