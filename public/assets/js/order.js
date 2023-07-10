@@ -38,7 +38,6 @@ function clickSearchBtn() {
     console.log(orderList);
     const startDate = document.getElementById('start-date').value;
     const endDate = document.getElementById('end-date').value;
-
     const orders = getOrdersByDateRange(startDate, endDate);
     //기간에 맞는 order 배열
     displayOrders(orders);
@@ -58,24 +57,37 @@ function displayOrders(orders) {
     const emptyOrder = document.querySelector('.empty-order');
     const button = document.createElement('input');
     button.type = 'button';
-    button.className = 'cancleBtn';
+    button.className = 'order-btn';
     button.value = '주문 취소';
+    const button2 = Object.assign(document.createElement('input'), {
+        type: 'button',
+        className: 'order-btn',
+        id: 'onOrderModal',
+        value: '주문 수정',
+    });
 
-    //취소버튼 생성
+    // 해야될거
+    // 1. 이벤트 리스너 등록
+    // 2. 모달 연결
+    // 3. 각 parentschild랑 연결해서 수정 가능하게 만들기
+    //취소버튼, 주문 수정 버튼 생성
+
     const orderRows = orders
         .map((order) => {
             const deliveryStatusCell = order.deliveryStatus === '배송준비중' ? button.outerHTML : '-';
+            const orderStatusCell = order.deliveryStatus === '배송준비중' ? button2.outerHTML : '-';
             //배송준비중 일 때만 취소버튼 생성 취소버튼 구현은 다음에
             return `
+            
       <tr>
-        <td>${order.orderNumber}</td>
-        <td>${order.orderDate}</td>
+        <td>${order.orderNumber} ${order.orderDate}</td>
         <td>${order.name}</td>
         <td>${order.quantity}</td>
         <td>${order.salePrice}</td>
         <td>${order.orderStatus}</td>
         <td>${order.deliveryStatus}</td>
         <td>${deliveryStatusCell}</td>
+        <td>${orderStatusCell}</td>
       </tr>
     `; //테이블 양식에 맞춰 넣어주기
         })
@@ -88,6 +100,21 @@ function displayOrders(orders) {
     }
     // 주문 내역 여부에 따라서 class 추가해서 주문 내역이 없습니다 안내 여부 판단
     document.getElementById('order-rows').innerHTML = orderRows;
+
+    // 모달작업!!
+    const onOrderModifyModal = document.querySelector('#onOrderModal');
+    onOrderModifyModal.addEventListener('click', ModifyModal);
+    function ModifyModal() {
+        document.getElementById('myModal').style.display = 'block';
+        const orderNumber = document.getElementById('orderNumber');
+        const orderProducts = document.getElementById('orderProducts');
+        const orderName = document.getElementById('orderName');
+        const orderHp = document.getElementById('orderHp');
+        orderNumber.innerHTML = '1';
+        orderProducts.innerHTML = '2';
+        orderName.value = '3';
+        orderHp.value = '4';
+    }
 }
 
 //조회 기간 버튼 - 오늘
