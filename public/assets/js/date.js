@@ -30,7 +30,7 @@ function register() {
     //     .then((res) => res.json())
     //     .then((res) => {
     //       if (res.success) {
-    //         location.href = "/"; //성공하면 finish_signup으로 이동
+    //         location.href = "view/finish_signup.html"; //성공하면 finish_signup으로 이동
     //       } else {
     //         alert(res.msg);
     //       }
