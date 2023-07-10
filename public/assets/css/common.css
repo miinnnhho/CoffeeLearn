@@ -30,38 +30,6 @@ img {
   box-sizing: border-box;
 }
 
-/* BUTTON 스타일링 */
-.btn {
-  width: 160px;
-  padding: 10px;
-  border-radius: 40px;
-  background-color: #f6f6f6;
-  color: #333;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  display: block;
-  transition: 0.4s;
-}
-.btn.on {
-  background-color: #288341;
-  color: #fff;
-}
-.btn:hover {
-  background-color: #288341;
-  color: #fff;
-}
-.btn.btn--brown {
-  color: #2e170d;
-  border-color: #2e170d;
-}
-.btn.btn--brown:hover {
-  color: #fff;
-  background-color: #2e170d;
-}
-
 /* HEADER */
 #header {
   width: 100%;
