@@ -1,0 +1,193 @@
+/* test - coffee.css*/
+
+section h2 {
+	font-size: 40px;
+	font-weight: 600;
+	text-align: center;
+	margin: 40px 0;
+	margin: auto;
+}
+.title {
+	display: flex;
+	position: relative;
+	margin-bottom: 40px;
+	flex-direction: column;
+}
+.title a {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	width: 90px;
+	right: 0;
+	bottom: 0;
+	color: 888;
+}
+.title a strong {
+	color: #288341;
+}
+.title a span {
+	margin-left: 5px;
+	transition: 0.3s;
+	color: #288341;
+}
+.title a:hover span {
+	margin-left: 15px;
+}
+
+/*test - items.css*/
+/*사이드 바로가기 창*/
+
+/*tab-box - 사이드 탭 메뉴 창 (커피 바로가기 & 선물세트 바로가기 둘다)*/
+.tab {
+	width: 280px;
+	height: 55px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #eee;
+	font-size: 18px;
+	font-weight: 500;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: flex;
+	transition: 0.4s;
+	align-items: center;
+}
+.tab-label.on .tab {
+	border: 1px solid #288341;
+	color: #288341;
+}
+.tab-label input {
+	display: none;
+}
+.tab-label.main {
+	margin-right: 10px;
+}
+.tab-label.main:last-child {
+	margin-right: 0;
+}
+.tab > div {
+	margin-right: 15px;
+}
+/* tab - 메인메뉴*/
+.tab.tab--main {
+	width: 180px;
+	border-radius: 30px;
+	background-color: #eee;
+}
+.tab.tab--main.on {
+	background-color: #288341;
+	color: #fff;
+}
+.tab.tab--main > div {
+	display: none;
+}
+.tab.tab--main > p {
+	margin: auto;
+}
+
+/* 상품 리스트 - 상품들 보이는 곳*/
+
+.item-box {
+	display: grid;
+	grid-template-columns: auto;
+	width: 100%;
+	margin: 40px 0;
+	/*
+	flex-wrap: wrap;
+	justify-content: space-between;
+*/
+}
+.item-box .item-list {
+	width: 23%;
+	border-radius: 10px;
+	border: 1px solid #eee;
+	margin-bottom: 30px;
+	position: relative;
+}
+.item-box .item-list::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background: #ffffff;
+	opacity: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: 0.3s;
+	animation: fade-out 0.3s ease-in 1 forwards;
+}
+@keyframes fade-out {
+	from {
+		opacity: 1;
+		z-index: 0;
+	}
+	to {
+		opacity: 0;
+		z-index: -1;
+	}
+}
+.item-box .img-box {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.item-box .img-box .main-img {
+	width: 100%;
+	transition: 0.3s;
+}
+.item-box .item-list:hover .main-img {
+	transform: scale(1.03);
+}
+.item-box .detail-box {
+	padding: 30px 20px;
+}
+.item-box .detail-box .description {
+	font-size: 14px;
+	color: #bbb;
+}
+.item-box .detail-box .name {
+	font-size: 18px;
+	font-weight: 500;
+	height: 60px;
+	margin-top: 3px;
+	word-break: keep-all;
+}
+.item-box .detail-box .sale-price,
+.item-box .detail-box .sale-percent {
+	font-size: 22px;
+	font-weight: 600;
+}
+.item-box .detail-box .details {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+.item-box .detail-box .sale-box {
+	display: flex;
+}
+.item-box .detail-box .sale-box .sale-percent {
+	color: #f54b4b;
+	margin-right: 10px;
+}
+.item-box .detail-box .price {
+	font-size: 15px;
+	color: #bbb;
+	text-decoration: line-through;
+}
+.item-box .detail-box .cart-btn {
+	border: none;
+	cursor: pointer;
+	background: #000;
+	border-radius: 5px;
+	padding: 10px;
+}
+.item-box .detail-box .cart-btn span {
+	color: #fff;
+	font-weight: 300;
+}
+.item-box .detail-box .cart-btn:hover span {
+	color: #bbb;
+}
