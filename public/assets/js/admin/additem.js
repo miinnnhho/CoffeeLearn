@@ -26,9 +26,10 @@ const inputMainImg = document.querySelector('.input-main-img');
 const inputSubImg = document.querySelector('.input-sub-img');
 const inputDescription = document.querySelector('.input-description');
 const selectShow = document.querySelector('.select-show');
-const submitButton = document.querySelector('submit-button');
+const submitButton = document.querySelector('.save-button');
 
-async function addProduct(e) {
+
+submitButton.addEventListener('submit', async(e) =>{
     e.preventDefault();
 
     const category = selectCategogy.value;
@@ -66,6 +67,4 @@ async function addProduct(e) {
 
     const result = await res.json();
     console.log(result);
-}
-
-submitButton.addEventListener('submit', addProduct);
+});

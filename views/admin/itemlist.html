@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%- include('components/head.html') -%>
+        <%- include('../components/head.html') -%>
         <link rel="stylesheet" href="/public/assets/css/admin/list.css" />
         <link rel="stylesheet" href="/public/assets/css/admin/nav.css" />
+        <script defer src="/public/assets/js/admin/itemlist.js"></script>
     </head>
     <body>
-        <%- include('components/header.html') -%>
+        <%- include('../components/header.html') -%>
         <div id="contentWrap">
             <!--왼쪽 네비게이션 -->
             <nav class="left-nav">
@@ -54,8 +55,8 @@
                 </div>
 
                 <!-- 리스트 -->
-                <div class="product-list">
-                    <table class="product-table">
+                <div>
+                    <table id="productList">
                         <thead>
                             <tr>
                                 <th style="width: 14%">번호</th>
@@ -65,19 +66,10 @@
                                 <th style="width: 14%">상품삭제</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="item-number"></td>
-                                <td class="category"></td>
-                                <td class="item-name"><a href="#"></a></td>
-                                <td class="item-price"></td>
-                                <td><button class="delete-button">상품삭제</button></td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <%- include('components/footer.html') -%>
+        <%- include('../components/footer.html') -%>
     </body>
 </html>

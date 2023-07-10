@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%- include('components/head.html') -%>
+        <%- include('../components/head.html') -%>
         <link rel="stylesheet" href="/public/assets/css/admin/list.css" />
         <link rel="stylesheet" href="/public/assets/css/admin/nav.css" />
     </head>
     <body>
-        <%- include('components/header.html') -%>
+        <%- include('../components/header.html') -%>
         <div id="contentWrap">
             <!--왼쪽 네비게이션 -->
             <nav class="left-nav">
@@ -54,8 +54,8 @@
                 </div>
 
                 <!-- 리스트 -->
-                <div class="category-list">
-                    <table class="category-table">
+                <div>
+                    <table id="categoryList">
                         <thead>
                             <tr>
                                 <th style="width: 14%">번호</th>
@@ -78,6 +78,6 @@
                 </div>
             </div>
         </div>
-        <%- include('components/footer.html') -%>
+        <%- include('../components/footer.html') -%>
     </body>
 </html>

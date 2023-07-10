@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%- include('components/head.html') -%>
-        <link rel="stylesheet" href="/public/assets/css/admin/additem.css" />
-        <link rel="stylesheet" href="/public/assets/css/admin/nav.css" />
-        <script defer src="/public/assets/js/admin/additem.js"></script>
+        <%- include('../components/head.html') -%>
+        <link rel="stylesheet" href="/assets/css/admin/additem.css" />
+        <link rel="stylesheet" href="/assets/css/admin/nav.css" />
+        <script defer src="/assets/js/admin/additem.js"></script>
     </head>
     <body>
-        <%- include('components/header.html') -%>
+        <%- include('../components/header.html') -%>
         <div id="contentWrap">
             <!--왼쪽 네비게이션 -->
             <nav class="left-nav">
@@ -51,7 +51,7 @@
                     <p>상품 추가</p>
                 </div>
                 <!-- 인풋 폼 -->
-                <form class="add-item-form" method="get">
+                <form id="addItemForm" method="get">
                     <ul>
                         <li>
                             <label>카테고리 선택</label>
@@ -122,6 +122,6 @@
                 </form>
             </div>
         </div>
-        <%- include('components/footer.html') -%>
+        <%- include('../components/footer.html') -%>
     </body>
 </html>

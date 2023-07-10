@@ -4,7 +4,7 @@ body {
 
 #contentWrap {
     width: 1280px;
-    margin: 60px;
+    margin: 60px auto 0;
     display: flex;
     justify-content: space-between;
 }
@@ -18,17 +18,17 @@ body {
     font-size: 20px;
 }
 
-.add-item-form {
+#addItemForm {
     margin-top: 30px;
 }
-.add-item-form ul{
+#addItemForm ul{
     padding: 0;
 }
-.add-item-form ul li{
+#addItemForm ul li{
     list-style: none;
 }
 
-.add-item-form ul li label {
+#addItemForm ul li label {
     display: inline-block;
     width: 140px;
     font-size: 14px;
