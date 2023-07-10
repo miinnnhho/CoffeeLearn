@@ -1,67 +1,114 @@
 <html>
-  <head>
-    <title>Test</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('components/head.html') -%>
+
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('components/head.html') -%>
     <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/test.css" />
     <link rel="stylesheet" href="/assets/css/tab.css" />
     <script defer src="/assets/js/test.js"></script>
     <script defer src="/assets/js/totop.js"></script>
-  </head>
-  <body>
-    <%- include('components/header.html') -%>
+</head>
+
+<body>
+  <%- include('components/header.html') -%>
     <div>
 
       <!-- 원두 추천 -->
       <section class="pick" id="pick">
         <div class="inner">
-          <div class="title">
-            <h2>추천 원두 PICK!</h2>
-            <a href="items.html">
-              <strong>더보기</strong>
-              <span class="material-icons">arrow_right_alt</span>
-            </a>
+          <div class="side-nav">
+            <div class="title">
+              <h2>추천 원두 PICK!</h2>
+              <a href="items.html">
+                <strong>더보기</strong>
+                <span class="material-icons">arrow_right_alt</span>
+              </a>
+            </div>
+            <div class="link-move">
+              <a href="#">커피상품보기</a>
+              <a href="#">선물세트보기</a>
+            </div>
+            <!-- 맛 선택 -->
+            <div class="tab-box">
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="달콤 쌉싸름" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>달콤 쌉싸름</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="고소함, 구수함" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>고소함, 구수함</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>묵직하고 달콤한 여운</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="은은하고 편안함" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>은은하고 편안함</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>상큼한 산미와 향</p>
+                </div>
+              </label>
+            </div>
+            <!-- 원산지 선택 name을 다 origin으로 변경해주세요. -->
+            <div class="tab-box">
+              <label class="tab-label">
+                <input type="radio" name="orgin" data-origin="Json에 있는 생산지로" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>Json에 있는 생산지로</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="고소함, 구수함" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>고소함, 구수함</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>묵직하고 달콤한 여운</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="은은하고 편안함" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>은은하고 편안함</p>
+                </div>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
+                <div class="tab">
+                  <div class="material-icons">radio_button_unchecked</div>
+                  <p>상큼한 산미와 향</p>
+                </div>
+              </label>
+            </div>
           </div>
-          <div class="tab-box">
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="달콤 쌉싸름" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>달콤 쌉싸름</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="고소함, 구수함" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>고소함, 구수함</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>묵직하고 달콤한 여운</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="은은하고 편안함" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>은은하고 편안함</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>상큼한 산미와 향</p>
-              </div>
-            </label>
-          </div>
-      
+
           <div class="item-box" id="pickItemBox">
             <div class="item-list">
               <a href="#">
@@ -142,6 +189,7 @@
           </div>
         </div>
       </section>
-    <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
-  </body>
+      <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
+</body>
+
 </html>
