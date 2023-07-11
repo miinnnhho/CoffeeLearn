@@ -1,6 +1,5 @@
 //카테고리별 선택사항 비활성화 처리
-const category = document.querySelector('.select-categogy');
-console.log(category.value);
+const category = document.querySelector('.select-category');
 
 category.addEventListener('change', () => {
     const tasteField = document.querySelector('.select-taste');
@@ -16,7 +15,7 @@ category.addEventListener('change', () => {
 });
 
 // 입력된 내용 서버로 전송
-const selectCategogy = document.querySelector('.select-categogy');
+const selectCategory = document.querySelector('.select-category');
 const selectTaste = document.querySelector('.select-taste');
 const selectOrigin = document.querySelector('.select-origin');
 const inputName = document.querySelector('.input-name');
@@ -26,13 +25,12 @@ const inputMainImg = document.querySelector('.input-main-img');
 const inputSubImg = document.querySelector('.input-sub-img');
 const inputDescription = document.querySelector('.input-description');
 const selectShow = document.querySelector('.select-show');
-const submitButton = document.querySelector('.save-button');
+const form = document.querySelector('#addItemForm');
 
-
-submitButton.addEventListener('submit', async(e) =>{
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const category = selectCategogy.value;
+    const category = selectCategory.value;
     const taste = selectTaste.value;
     const origin = selectOrigin.value;
     const name = inputName.value;
@@ -44,13 +42,13 @@ submitButton.addEventListener('submit', async(e) =>{
     const show = selectShow.value;
 
     const product = {
-        Category:category,
+        Category: category,
         taste,
         origin,
         name,
         price,
         amount,
-        mainImage:mainImg,
+        mainImage: mainImg,
         subImg,
         description,
         show,
@@ -64,6 +62,11 @@ submitButton.addEventListener('submit', async(e) =>{
         method: 'POST',
         body: dataJson,
     });
+
+    if (!res.ok) {
+        alert('에러가 발생했습니다.');
+        return;
+    }
 
     const result = await res.json();
     console.log(result);
