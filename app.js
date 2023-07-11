@@ -4,7 +4,8 @@ import ejs from 'ejs';
 import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
-import addItemRouter from './routes/additem.js';
+import addProductRouter from './routes/admin_additem.js';
+import productListRouter from './routes/admin_itemlist.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -17,8 +18,8 @@ app.set('view engine', 'html');
 app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
-app.use('/additem', addItemRouter);
-
+app.use('/admin/additem', addProductRouter);
+app.use('/admin/product', productListRouter);
 app.listen(PORT, () => {
   console.log(`✅ Server listening on port ${PORT}`);
 });

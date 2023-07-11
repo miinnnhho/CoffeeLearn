@@ -4,8 +4,11 @@ const productList = document.querySelector('#productList');
 insertProductElement();
 
 async function insertProductElement() {
-    const res = await fetch(`http://localhost:3000/admin/product`);
+    const res = await fetch('http://localhost:3000/admin/product');
     const products = await res.json();
+
+    console.log(res);
+    console.log(products);
 
     products.forEach((product) => {
         const itemNumber = product._id;
@@ -47,6 +50,9 @@ deleteBtns.forEach((deleteBtn) => {
         }
     });
 });
+
+
+// 상품수정하기
 
 
 
