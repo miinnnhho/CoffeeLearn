@@ -4,14 +4,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('components/head.html') -%>
-  <link rel="stylesheet" href="/assets/css/items.css" />
-  <link rel="stylesheet" href="/assets/css/items_category.css" />
+  <%- include('head.html') -%>
+    <title>Coffee Learn</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Coffee Learn" />
+    <meta property="og:title" content="Coffee Learn" />
+    <meta property="og:description" content="커피런에서, 커피의 맛을 배우다." />
+    <meta property="og:image" content="./asset/images/coffeeLearn_seo.png" />
+
+    <!-- Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="/public/assets/css/common.css" />
+    <link rel="stylesheet" href="/public/assets/css/totop.css" />
+    <link rel="stylesheet" href="/public/assets/css/items_all.css" />
+    <link rel="stylesheet" href="/public/assets/css/items_category.css" />
+
+    <!-- JS -->
+
+    <script defer src="./js/header.js"></script>
+    <script defer src="./js/footer.js"></script>
+    <script defer src="./js/totop.js"></script>
+    <script defer src="/public/assets/js/items.js"></script>
+
 </head>
 
 <body>
+
   <!--header-->
   <%- include('components/header.html') -%>
+    <header></header>
 
     <!--top-->
     <div class="top">
@@ -23,13 +54,17 @@
     </div>
 
     <!--main-->
+
     <container class="items">
       <!--items가 전체 main 부분에서 제일 부모 요소 -->
+
       <div class="inner">
+
         <!--side filter-->
         <div class="side-filter">
 
           <!--filter_coffee-->
+
           <div class="filter-coffee">
             <h3>필터</h3>
             <div class="filter-coffee-border"></div>
@@ -92,6 +127,7 @@
 
         <!--container-->
         <div class="container">
+
           <div class="container-head">
             <span class="product_num">총 000개의 상품이 있습니다.</span>
             <span class="select-box">
@@ -103,6 +139,7 @@
             </span>
             <div class="container-border"></div>
           </div>
+
           <div class="container-main">
             <div class="container-box">
 
@@ -113,18 +150,21 @@
                 <p class="product1-keyword">#해시태그 입력하세요</p>
                 <spanp class="product1-price"> 3,400원</spanp><span
                   class="material-symbols-outlined">shopping_cart</span>
+
               </div>
               <div class="product-type1">
                 <div> <img class="product1-img" src="/public/assets/img/item_main_2.jpg" alt="item_main_2"></div>
                 <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <p class="product1-keyword">#해시태그 입력하세요</p>
                 <span class="product1-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
               <div class="product-type1">
                 <div> <img class="product1-img" src="/public/assets/img/item_main_3.jpg" alt="item_main_3"></div>
                 <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <p class="product1-keyword">#해시태그 입력하세요</p>
                 <span class="product1-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
 
               <!--type2-->
@@ -133,18 +173,21 @@
                 <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <p class="product2-discount">#해시태그 입력하세요</p>
                 <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
               <div class="product-type2">
                 <div> <img class="product2-img" src="/public/assets/img/item_main_5.jpg" alt="item_main_5"></div>
                 <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <p class="product2-discount">#해시태그 입력하세요</p>
                 <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
               <div class="product-type2">
                 <div> <img class="product2-img" src="/public/assets/img/item_main_6.jpg" alt="item_main_6"></div>
                 <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <p class="product2-discount">#해시태그 입력하세요</p>
                 <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
 
               <!--type3-->
@@ -153,19 +196,23 @@
                 <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <span class="discount">30%</span>
                 <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
               <div class="product-type3">
                 <div> <img class="product3-img" src="/public/assets/img/item_main_8.jpg" alt="item_main_8"></div>
                 <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <span class="discount">30%</span>
                 <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
               <div class="product-type3">
                 <div> <img class="product3-img" src="/public/assets/img/item_main_9.jpg" alt="item_main_9"></div>
                 <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
                 <span class="discount">30%</span>
                 <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
+
               </div>
+
             </div>
           </div>
         </div>
@@ -174,10 +221,12 @@
     </container>
 
     <!--footer-->
+
     <footer></footer>
     <div id="to-top">
       <div class="material-icons">arrow_upward</div>
     </div>
     <%- include('components/footer.html') -%>
 </body>
+
 </html>
