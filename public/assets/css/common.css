@@ -8,57 +8,28 @@ body {
   color: #333;
   padding-top: 100px;
   box-sizing: border-box;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 a {
-	text-decoration: none;
-	color: #333;
+  text-decoration: none;
+  color: #333;
 }
 img {
-	display: block;
+  display: block;
 }
 ::selection {
-	background: #288341;
-	color: #fff;
+  background: #288341;
+  color: #fff;
 }
 
 /* INNER */
 .inner {
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box;
-}
-
-/* BUTTON 스타일링 */
-.btn {
-	width: 160px;
-	padding: 10px;
-	border-radius: 40px;
-	background-color: #f6f6f6;
-	color: #333;
-	font-size: 16px;
-	font-weight: 500;
-	text-align: center;
-	cursor: pointer;
-	box-sizing: border-box;
-	display: block;
-	transition: 0.4s;
-}
-.btn.on {
-	background-color: #288341;
-	color: #fff;
-}
-.btn:hover {
-	background-color: #288341;
-	color: #fff;
-}
-.btn.btn--brown {
-	color: #2e170d;
-	border-color: #2e170d;
-}
-.btn.btn--brown:hover {
-	color: #fff;
-	background-color: #2e170d;
 }
 
 /* HEADER */
@@ -199,12 +170,14 @@ img {
   margin-left: 180px;
   margin-right: 20px;
 }
+/* admin-header */
 #header.admin-header #navList {
   display: none;
 }
 #header.admin-header .basket-nav {
   display: none;
 }
+/* 공통 */
 #header.admin-header .search-form,
 #header.items-header .search-form {
   display: none;
@@ -212,15 +185,16 @@ img {
 
 #footer {
   border-top: 1px solid #eeeeee;
-  padding: 30px 0;
   background-color: #ffffff;
 }
 #footer .inner {
   margin: auto;
+  width: 1280px;
+  height: 150px;
+  padding: 30px 0;
 }
 #footer .footer-content ul {
   display: flex;
-  width: 1280px;
 }
 #footer div ul li a {
   margin-right: 15px;

@@ -1,195 +1,239 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-  <title>Test</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('components/head.html') -%>
-    <!-- Cutom CSS & JS -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopping Mall</title>
+    <!-- 아이콘 -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/elice-rabbit-favicon.png"
+    />
+    <!-- bulma css 관련 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Daum 주소 API 사용하기 위한 파일 -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- 커스텀 css, js -->
     <link rel="stylesheet" href="/assets/css/test.css" />
-    <link rel="stylesheet" href="/assets/css/tab.css" />
-    <script defer src="/assets/js/test.js"></script>
-    <script defer src="/assets/js/totop.js"></script>
-</head>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <nav role="navigation" aria-label="main navigation">
+      <div>
+        <div>
+          <a href="/">
+            <img src="/elice-rabbit.png" width="30" height="30" />
+            <span>Shopping Mall</span>
+          </a>
 
-<body>
-  <%- include('components/header.html') -%>
-    <div>
+          <a
+            role="button"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-      <!-- 원두 추천 -->
-      <section class="pick" id="pick">
-        <div class="inner">
-          <div class="side-nav">
-            <div class="title">
-              <h2>추천 원두 PICK!</h2>
-              <a href="items.html">
-                <strong>더보기</strong>
-                <span class="material-icons">arrow_right_alt</span>
+        <div aria-label="breadcrumbs">
+          <ul id="navbar">
+            <li>
+              <a href="/cart" aria-current="page">
+                <span>
+                  <i></i>
+                </span>
+                <span>카트</span>
               </a>
-            </div>
-            <div class="link-move">
-              <a href="#">커피상품보기</a>
-              <a href="#">선물세트보기</a>
-            </div>
-            <!-- 맛 선택 -->
-            <div class="tab-box">
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="달콤 쌉싸름" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>달콤 쌉싸름</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="고소함, 구수함" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>고소함, 구수함</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>묵직하고 달콤한 여운</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="은은하고 편안함" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>은은하고 편안함</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>상큼한 산미와 향</p>
-                </div>
-              </label>
-            </div>
-            <!-- 원산지 선택 name을 다 origin으로 변경해주세요. -->
-            <div class="tab-box">
-              <label class="tab-label">
-                <input type="radio" name="orgin" data-origin="Json에 있는 생산지로" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>Json에 있는 생산지로</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="고소함, 구수함" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>고소함, 구수함</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>묵직하고 달콤한 여운</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="은은하고 편안함" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>은은하고 편안함</p>
-                </div>
-              </label>
-              <label class="tab-label">
-                <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
-                <div class="tab">
-                  <div class="material-icons">radio_button_unchecked</div>
-                  <p>상큼한 산미와 향</p>
-                </div>
-              </label>
-            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 배송지 정보 입력 박스 -->
+    <section>
+      <div>
+        <div>
+          <div>
+            <p>장바구니 &nbsp; &gt;</p>
           </div>
+          <div>
+            <p>주문결제</p>
+          </div>
+          <div>
+            <p>&gt; &nbsp;주문완료</p>
+          </div>
+        </div>
 
-          <div class="item-box" id="pickItemBox">
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_1.jpg" />
+        <div>
+          <div>
+            <!-- 배송지 정보 -->
+            <p>배송지정보</p>
+            <div>
+              <div>
+                <label for="receiverName">이름</label>
+              </div>
+              <div>
+                <div>
+                  <input
+                    id="receiverName"
+                    type="text"
+                    placeholder="받는 분 이름을 입력해 주세요."
+                    autocomplete="on"
+                  />
                 </div>
-                <div class="detail-box">
-                  <strong class="description">기분 좋은 쓴맛</strong>
-                  <h3 class="name">[뉴크롭] 인도네시아 만델링 G1 수마트라</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">5,300원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">5,300원</p>
-                </div>
-              </a>
+              </div>
             </div>
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_2.jpg" />
+
+            <div>
+              <div>
+                <label for="receiverPhoneNumber">연락처</label>
+              </div>
+              <div>
+                <div>
+                  <input
+                    id="receiverPhoneNumber"
+                    type="number"
+                    placeholder="- 없이 입력해 주세요."
+                    autocomplete="on"
+                  />
                 </div>
-                <div class="detail-box">
-                  <strong class="description">묵직한 바디와 구수한 단맛</strong>
-                  <h3 class="name">[뉴크롭] 베트남 로부스타 G1 Wet Polished SC18</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">2,300원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">2,300원</p>
-                </div>
-              </a>
+              </div>
             </div>
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_3.jpg" />
+
+            <div>
+              <div>
+                <label for="address2">주소</label>
+              </div>
+              <div>
+                <div>
+                  <input
+                    id="postalCode"
+                    type="text"
+                    placeholder="주소찾기를 클릭해 주세요."
+                    readonly
+                  />
                 </div>
-                <div class="detail-box">
-                  <strong class="description">스모키함과 좋은 향나무의 아로마</strong>
-                  <h3 class="name">[뉴크롭] 과테말라 SHB 안티구아</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">4,500원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">4,500원</p>
+                <div>
+                  <button id="searchAddressButton">
+                    주소찾기
+                  </button>
                 </div>
-              </a>
+              </div>
             </div>
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_4.jpg" />
+
+            <div>
+              <div></div>
+              <div>
+                <div>
+                  <input
+                    id="address1"
+                    type="text"
+                    placeholder=""
+                    autocomplete="on"
+                    readonly
+                  />
                 </div>
-                <div class="detail-box">
-                  <strong class="description">강렬한 바디와 기분 좋은 쓴맛</strong>
-                  <h3 class="name">스타 에스프레소</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">3,200원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">3,200원</p>
+              </div>
+            </div>
+
+            <div>
+              <div></div>
+              <div>
+                <div>
+                  <input
+                    id="address2"
+                    type="text"
+                    placeholder=""
+                    autocomplete="on"
+                  />
                 </div>
-              </a>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <label for="requestSelectBox">요청사항</label>
+              </div>
+              <div>
+                <div>
+                  <select id="requestSelectBox">
+                    <option value="0">
+                      배송시 요청사항을 선택해 주세요.
+                    </option>
+                    <option value="1">직접 수령하겠습니다.</option>
+                    <option value="2">배송 전 연락바랍니다.</option>
+                    <option value="3">부재 시 경비실에 맡겨주세요.</option>
+                    <option value="4">부재 시 문 앞에 놓아주세요.</option>
+                    <option value="5">부재 시 택배함에 넣어주세요.</option>
+                    <option value="6">직접 입력</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div id="customRequestContainer">
+              <div>
+                <div>
+                  <input
+                    id="customRequest"
+                    type="text"
+                    maxlength="50"
+                    placeholder="최대 50자 입력이 가능합니다."
+                    autocomplete="on"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-      <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
-</body>
 
+        <!-- 주문 정보 요약 -->
+        <div>
+          <div>
+            <div>
+              <p>결제정보</p>
+            </div>
+            <div>
+              <div>
+                <p>주문상품</p>
+                <p id="productsTitle"></p>
+              </div>
+              <div>
+                <p>상품총액</p>
+                <p id="productsTotal"></p>
+              </div>
+              <div>
+                <p>배송비</p>
+                <p id="deliveryFee"></p>
+              </div>
+            </div>
+            <div>
+              <p>총 결제금액</p>
+              <p id="orderTotal"></p>
+            </div>
+            <div>
+              <button id="checkoutButton">
+                결제하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
