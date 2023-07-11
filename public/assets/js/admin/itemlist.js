@@ -4,7 +4,23 @@ const productList = document.querySelector('#productList');
 insertProductElement();
 
 async function insertProductElement() {
-    const res = await fetch('http://localhost:3000/admin/product');
+    const res = await fetch('http://locahost:5000/admin/product', {
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => data);
+        console.log(res);
+    // const res = await fetch('http://localhost:3000/admin/product', {
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    // });
+    if (!res.ok) {
+        alert('에러가 발생했습니다.');
+        return;
+    }
     const products = await res.json();
 
     console.log(res);
@@ -129,6 +145,3 @@ const modal = `
 `;
 
 const updateBtn = document.querySelector('.update-product');
-
-
-
