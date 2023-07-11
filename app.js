@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url';
 import indexRouter from './routes/index.js';
 import addProductRouter from './routes/admin_additem.js';
 import productListRouter from './routes/admin_itemlist.js';
+import categoryListRouter from './routes/admin_categorylist.js';
+import orderListRouter from './routes/admin_orderlist.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -20,6 +22,8 @@ app.engine('.html', ejs.__express);
 app.use('/', indexRouter);
 app.use('/admin/additem', addProductRouter);
 app.use('/admin/product', productListRouter);
+app.use('/admin/category', categoryListRouter);
+app.use('/admin/order', orderListRouter);
 app.listen(PORT, () => {
   console.log(`✅ Server listening on port ${PORT}`);
 });

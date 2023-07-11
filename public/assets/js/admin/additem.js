@@ -42,13 +42,13 @@ form.addEventListener('submit', async (e) => {
     const show = selectShow.value;
 
     const product = {
-        Category: category,
+        category,
         taste,
         origin,
         name,
         price,
         amount,
-        mainImage: mainImg,
+        mainImg,
         subImg,
         description,
         show,
@@ -56,7 +56,7 @@ form.addEventListener('submit', async (e) => {
 
     const dataJson = JSON.stringify(product);
 
-    const apiUrl = 'http://localhost:3000/admin/product/add';
+    const apiUrl = 'http://localhost:3000/admin/products';
 
     const res = await fetch(apiUrl, {
         method: 'POST',
@@ -71,3 +71,4 @@ form.addEventListener('submit', async (e) => {
     const result = await res.json();
     console.log(result);
 });
+

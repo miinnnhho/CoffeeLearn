@@ -1,183 +1,133 @@
 <!DOCTYPE html>
 
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee Learn</title>
+    <head>
+        <title>Test</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/order.css" />
+        <script defer src="/assets/js/order.js"></script>
+    </head>
+    <body>
+        <%- include('components/header.html') -%>
+        <div class="box-inner">
+            <div class="container">
+                <ul id="mypageSubMenu">
+                    <h2 class="mypage-h2">마이페이지</h2>
+                    <li class="main-li">
+                        <span class="title">나의쇼핑</span>
+                        <hr />
+                        <ul class="sub-depth1">
+                            <li>
+                                <a href="" class="active" style="color: #288341">- 주문목록/배송조회</a>
+                            </li>
+                            <li><a href="" class="active">- 취소/반품/교환 내역</a></li>
+                            <li><a href="" class="active">- 환불/입금 내역</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-li">
+                        <span class="title">혜택관리</span>
+                        <hr />
+                        <ul class="sub-depth1">
+                            <li><a href="" class="active">- 쿠폰 내역</a></li>
+                            <li><a href="" class="active">- 포인트 내역</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-li">
+                        <span class="title">나의정보</span>
+                        <hr />
+                        <ul class="sub-depth1">
+                            <li><a href="" class="active">- 회원 정보 변경</a></li>
+                            <li><a href="" class="active">- 회원 탈퇴</a></li>
+                            <li><a href="" class="active">- 배송지 관리</a></li>
+                        </ul>
+                    </li>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Coffee Learn" />
-    <meta property="og:title" content="Coffee Learn" />
-    <meta property="og:description" content="커피런에서, 커피의 맛을 배우다." />
-    <meta property="og:image" content="./asset/images/coffeeLearn_seo.png" />
+                    <li class="main-li">
+                        <span class="title">상품문의</span>
+                        <hr />
+                        <ul class="sub-depth1">
+                            <li><a href="" class="active">- 1:1문의하기</a></li>
+                            <li><a href="" class="active">- 문의내역 확인</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-    <!-- Link -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
-    />
-    <link rel="icon" href="./favicon.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+                <div class="order-inner">
+                    <div class="order-check">
+                        <h2>주문/배송 조회</h2>
+                        <div class="order-box">
+                            <ul class="order-ul">
+                                <li>
+                                    <p>0</p>
+                                    주문접수
+                                </li>
+                                <li class="material-icons arrow-li">arrow_forward_ios</li>
+                                <li>
+                                    <p>0</p>
+                                    결제완료
+                                </li>
+                                <li class="material-icons arrow-li">arrow_forward_ios</li>
+                                <li>
+                                    <p>0</p>
+                                    배송준비중
+                                </li>
+                                <li class="material-icons arrow-li">arrow_forward_ios</li>
+                                <li>
+                                    <p>0</p>
+                                    배송중
+                                </li>
+                                <li class="material-icons arrow-li">arrow_forward_ios</li>
+                                <li>
+                                    <p>0</p>
+                                    배송완료
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-form">
+                        <div class="form-search">
+                            <span class="check">조회</span>
+                            <button class="period-btn" id="btnToday" type="radio">오늘</button>
+                            <button class="period-btn" id="btnWeek" type="radio">7일</button>
+                            <button class="period-btn" id="btnMonth" type="radio">1개월</button>
+                            <button class="period-btn" id="btn3Month" type="radio">3개월</button>
+                            <button class="period-btn" id="btnYear" type="radio">1년</button>
+                            <label for="start-date"></label>
+                            <input type="date" id="start-date" />
+                            <span class="wave">~</span>
+                            <label for="end-date"></label>
+                            <input type="date" id="end-date" />
 
-    <link href="/assets/css/common.css" rel="stylesheet" />
-    <link href="/assets/css/order.css" rel="stylesheet" />
-    <!-- GSAP & ScrollToPlugin -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
-      integrity="sha512-v/m68W+vaGN/6igoyFpd4GlQzu0jx9/n5gr2PKq5vif+RObyGKHse384YHrOULaxZ810XhlHUrmB3U8UnPB19Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- ScrollMagic -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
-      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  </head>
-  <body></body>
-  <%- include('header.html') -%>
-  <div class="boxinner">
-    <div class="container">
-      <ul class="sub-menu-mypage">
-        <h2 class="mypage-h2">마이페이지</h2>
-        <li id="mainLi">
-          <span class="title">나의쇼핑</span>
-          <hr />
-          <ul class="sub-depth1">
-            <li>
-              <a href="" class="active">- 주문목록/배송조회</a>
-            </li>
-            <li><a href="" class="active">- 취소/반품/교환 내역</a></li>
-            <li><a href="" class="active">- 환불/입금 내역</a></li>
-          </ul>
-        </li>
-        <li id="MainLi">
-          <span class="title">혜택관리</span>
-          <hr />
-          <ul class="sub-depth1">
-            <li><a href="" class="active">- 쿠폰 내역</a></li>
-            <li><a href="" class="active">- 포인트 내역</a></li>
-          </ul>
-        </li>
-        <li id="MainLi">
-          <span class="title">나의정보</span>
-          <hr />
-          <ul class="sub-depth1">
-            <li><a href="" class="active">- 회원 정보 변경</a></li>
-            <li><a href="" class="active">- 회원 탈퇴</a></li>
-            <li><a href="" class="active">- 배송지 관리</a></li>
-          </ul>
-        </li>
-
-        <li id="MainLi">
-          <span class="title">상품문의</span>
-          <hr />
-          <ul class="sub-depth1">
-            <li><a href="" class="active">- 1:1문의하기</a></li>
-            <li><a href="" class="active">- 문의내역 확인</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <div class="orderinner">
-        <div class="orderCheck">
-          <h2>주문/배송 조회</h2>
-          <div class="orderBox">
-            <ul class="orderUl">
-              <li>
-                <p>0</p>
-                주문접수
-              </li>
-              <li class="material-icons arrow-li">arrow_forward_ios</li>
-              <li>
-                <p>0</p>
-                결제완료
-              </li>
-              <li class="material-icons arrow-li">arrow_forward_ios</li>
-              <li>
-                <p>0</p>
-                배송준비중
-              </li>
-              <li class="material-icons arrow-li">arrow_forward_ios</li>
-              <li>
-                <p>0</p>
-                배송중
-              </li>
-              <li class="material-icons arrow-li">arrow_forward_ios</li>
-              <li>
-                <p>0</p>
-                배송완료
-              </li>
-            </ul>
-          </div>
+                            <button id="search-button"></button>
+                        </div>
+                    </div>
+                    <div class="order-list">
+                        <span>내역 총 <strong>0</strong>건</span>
+                        <table id="order-list">
+                            <thead>
+                                <tr>
+                                    <th>상품번호/주문일</th>
+                                    <th>상품명/옵션</th>
+                                    <th>수량</th>
+                                    <th>상품금액</th>
+                                    <th>주문 상태</th>
+                                    <th>배송 상태</th>
+                                    <th>취소 요청</th>
+                                    <th>주문 수정</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order-rows"></tbody>
+                            <th colspan="8" style="text-align: center" class="empty-order">주문 내역이 없습니다</th>
+                            <!-- td 존재 -->
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="searchForm">
-          <div class="formSearch">
-            <span class="check">조회</span>
-            <button class="periodBtn" id="btnToday" type="radio">오늘</button>
-            <button class="periodBtn" id="btnWeek" type="radio">7일</button>
-            <button class="periodBtn" id="btnMonth" type="radio">1개월</button>
-            <button class="periodBtn" id="btn3Month" type="radio">3개월</button>
-            <button class="periodBtn" id="btnYear" type="radio">1년</button>
-            <label for="start-date"></label>
-            <input type="date" id="start-date" />
-            <span class="wave">~</span>
-            <label for="end-date"></label>
-            <input type="date" id="end-date" />
-
-            <button id="search-button"></button>
-          </div>
-        </div>
-        <div class="orderList">
-          <span>내역 총 <strong>0</strong>건</span>
-          <table id="order-list">
-            <thead>
-              <tr>
-                <th>주문 번호</th>
-                <th>주문 날짜</th>
-                <th>상품명/옵션</th>
-                <th>수량</th>
-                <th>상품금액</th>
-                <th>주문 상태</th>
-                <th>배송 상태</th>
-                <th>취소 요청</th>
-              </tr>
-            </thead>
-            <tbody id="order-rows"></tbody>
-            <th colspan="8" style="text-align: center" class="empty-order">
-              주문 내역이 없습니다
-            </th>
-            <!-- td 존재 -->
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-  <%- include('footer.html') -%>
-  <script src="/assets/js/order.js"></script>
+        <!-- 모달 만들기 -->
+        <%- include('order_modify.html') -%> <%- include('components/footer.html') -%>
+    </body>
 </html>

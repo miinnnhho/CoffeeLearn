@@ -4,7 +4,7 @@ const productList = document.querySelector('#productList');
 insertProductElement();
 
 async function insertProductElement() {
-    const res = await fetch('http://locahost:5000/admin/product', {
+    const res = await fetch("/assets/products.json", {
         headers: {
             'Content-Type': 'application/json',
         },
@@ -12,7 +12,7 @@ async function insertProductElement() {
         .then((res) => res.json())
         .then((data) => data);
         console.log(res);
-    // const res = await fetch('http://localhost:3000/admin/product', {
+    // const res = await fetch('http://localhost:3000/admin/products', {
     //     headers: {
     //         'Content-Type': 'application/json',
     //     },
