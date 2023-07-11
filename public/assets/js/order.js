@@ -67,10 +67,7 @@ function displayOrders(orders) {
     });
 
     // 해야될거
-    // 1. 이벤트 리스너 등록
-    // 2. 모달 연결
     // 3. 각 parentschild랑 연결해서 수정 가능하게 만들기
-    //취소버튼, 주문 수정 버튼 생성
 
     const orderRows = orders
         .map((order) => {
@@ -80,7 +77,7 @@ function displayOrders(orders) {
             return `
             
       <tr>
-        <td>${order.orderNumber} ${order.orderDate}</td>
+        <td>${order.orderNumber}<p> ${order.orderDate}</td>
         <td>${order.name}</td>
         <td>${order.quantity}</td>
         <td>${order.salePrice}</td>

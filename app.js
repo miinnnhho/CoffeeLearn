@@ -6,8 +6,6 @@ import { fileURLToPath } from 'url';
 import indexRouter from './routes/index.js';
 import orderRouter from './routes/order.js';
 import orderCompleteRouter from './routes/order_complete.js';
-import orderModifyRouter from './routes/order_modify.js';
-import orderFormRouter from './routes/order_form.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -22,8 +20,6 @@ app.engine('.html', ejs.__express);
 app.use('/', indexRouter);
 app.use('/order', orderRouter);
 app.use('/order_complete', orderCompleteRouter);
-app.use('/order_modify', orderModifyRouter);
-app.use('/order_form', orderFormRouter);
 
 app.listen(PORT, () => {
     console.log(`✅ Server listening on port ${PORT}`);
