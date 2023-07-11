@@ -1,5 +1,7 @@
 /* test - coffee.css*/
-
+.pick {
+	min-height: calc(100vh - 250px);
+}
 section h2 {
 	font-size: 40px;
 	font-weight: 600;
@@ -36,8 +38,30 @@ section h2 {
 
 /*test - items.css*/
 /*사이드 바로가기 창*/
-
+.inner {
+	display: flex;
+}
 /*tab-box - 사이드 탭 메뉴 창 (커피 바로가기 & 선물세트 바로가기 둘다)*/
+.tab-border {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	line-height: 35px;
+	border: 1px solid #ddd;
+	margin: 5px 0;
+}
+.tab-box h3 {
+	font-size: 26px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+.tab-box span {
+	font-size: 18px;
+}
+
 .tab {
 	width: 280px;
 	height: 55px;
@@ -52,6 +76,9 @@ section h2 {
 	display: flex;
 	transition: 0.4s;
 	align-items: center;
+}
+.tab-box2 {
+	margin-top: 30px;
 }
 .tab-label.on .tab {
 	border: 1px solid #288341;
@@ -89,27 +116,69 @@ section h2 {
 /* 상품 리스트 - 상품들 보이는 곳*/
 
 .item-box {
-	display: grid;
-	grid-template-columns: auto;
-	width: 100%;
-	margin: 40px 0;
-	/*
-	flex-wrap: wrap;
-	justify-content: space-between;
-*/
+	line-height: 50px;
+	margin-left: 50px;
+	color: #000;
 }
+.item-head .item-num {
+	margin-left: 15px;
+	font-size: 20px;
+	padding-top: 10px;
+}
+.item-head .select-box {
+	flex: none;
+	margin-left: 550px;
+}
+.item-head #order {
+	width: 150px;
+	height: 36px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+	border-color: #ccc;
+}
+.select-box .option {
+	border-radius: 0px;
+}
+
+.item-border {
+	width: 960px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.item-wrap {
+	display: grid;
+	grid-template-columns: 310px 310px 310px;
+	justify-content: space-between;
+	grid-template-rows: repeat(auto, 528px);
+	width: 920px;
+	column-gap: 20px;
+	row-gap: 20px;
+}
+
+/*
+.item-list {
+	display: grid;
+	grid-template-columns: 310px 310px 310px;
+	justify-content: space-between;
+	grid-template-rows: repeat(auto, 528px);
+	width: 920px;
+	column-gap: 20px;
+	row-gap: 20px;
+}
+*/
+
 .item-box .item-list {
-	width: 23%;
 	border-radius: 10px;
 	border: 1px solid #eee;
 	margin-bottom: 30px;
-	position: relative;
 }
 .item-box .item-list::before {
 	content: '';
 	display: block;
-	width: 100%;
-	height: 100%;
+
 	border-radius: 10px;
 	background: #ffffff;
 	opacity: 1;
@@ -129,11 +198,16 @@ section h2 {
 		z-index: -1;
 	}
 }
+
+/*
 .item-box .img-box {
 	width: 100%;
 	border-radius: 10px;
 	overflow: hidden;
 }
+
+
+
 .item-box .img-box .main-img {
 	width: 100%;
 	transition: 0.3s;
@@ -141,6 +215,7 @@ section h2 {
 .item-box .item-list:hover .main-img {
 	transform: scale(1.03);
 }
+*/
 .item-box .detail-box {
 	padding: 30px 20px;
 }
