@@ -7,6 +7,7 @@ import indexRouter from './routes/index.js';
 import loginRouter from './routes/login.js';
 import signupRouter from './routes/signup.js';
 import finishSignupRouter from './routes/finish_signup.js';
+import userInformationRouter from './routes/user_information.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -22,6 +23,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/finish_signup', finishSignupRouter);
+app.use('/user_information', userInformationRouter);
 
 
 app.listen(PORT, () => {
