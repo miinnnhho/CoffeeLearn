@@ -15,32 +15,41 @@
         <link rel="icon" href="/assets/img/favicon.png" />
         <!-- 로그인 관련 axios 설치 -->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  
+        <%- include('components/head.html') -%>
         <title>로그인</title>
+        <style>
+            #wrap {
+                min-height: calc(100vh - 250px);
+            }
+        </style>
     </head>
     <body>
-        <section class="login-form">
-            <h1>로그인</h1>
-            <form name="form" >
-                <div class="int-area">
-                    <input type="text" name="id" id="id" autocomplete="off" required />
-                    <label for="id" class="user-idtext">E-mail</label>
-                    <!-- <div id="id_error">아이디를 입력해주세요.</div> -->
-                </div>
-                <div class="int-area">
-                    <input type="password" name="pw" id="pw" autocomplete="off" required />
-                    <label for="pw">PASSWORD</label>
-                    <!-- <div id="pw_error">비밀번호를 입력해주세요.</div> -->
-                </div>
-                <div class="btn-area">
-                    <!-- 로그인 버튼 이벤트 추가 -->
-                    <button type="submit" class="btn1" onclick="handleLoginSubmit(event)">로그인</button>
-                    <!-- 현재 페이지에서 새로운 창 여는 방식 -->
-                    <button onclick="location.href='signup.html'" type="submit" class="btn2">회원가입</button>
-                </div>
-            </form>
-            <div class="caption"><a href="">아이디 찾기</a> <a>|</a><a href=""> 비밀번호 찾기</a></div>
-        </section>
+        <%- include('components/header.html') -%>
+        <div id="wrap">
+            <section class="login-form">
+                <h1>로그인</h1>
+                <form name="form">
+                    <div class="int-area">
+                        <input type="text" name="id" id="id" autocomplete="off" required />
+                        <label for="id" class="user-idtext">E-mail</label>
+                        <!-- <div id="id_error">아이디를 입력해주세요.</div> -->
+                    </div>
+                    <div class="int-area">
+                        <input type="password" name="pw" id="pw" autocomplete="off" required />
+                        <label for="pw">PASSWORD</label>
+                        <!-- <div id="pw_error">비밀번호를 입력해주세요.</div> -->
+                    </div>
+                    <div class="btn-area">
+                        <!-- 로그인 버튼 이벤트 추가 -->
+                        <button type="submit" class="btn1" onclick="handleLoginSubmit(event)">로그인</button>
+                        <!-- 현재 페이지에서 새로운 창 여는 방식 -->
+                        <button onclick="location.href='/views/signup.html'" type="submit" class="btn2">회원가입</button>
+                    </div>
+                </form>
+                <div class="caption"><a href="">아이디 찾기</a> <a>|</a><a href=""> 비밀번호 찾기</a></div>
+            </section>
+        </div>
+        <%- include('components/footer.html') -%>
     </body>
     <script src="/assets/js/alert.js"></script>
     <script src="/assets/js/login.js"></script>

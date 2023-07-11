@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+
+        <link rel="stylesheet" href="/assets/css/login_infomation.css" />
+        <!-- <link rel="stylesheet" href="/assets/css/login.css" /> -->
+        <title>회원 정보 변경</title>
+    </head>
+    <body>
+        <div class="container">
+            <ul id="subMenuMypage">
+                <h2 class="mypage-h2">마이페이지</h2>
+                <li class="mainLi">
+                    <span class="title">나의쇼핑</span>
+
+                    <ul class="sub-depth1">
+                        <li>
+                            <a href="" class="active">주문목록/배송조회</a>
+                        </li>
+                        <!-- <li><a href="" class="active">- 취소/반품/교환 내역</a></li>
+                    <li><a href="" class="active">- 환불/입금 내역</a></li> -->
+                    </ul>
+                </li>
+                <li class="mainLi">
+                    <span class="title">혜택관리</span>
+
+                    <ul class="sub-depth1">
+                        <li><a href="" class="active">쿠폰 내역</a></li>
+                        <!-- <li><a href="" class="active">- 포인트 내역</a></li> -->
+                    </ul>
+                </li>
+                <li class="mainLi">
+                    <span class="title">나의정보</span>
+
+                    <ul class="sub-depth1">
+                        <li><a href="" class="active">회원 정보 변경</a></li>
+                        <li><a href="" class="active">회원 탈퇴</a></li>
+                        <!-- <li><a href="" class="active">- 배송지 관리</a></li> -->
+                    </ul>
+                </li>
+            </ul>
+            <div id="myInfomation">
+                <div class="info-button">
+                    <button>정보 수정</button>
+                    <button>회원 탈퇴</button>
+                </div>
+                <div id="userInfo">
+                    <div class="info-name-main">
+                        <div class="info-name">이메일<span class="required-asterisk">*</span></div>
+
+                        <div class="info-name">비밀번호<span class="required-asterisk">*</span></div>
+
+                        <div class="info-name">이름<span class="required-asterisk">*</span></div>
+
+                        <div class="info-name">휴대폰번호<span class="required-asterisk">*</span></div>
+
+                        <div class="info-name">주소<span class="required-asterisk">*</span></div>
+
+                        <div class="info-name">상세주소<span class="required-asterisk">*</span></div>
+                    </div>
+                    <div class="info-value-main">
+                        <div class="info-value"><span>이메일 값</span></div>
+
+                        <div class="info-value"><button>비밀번호 변경</button></div>
+
+                        <div class="info-value"><span>이름 값</span></div>
+
+                        <div class="info-value"><span>휴대폰 번호 값</span></div>
+
+                        <div class="info-value"><span>주소 값</span></div>
+
+                        <div class="info-value"><span>상세 주소 값</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- kakao API -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- kakao API -->
+    <script src="/assets/js/address_kakao.js"></script>
+</html>
+
+<!-- 
+조회페이지 -> span
+수정 -> input text 
+탈퇴 -> 버튼 -> 재확인 alert -> 탈퇴 -->

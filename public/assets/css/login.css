@@ -1,71 +1,76 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-size: cover;
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
 }
 body::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: (0, 0, 0, 0.7);
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: (0, 0, 0, 0.7);
 }
 .login-form {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
 }
 .login-form h1 {
-  /*margin-bottom: 60px; */
-  color: #000;
-  font-size: 30px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center;
-  margin-bottom: 40px;
+    /*margin-bottom: 60px; */
+    color: #000;
+    font-size: 30px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 40px;
 }
 .int-area {
-  width: 400px;
-  position: relative;
-  margin-top: 20px;
+    width: 400px;
+    position: relative;
+    margin-top: 20px;
 }
 .div-phone {
-  width: 400px;
-  position: relative;
-  margin-top: 0px;
+    width: 400px;
+    position: relative;
+    margin-top: 0px;
 }
 
 .int-area:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 .int-area input {
-  width: 100%;
-  padding: 20px 10px 10px;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #999;
-  font-size: 18px;
-  color: black;
-  outline: none;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    color: black;
+    outline: none;
 }
 .int-area label {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  font-size: 18px;
-  color: #999;
-  transition: top 0.5s ease;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    color: #999;
+    transition: top 0.5s ease;
 }
 .int-area label.warning {
-  color: red !important;
-  animation: warning 0.3s ease;
-  animation-iteration-count: 3;
+    color: red !important;
+    animation: warning 0.3s ease;
+    animation-iteration-count: 3;
 }
 
 /* 오류시 글씨 흔들림 */
@@ -87,82 +92,84 @@ body::before {
 
 .int-area input:focus + label,
 .int-area input:valid + label {
-  top: 0;
-  font-size: 13px;
-  color: #2e170d;
+    top: 0;
+    font-size: 13px;
+    color: #2e170d;
 }
 .btn-area {
-  margin-top: 30px;
+    margin-top: 30px;
+    /* display: flex;
+    justify-content: center; */
 }
 /* 로그인 버튼 */
 .btn1 {
-  width: 100%;
-  height: 50px;
-  background: #ffdb7e;
-  color: #282828;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 30px;
-  text-align: center;
+    width: 100%;
+    height: 50px;
+    background: #ffdb7e;
+    color: #282828;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
 }
 /* 버튼 css 다시 조절 (7.7 18:57) */
 /* .signup_text {
   border-top: 10px;
 } */
 .btn1:disabled {
-  background: #cccccc; /* 흐린 배경색 */
-  color: #777777; /* 흐린 글자 색 */
-  cursor: not-allowed; /* 차단된 마우스 포인터 표시 */
+    background: #cccccc; /* 흐린 배경색 */
+    color: #777777; /* 흐린 글자 색 */
+    cursor: not-allowed; /* 차단된 마우스 포인터 표시 */
 }
 /* 회원가입 버튼 */
 .btn2 {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  background: #371d1d;
-  color: #fff;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background: #371d1d;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 /* 아이디, 비밀번호 잃어버린 문구  */
 .caption {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 .caption a {
-  font-size: 15px;
-  color: #999;
-  text-decoration: none;
+    font-size: 15px;
+    color: #999;
+    text-decoration: none;
 }
 
 /* 검사 class -> 필요없으면 지우기 */
 .pw_checking {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  background: #e9e9e9;
-  color: #282828;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background: #e9e9e9;
+    color: #282828;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 #result {
-  text-align: center;
-  color: red;
+    text-align: center;
+    color: red;
 }
 .email_input {
-  width: none;
+    width: none;
 }
 
 /* *표시한 글씨 */
 .required-asterisk {
-  color: red;
+    color: red;
 }

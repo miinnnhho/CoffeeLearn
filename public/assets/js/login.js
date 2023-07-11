@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         axios
-            .post('', loginData) //백엔드 API 주소 추가하기
+            .post('http://localhost:3000/user/login', loginData) //백엔드 API 주소 추가하기
             .then(function (response) {
                 // 성공
                 if (response.status === 200) {
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(function (error) {
                 // 로그인 실패
                 console.error('로그인 실패:', error.message);
+                // alert("등록되지 않은 ID 이거나 비밀번호가 일치하지 않습니다");
             });
     };
 });
