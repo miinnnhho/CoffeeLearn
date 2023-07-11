@@ -24,31 +24,54 @@ function createProductElement(product, itemBoxId) {
   const salePercentHTML = generatePriceHTML(product.salePercent, product.category);
 
   const itemEl = document.createElement('div');
-  itemEl.className = 'item-list';
+  itemEl.classList.add('item-list');
 
   const itemLink = document.createElement('a');
   itemLink.href = `items_info?id=${product.id}`;
 
   itemLink.innerHTML = `
-    <div class="img-box">
-      <img class="main-img" src="${mainImgSrc}" />
-    </div>
-    <div class="detail-box">
-      <strong class="description">${product.description}</strong>
-      <h3 class="name">${product.name}</h3>
-      <div class="details">
-        <div class="sale-box">
-          ${salePercentHTML}
-          <p class="sale-price"> ${salePrice.toLocaleString()}원</p>
+        <div class="img-box">
+          <img class="main-img" src="${mainImgSrc}" />
         </div>
-        <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+        <div class="detail-box">
+          <strong class="description">${product.description}</strong>
+          <h3 class="name">${product.name}</h3>
+        </div>
+      `;
+
+  const priceBox = document.createElement('div');
+  priceBox.classList.add('price-box');
+  priceBox.innerHTML = `
+      <div class="details">
+          <p class="sale-price">${salePrice.toLocaleString()}원</p>
+          <button class="cart-btn">
+              <span class="material-symbols-outlined">shopping_cart</span>
+          </button>
+          ${product.salePercent === 0 ? originPriceHTML : salePercentHTML}
       </div>
-      ${originPriceHTML}
-    </div>
-  `;
+      `;
 
   itemEl.appendChild(itemLink);
+  itemEl.appendChild(priceBox);
   document.getElementById(itemBoxId).appendChild(itemEl);
+
+  // cart-btn 클릭 이벤트 처리
+  const cartBtn = itemEl.querySelector('.cart-btn');
+  cartBtn.addEventListener('click', () => {
+    handleCartButtonClick(product.name);
+  });
+}
+
+// 공통 함수: cart-btn 클릭 이벤트 처리
+function handleCartButtonClick(productName) {
+  const cartModal = document.getElementById('cartModal');
+  const cartItemName = document.querySelector('.cart-item-name');
+
+  // cartModal에 class "on" 추가
+  cartModal.classList.add('on');
+
+  // 클릭한 상품의 이름을 .cart-item-name에 표시
+  cartItemName.innerHTML = productName;
 }
 
 // 공통 함수: 상품 목록 표시
@@ -80,7 +103,7 @@ function isCoffeeCategory(product) {
 function displayProductsByTaste(products, taste, itemBoxId) {
   const filteredProducts = products.filter((product) => {
     if (taste === '블렌드') {
-      return isCoffeeCategory(product) && product.origin === '블렌드';
+      return isCoffeeCategory(product) && product.origin === '블렌드' && product.taste !== '달콤 쌉싸름';
     } else {
       return isCoffeeCategory(product) && product.taste === taste;
     }
@@ -110,51 +133,61 @@ function displayOriginItems(products, origin, originId) {
     const mainImgSrc = getProductImageSrc(product.id);
 
     const originItem = document.createElement('li');
-    originItem.className = 'origin-item-list';
+    originItem.classList.add('origin-item-list');
 
-    const itemLink = document.createElement('a');
-    itemLink.href = `items_info?id=${product.id}`;
+    const itemLink = `items_info?id=${product.id}`;
 
-    itemLink.innerHTML = `
-      <div class="prod-img">
-        <img src="${mainImgSrc}" alt="${product.name}" />
-      </div>
-      <p class="item-name">${product.name}</p>
-      <button class="cart-btn small"><span class="material-symbols-outlined">shopping_cart</span></button>
+    originItem.innerHTML = `
+    <div>
+        <div class="prod-img">
+            <img src="${mainImgSrc}" alt="${product.name}" />
+        </div>
+        <a href=${itemLink} class="item-name">${product.name}</a>
+    </div>
     `;
 
-    originItem.appendChild(itemLink);
+    const cartBtn = document.createElement('button');
+    cartBtn.classList.add('cart-btn', 'small');
+    cartBtn.innerHTML = `<span class="material-symbols-outlined">shopping_cart</span></button>`;
+
+    originItem.appendChild(cartBtn);
     originItems.appendChild(originItem);
+
+    // cart-btn 클릭 이벤트 처리
+    cartBtn.addEventListener('click', () => {
+      handleCartButtonClick(product.name);
+    });
   });
 }
 
-// 선물 상품은 최대 5개까지만 불러오기
-function displayGiftProducts(products) {
-  const giftSwiperWrapper = document.getElementById('giftSwiperWrapper');
-  giftSwiperWrapper.innerHTML = '';
+// 공통 함수: 스크롤 고정 및 cartModal.on 제거
+function removeOnClass() {
+  const cartModal = document.getElementById('cartModal');
+  cartModal.classList.remove('on');
+}
 
-  const giftProducts = products.filter((product) => product.category === '선물세트');
+// 공통 함수: 상품 데이터 저장
+function saveProductToLocalStorage(product, optionValue) {
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+  const existingProductIndex = products.findIndex((p) => p.name === product.name);
 
-  giftProducts.slice(0, 5).forEach((product) => {
-    const giftSlide = document.createElement('div');
-    giftSlide.className = 'swiper-slide';
+  if (existingProductIndex !== -1) {
+    // 이미 상품이 존재하는 경우 기존 상품을 업데이트
+    products[existingProductIndex] = { ...product, option: optionValue };
+  } else {
+    // 새로운 상품을 추가
+    products.push({ ...product, option: optionValue });
+  }
 
-    const itemLink = document.createElement('a');
-    itemLink.href = `items_info?id=${product.id}`;
+  localStorage.setItem('products', JSON.stringify(products));
+}
 
-    const giftImage = document.createElement('img');
-    giftImage.src = getProductImageSrc(product.id);
-    giftImage.alt = `선물세트 추천: ${product.name}`;
+// 함수 : 장바구니 모달의 select option 초기화
+function initializeOptions() {
+  const optionSelect = document.querySelector('.option-select');
+  const selectMenu = optionSelect.querySelector('.select-menu');
 
-    itemLink.appendChild(giftImage);
-    giftSlide.appendChild(itemLink);
-    giftSwiperWrapper.appendChild(giftSlide);
-    
-    const giftName = document.createElement('p');
-    giftName.className = 'gift-name';
-    giftName.innerHTML = product.name;
-    giftSlide.appendChild(giftName);
-  });
+  selectMenu.selectedIndex = 0; // 초기 선택값을 첫 번째 옵션으로 설정
 }
 
 window.onload = async () => {
@@ -166,7 +199,6 @@ window.onload = async () => {
     displayOriginItems(products, '아프리카', 'africa-origin');
     displayOriginItems(products, '아시아/태평양', 'asia-origin');
     displayOriginItems(products, '중남미', 'latin-america-origin');
-    displayGiftProducts(products);
 
     // 탭 클릭 이벤트 처리
     const tabLabels = document.querySelectorAll('.tab-label');
@@ -212,26 +244,38 @@ window.onload = async () => {
       const itemBoxId = defaultTaste === '블렌드' ? 'blendItemBox' : 'pickItemBox';
       displayProductsByTaste(products, defaultTaste, itemBoxId);
     }
+
+    // 취소 버튼 클릭 이벤트 처리
+    const cancelBtn = document.querySelector('.btn-cancel');
+    cancelBtn.addEventListener('click', () => {
+      removeOnClass();
+      initializeOptions();
+    });
+
+    // 배경 클릭 이벤트 처리
+    const cartBackground = document.getElementById('cartBackground');
+    cartBackground.addEventListener('click', removeOnClass);
+
+    // 확인 버튼 클릭 이벤트 처리
+    const confirmBtn = document.querySelector('.btn-confirm');
+    confirmBtn.addEventListener('click', () => {
+      const optionSelect = document.querySelector('.option-select');
+      const selectedOption = optionSelect.querySelector('select').value;
+
+      if (selectedOption === '') {
+        alert('☕ 분쇄 옵션을 선택하세요.');
+      } else {
+        const productName = document.querySelector('.cart-item-name').textContent;
+        const selectedProduct = products.find((product) => product.name === productName);
+
+        saveProductToLocalStorage(selectedProduct, selectedOption);
+        alert('🛍상품이 장바구니에 담겼습니다.');
+      }
+
+      initializeOptions();
+      removeOnClass();
+    });
   } catch (error) {
     console.error('상품을 가져오는 동안 오류가 발생했습니다:', error);
   }
-
-  // Gift Swiper 초기 셋팅
-  new Swiper('.gift-swiper', {
-    slidesPerView: 3,
-    spaceBetween: 10,
-    centeredSlides: 1,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-    },
-    pagination: {
-      el: '.gift .swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      prevEl: '.gift .swiper-prev',
-      nextEl: '.gift .swiper-next',
-    },
-  });
 };

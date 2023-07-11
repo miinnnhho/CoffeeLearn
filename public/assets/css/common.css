@@ -231,10 +231,9 @@ img {
   z-index: 9;
   width: 42px;
   height: 42px;
-  background-color: #333;
+  background-color: #222;
   color: #fff;
-  border: 2px solid #fff;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   justify-content: center;

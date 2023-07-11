@@ -6,10 +6,8 @@
     <%- include('components/head.html') -%>
     <!-- Cutom CSS & JS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/tab.css" />
-    <script defer src="/assets/js/main.js"></script>
-    <script defer src="/assets/js/common.js"></script>
-    <script defer src="/assets/js/totop.js"></script>
+    <link rel="stylesheet" href="/assets/css/main_tab.css" />
+
     <style>
       #wrap {
         min-height: calc(100vh - 250px);
@@ -160,7 +158,13 @@
       <!-- 선물하기 -->
       <section id="gift" class="gift">
         <div class="swiper gift-swiper">
-          <h2>소중한 사람에게 선물하세요!</h2>
+          <div class="title ">
+            <h2>소중한 사람에게 선물하세요!</h2>
+            <a href="#">
+              <strong>더보기</strong>
+              <span class="material-icons">arrow_right_alt</span>
+            </a>
+          </div>
           <div class="swiper-wrapper" id="giftSwiperWrapper"></div>
         </div>
         <div class="swiper-pagination"></div>
@@ -176,5 +180,8 @@
     <%- include('components/footer.html') -%>
     <!-- top버튼 -->
     <%- include('components/totop.html') -%>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/totop.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

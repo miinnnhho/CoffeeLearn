@@ -8,6 +8,7 @@ import itemsRouter from './routes/items.js';
 import itemsInfoRouter from './routes/items_info.js';
 import cartRouter from './routes/cart.js';
 import orderRouter from './routes/order.js';
+import orderCompleteRouter from './routes/order_complete.js';
 import testRouter from './routes/test.js';
 
 
@@ -26,6 +27,7 @@ app.use('/items', itemsRouter);
 app.use('/items_info', itemsInfoRouter);
 app.use('/cart', cartRouter);
 app.use('/order', orderRouter);
+app.use('/order_complete', orderCompleteRouter);
 app.use('/test', testRouter);
 
 

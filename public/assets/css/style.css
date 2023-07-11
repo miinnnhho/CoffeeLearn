@@ -7,7 +7,7 @@ section h2 {
 .title {
   display: flex;
   position: relative;
-  margin: 60px;
+  margin: 60px 0;
 }
 .title h2 {
   margin: auto;
@@ -28,40 +28,25 @@ section h2 {
 .title a:hover span {
   margin-left: 15px;
 }
-
-/* 장바구니 버튼 */
-.cart-btn {
-  border: none;
-  cursor: pointer;
-  background: #000;
-  border-radius: 5px;
-  padding: 10px;
-}
-.cart-btn.small {
-  margin: 15px;
-}
-.cart-btn span {
-  color: #fff;
-  font-weight: 300;
-}
-.cart-btn:hover span {
-  color: #bbb;
+#gift .title a {
+  bottom: 0;
+  right: 100px;
 }
 
 /* 상품 리스트 */
 .item-box {
   display: flex;
   width: 100%;
-  height: 500px;
+  height: 480px;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px 0;
+  box-sizing: border-box;
 }
 .item-box .item-list {
   width: 23%;
   border-radius: 10px;
   border: 1px solid #eee;
-  margin-bottom: 30px;
   position: relative;
 }
 .item-box .item-list::before {
@@ -101,7 +86,7 @@ section h2 {
   transform: scale(1.03);
 }
 .item-box .detail-box {
-  padding: 30px 20px;
+  padding: 10px 20px;
 }
 .item-box .detail-box .description {
   font-size: 14px;
@@ -114,27 +99,51 @@ section h2 {
   margin-top: 3px;
   word-break: keep-all;
 }
-.item-box .detail-box .sale-price,
-.item-box .detail-box .sale-percent {
+.price-box {
+  margin-top: 10px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+.price-box .details {
+  height: 44px;
+  line-height: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+.price-box .details .cart-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+}
+.item-box .sale-price,
+.item-box .sale-percent {
   font-size: 22px;
   font-weight: 600;
 }
-.item-box .detail-box .details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+
+/* 장바구니 버튼 */
+.cart-btn {
+  border: none;
+  cursor: pointer;
+  background: #000;
+  border-radius: 5px;
+  padding: 10px;
 }
-.item-box .detail-box .sale-box {
-  display: flex;
+.cart-btn.small {
+  margin: 15px;
 }
-.item-box .detail-box .sale-box .sale-percent {
-  color: #f54b4b;
-  margin-right: 10px;
+.cart-btn span {
+  color: #fff;
+  font-weight: 300;
 }
-.item-box .detail-box .price {
-  font-size: 15px;
+.cart-btn:hover span {
   color: #bbb;
-  text-decoration: line-through;
 }
 
 /* VISUAL */
@@ -176,7 +185,7 @@ section h2 {
 }
 .visual .youtube-cover .text h2 {
   color: #fff;
-  font-weight: 100;
+  font-weight: 300;
   text-align: left;
 }
 
@@ -302,14 +311,20 @@ section h2 {
   border: 1px solid #ddd;
   overflow: hidden;
 }
-.origin-item-list a {
+.origin-item-list > div {
   display: block;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .prod-img {
   overflow: hidden;
+  margin-right: 10px;
+}
+.origin-item-list .cart-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .prod-img img {
   width: 80px;
@@ -319,7 +334,7 @@ section h2 {
 .origin-item-list a:hover {
   color: #288341;
 }
-.origin-item-list a:hover .prod-img img {
+.origin-item-list:hover .prod-img img {
   transform: scale(1.1);
 }
 .origin-item-list .item-name {
@@ -332,23 +347,19 @@ section h2 {
 
 /* 선물추천 섹션 */
 .gift {
-  height: 900px;
+  height: 850px;
   background-color: #f6f5ef;
   position: relative;
   transition: height 0.4s;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .gift .swiper {
   width: 100%;
-  padding: 80px 0;
   box-sizing: border-box;
   position: absolute;
   top: 0px;
   left: 50%;
   transform: translateX(-50%);
-}
-.gift .swiper h2 {
-  margin-bottom: 40px;
 }
 .gift .swiper-slide {
   height: 500px;
@@ -406,7 +417,7 @@ section h2 {
   bottom: 100px;
   left: 0;
   right: 0;
-  z-index: 0;
+  z-index: 10;
 }
 .gift .swiper-pagination .swiper-pagination-bullet {
   background-color: transparent;
