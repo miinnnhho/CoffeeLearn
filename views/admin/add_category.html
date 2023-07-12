@@ -4,9 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <%- include('../components/head.html') -%>
-        <link rel="stylesheet" href="/assets/css/admin/list.css" />
+        <link rel="stylesheet" href="/assets/css/admin/additem.css" />
         <link rel="stylesheet" href="/assets/css/admin/nav.css" />
-        <script defer src="/assets/js/admin/itemlist.js"></script>
     </head>
     <body>
         <%- include('../components/header.html') -%>
@@ -42,34 +41,34 @@
                         </ul>
                     </li> -->
                 </ul>
+                
             </nav>
-
             <!-- 오른쪽 컨텐츠영역 -->
-            <div id="rightBox">
+            <div id="contentBox">
                 <!-- 내역 박스 -->
-                <div class="title-box">
-                    <p>상품리스트 관리</p>
-                    <div class="button-box">
-                        <a href="/admin/additem"><button>상품 추가</button></a>
+                <div class="category-box">
+                    <p>카테고리 추가</p>
+                </div>
+                <!-- 인풋 폼 -->
+                <form id="addCategoryForm" method="get" enctype="multipart/form-data">
+                    <ul>
+                        <li>
+                            <label>카테고리명</label>
+                            <input type="text" class="category-name" />
+                        </li>
+                        <li>
+                            <label>카테고리설명</label>
+                            <input type="text" class="category-description" />
+                        </li>
+                    </ul>
+                    <div class="button-wrap">
+                        <button><a href="/admin/category">목록으로</a></button>
+                        <button type="submit" class="save-button">저장하기</button>
                     </div>
-                </div>
-
-                <!-- 리스트 -->
-                <div>
-                    <table id="productList">
-                        <thead>
-                            <tr>
-                                <th style="width: 14%">번호</th>
-                                <th style="width: 14%">카테고리</th>
-                                <th>상품명</th>
-                                <th style="width: 14%">가격</th>
-                                <th style="width: 14%">상품삭제</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+                </form>
             </div>
         </div>
         <%- include('../components/footer.html') -%>
+        <script src="/assets/js/admin/add_category.js"></script>
     </body>
 </html>
