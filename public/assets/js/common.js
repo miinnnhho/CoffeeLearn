@@ -21,6 +21,6 @@ function alertMessage() {
   const searchBtn = document.querySelector('.search-btn');
   searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
-    alert('☕ 상품 검색기능 준비중입니다.');
+    alert('☕ 상품 검색 기능 준비중입니다.');
   });
 }

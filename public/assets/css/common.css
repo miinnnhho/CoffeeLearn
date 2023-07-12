@@ -239,3 +239,44 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+/* select-box CSS */
+.select-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.option-select-box .option-select {
+  width: 75%;
+}
+.option-select-box .option-select .select-menu {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  outline: none;
+}
+.amount-select {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+.amount-select .amount-count {
+  font-size: 18px;
+  font-weight: 600;
+}
+.amount-select button {
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

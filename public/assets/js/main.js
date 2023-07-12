@@ -1,3 +1,10 @@
+// 상품 데이터 호출
+async function getProducts() {
+  const response = await fetch('/assets/products.json');
+  const data = await response.json();
+  return data;
+}
+
 // 공통 함수: 상품 이미지 경로 생성
 function getProductImageSrc(productId) {
   return `/assets/img/items/item_main_${productId}.jpg`;
@@ -64,12 +71,6 @@ function displayProductList(products, itemBoxId, condition) {
   });
 }
 
-// 상품 데이터 호출
-async function getProducts() {
-  const response = await fetch('/assets/products.json');
-  const data = await response.json();
-  return data;
-}
 
 // 커피 카테고리인지 확인
 function isCoffeeCategory(product) {
