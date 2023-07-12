@@ -25,7 +25,7 @@ h3 {
     font-weight: 600;
     line-height: normal;
 }
-.mainLi {
+.main-li {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -108,14 +108,15 @@ hr {
     width: 200px;
 }
 #myInfomation {
-    /* margin-top: 77px; */
-    width: auto;
-    margin-left: 10px;
+    width: 512px;
+    margin-left: 83px;
+    margin-top: 137px;
 }
 /* 버튼 */
 .info-button {
-    margin-left: 519px;
-    
+    margin-left: 160px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 .edit-btn {
     background: #ffdb7e;
@@ -144,7 +145,6 @@ hr {
     cursor: pointer;
 }
 
-
 #myInfomation .user-h2 {
     margin: 0 0 20px 0;
     padding: 0 0 10px 0;
@@ -167,7 +167,7 @@ tr {
     vertical-align: inherit;
     border-color: inherit;
     border-bottom: 1px solid #dcdcdc;
-    height: 56px;
+    height: 80px;
     width: 185px;
     padding: 12px 20px 12px 20px;
 }
@@ -182,7 +182,10 @@ td input {
     font-family: 'Nanum Gothic', 'Noto Sans KR', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움', sans-serif;
     color: #333;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 28px;
+    border: none;
+    background: #ececec;
+    border-radius: 5px;
 }
 td p {
     font-size: 12px;
@@ -190,5 +193,5 @@ td p {
     font-family: 'Nanum Gothic', 'Noto Sans KR', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움', sans-serif;
     color: #333;
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 28px;
 }

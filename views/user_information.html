@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 
-        <link rel="stylesheet" href="/public/assets/css/user_infomation.css" />
+        <link rel="stylesheet" href="/assets/css/user_infomation.css" />
         <!-- <link rel="stylesheet" href="/assets/css/login.css" /> -->
         <%- include('components/head.html') -%>
         <style>
@@ -22,7 +22,7 @@
             <div class="container">
                 <ul id="subMenuMypage">
                     <h2 class="mypage-h2">마이페이지</h2>
-                    <li class="mainLi">
+                    <li class="main-li">
                         <span class="title">나의쇼핑</span>
                         <hr />
                         <ul class="sub-depth1">
@@ -33,7 +33,7 @@
                     <li><a href="" class="active">- 환불/입금 내역</a></li> -->
                         </ul>
                     </li>
-                    <li class="mainLi">
+                    <li class="main-li">
                         <span class="title">혜택관리</span>
                         <hr />
                         <ul class="sub-depth1">
@@ -41,12 +41,12 @@
                             <!-- <li><a href="" class="active">- 포인트 내역</a></li> -->
                         </ul>
                     </li>
-                    <li class="mainLi">
+                    <li class="main-li">
                         <span class="title">나의정보</span>
                         <hr />
                         <ul class="sub-depth1">
                             <li><a href="" class="active">회원정보 변경 / 회원탈퇴</a></li>
-                            
+
                             <!-- <li><a href="" class="active">- 배송지 관리</a></li> -->
                         </ul>
                     </li>
@@ -63,12 +63,8 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th>
-                                        <span class="important">이메일</span>
-                                    </th>
-                                    <td>
-                                        <input type="hidden" name="nameId" value="이메일 적힘" />
-                                    </td>
+                                    <th><span class="important">이메일</span></th>
+                                    <td><p>이메일 적힘</p></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">비밀번호</span></th>
@@ -76,7 +72,7 @@
                                 </tr>
                                 <tr>
                                     <th><span class="important">이름</span></th>
-                                    <td><input type="text" value="회원이름" /></td>
+                                    <td><input type="text" value="이름" /></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">휴대폰번호</span></th>
@@ -114,7 +110,7 @@
     <!-- kakao API -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- kakao API -->
-    <script src="/public/assets/js/address_kakao.js"></script>
+    <script src="/assets/js/address_kakao.js"></script>
 </html>
 
 <!-- 
