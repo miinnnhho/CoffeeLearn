@@ -186,7 +186,8 @@ body {
 .clicked {
     display: none;
 }
-.order-btn {
+.cancle-btn,
+.modify-btn {
     width: 68px;
     height: 35px;
     display: flex;
@@ -202,27 +203,27 @@ body {
     color: #d74646;
     font-size: 12px;
 }
-.order-btn:hover {
+.cancle-btn:hover {
     background: #d74646;
     color: #fff;
     border: #fff;
 }
-#order-btn {
-    border: 1px solid #282828;
-    color: #282828;
+.modify-btn {
+    border: 1px solid #414641;
+    color: #414641;
 }
-#order-btn:hover {
-    background: dimgray;
+.modify-btn:hover {
+    background: #414641;
     color: #fff;
 }
 /* 옆 메뉴 */
-#mypageSubMenu {
+#subMenuMypage {
     display: inline-flex;
     flex-direction: column;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 .container {
-    margin-left: 0px;
+    display: flex;
 }
 .mypage-h2 {
     color: #000;
@@ -232,13 +233,7 @@ body {
     font-weight: 600;
     line-height: normal;
     margin-bottom: 60px;
-}
-h3 {
-    color: #000;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    margin-top: 100px;
 }
 .main-li {
     display: inline-flex;
@@ -257,6 +252,7 @@ h3 {
     line-height: normal;
     margin: 10px;
     margin-bottom: 0px;
+    margin-left: 0px;
 }
 
 .sub-depth1 {
@@ -267,6 +263,8 @@ h3 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-bottom: 60px;
+
     /* border-top: 2px solid; */
 }
 .sub-depth1 li {
@@ -281,8 +279,8 @@ hr {
 .active {
     text-decoration-line: none;
     color: #000;
+    list-style: none;
 }
-
 /* 모달버튼 */
 .modal {
     display: none;

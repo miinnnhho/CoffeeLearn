@@ -7,8 +7,8 @@ function openModal() {
     const orderHp = document.getElementById('orderHp');
     orderNumber.innerHTML = '1';
     orderProducts.innerHTML = '2';
-    orderName.value = '3';
-    orderHp.value = '4';
+    orderName.value = 'a';
+    orderHp.value = 'b';
 }
 
 // 모달 닫기

@@ -1,22 +1,19 @@
-//모든 주문 목록 (임시)
-//추후 fetch로 바꿀예정
-
 let orderList;
 
 function getProducts() {
-    return new Promise((resolve, reject) => {
-        fetch('/assets/data/order.json')
-            .then((response) => response.json())
-            .then((data) => {
-                orderList = data;
-                console.log(orderList);
-                resolve(); // 데이터 할당 후에 Promise를 해결합니다.
-            })
-            .catch((error) => {
-                console.error('Error fetching product data:', error);
-                reject(error); // 에러가 발생한 경우 Promise를 거부합니다.
-            });
-    });
+    return fetch('/assets/data/order.json')
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`${response.status} 에러가 발생했습니다.`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            orderList = data;
+        })
+        .catch((error) => {
+            console.error('Error fetching product data:', error);
+        });
 }
 
 // async 함수를 정의하여 비동기적으로 실행합니다.
@@ -26,13 +23,11 @@ async function initialize() {
         // 데이터가 할당된 후에 원하는 작업을 수행합니다.
         console.log('Products data has been initialized.');
         // ...
+        clickSearchBtn();
     } catch (error) {
         console.error('Error initializing products data:', error);
     }
 }
-
-// initialize() 함수를 호출하여 초기화 작업을 시작합니다.
-initialize();
 
 function clickSearchBtn() {
     console.log(orderList);
@@ -53,42 +48,40 @@ function getOrdersByDateRange(startDate, endDate) {
 
 function displayOrders(orders) {
     //기간에 맞는 order 배열입력받음
-    const reverseOrders = orders.reverse();
+    orders.reverse();
     const emptyOrder = document.querySelector('.empty-order');
-    const button = document.createElement('input');
-    button.type = 'button';
-    button.className = 'order-btn';
-    button.value = '주문 취소';
-    const button2 = Object.assign(document.createElement('input'), {
-        type: 'button',
-        className: 'order-btn',
-        id: 'onOrderModal',
-        value: '주문 수정',
-    });
+    const cancleBtn = document.createElement('input');
+    cancleBtn.type = 'button';
+    cancleBtn.className = 'modify-btn';
+    cancleBtn.value = '주문 취소';
+    const modifyBtn = document.createElement('input');
+    modifyBtn.type = 'button';
+    modifyBtn.className = 'cancle-btn';
+    modifyBtn.value = '주문 수정';
 
     // 해야될거
     // 3. 각 parentschild랑 연결해서 수정 가능하게 만들기
 
     const orderRows = orders
         .map((order) => {
-            const deliveryStatusCell = order.deliveryStatus === '배송준비중' ? button.outerHTML : '-';
-            const orderStatusCell = order.deliveryStatus === '배송준비중' ? button2.outerHTML : '-';
+            const deliveryStatusCell = order.deliveryStatus === '배송준비중' ? cancleBtn.outerHTML : '-';
+            const orderModifyCell = order.deliveryStatus === '배송준비중' ? modifyBtn.outerHTML : '-';
             //배송준비중 일 때만 취소버튼 생성 취소버튼 구현은 다음에
             return `
-            
       <tr>
-        <td>${order.orderNumber}<p> ${order.orderDate}</td>
+        <td><span>${order.orderNumber}</span><p> <span style="color: gray;">${order.orderDate}</span></td>
         <td>${order.name}</td>
         <td>${order.quantity}</td>
         <td>${order.salePrice}</td>
         <td>${order.orderStatus}</td>
         <td>${order.deliveryStatus}</td>
         <td>${deliveryStatusCell}</td>
-        <td>${orderStatusCell}</td>
+        <td>${orderModifyCell}</td>
       </tr>
     `; //테이블 양식에 맞춰 넣어주기
         })
         .join('');
+    // apend
     if (!orders.length == 0) {
         emptyOrder.classList.add('clicked');
     }
@@ -99,21 +92,33 @@ function displayOrders(orders) {
     document.getElementById('order-rows').innerHTML = orderRows;
 
     // 모달작업!!
-    const onOrderModifyModal = document.querySelector('#onOrderModal');
-    onOrderModifyModal.addEventListener('click', ModifyModal);
-    function ModifyModal() {
+    const onOrderModifyModal = document.querySelectorAll('.cancle-btn');
+    onOrderModifyModal.forEach((btn) => {
+        btn.addEventListener('click', modifyOrderModal);
+    });
+    // querySelectorAll를 적용하면 forEach를 사용해서 이벤트를 등록해주어야 한다.
+    function modifyOrderModal(event) {
         document.getElementById('myModal').style.display = 'block';
+        // 모달 기본값 작업
         const orderNumber = document.getElementById('orderNumber');
         const orderProducts = document.getElementById('orderProducts');
         const orderName = document.getElementById('orderName');
         const orderHp = document.getElementById('orderHp');
-        orderNumber.innerHTML = '1';
-        orderProducts.innerHTML = '2';
-        orderName.value = '3';
-        orderHp.value = '4';
+
+        const target = event.currentTarget;
+        const rowElem = target.closest('tr');
+        let orderNumberModifyrow = rowElem.querySelector('td:nth-child(1)');
+        let orderNumberModify = orderNumberModifyrow.querySelector('span');
+        let orderProductsModify = rowElem.querySelector('td:nth-child(2)');
+        // const orderNameModify = ;
+        // const orderHpModify = ;
+        orderNumber.innerHTML = orderNumberModify.innerHTML;
+        orderProducts.innerHTML = orderProductsModify.innerHTML;
+        orderName.value = '동훈';
+        orderHp.value = '112';
     }
 }
-
+// curr
 //조회 기간 버튼 - 오늘
 function dateChangeToday() {
     const today = new Date().toISOString().split('T')[0];
@@ -204,3 +209,9 @@ btnWeek.addEventListener('click', dateChangeWeek); //7일 버튼 클릭 이벤�
 btnMonth.addEventListener('click', dateChangeMonth); //1개월 버튼 클릭 이벤트 등록
 btn3Month.addEventListener('click', dateChange3Month); //3개월 버튼 클릭 이벤트 등록
 btnYear.addEventListener('click', dateChangeYear); //1년 버튼 클릭 이벤트 등록
+
+// 엘리먼트리스트 여러엘리먼트 한번에 등록하기
+
+// initialize() 함수를 호출하여 초기화 작업을 시작합니다.
+dateChangeWeek();
+initialize();
