@@ -25,7 +25,7 @@ window.handleLoginSubmit = function (event) {
             } else {
                 // 로그인 실패 처리
                 console.error('로그인 실패:', error.message);
-                alert('등록되지 않은 e-mail 이거나 비밀번호가 일치하지 않습니다');
+                alert('회원정보를 찾을 수 없습니다.');
             }
         });
 
