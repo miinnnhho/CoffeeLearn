@@ -1,41 +1,57 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const emailInput = document.getElementById('id');
-    const passwordInput = document.getElementById('pw');
+const email = document.getElementById('id').value;
+const password = document.getElementById('pw').value;
+const loginBtn = document.getElementById('pw').value;
+const loginData = {
+    email: email,
+    password: password,
+};
+window.handleLoginSubmit = function (event) {
+    event.preventDefault();
 
-    window.handleLoginSubmit = function (event) {
-        event.preventDefault();
-
-        //이메일, 비밀번호 입력란 값 가져오기
-        const email = emailInput.value;
-        const password = passwordInput.value;
-
-        // 이메일, 비밀번호 값 =>객체로 묶어 loginData에 저장
-        const loginData = {
-            email: email,
-            password: password,
-        };
-
-        axios
-            .post('http://localhost:3000/user/login', loginData) //백엔드 API 주소 추가하기
-            .then(function (response) {
-                // 성공
-                if (response.status === 200) {
-                    // 토큰 -> 로컬 스토리지에 저장
-                    localStorage.setItem('myToken', response.data.token);
-                    // 랜딩 페이지로 이동
-                    window.location.href = '/홈으로'; //홈으로 이동
-                }
-            })
-            .catch(function (error) {
-                // 로그인 실패
+    // 로그인 API 호출 예시
+    fetch('/user/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                // 로그인 성공 후 처리
+                localStorage.setItem('token', data.token);
+                window.location.href = '/'; //홈으로 이동
+            } else {
+                // 로그인 실패 처리
                 console.error('로그인 실패:', error.message);
-                // alert("등록되지 않은 ID 이거나 비밀번호가 일치하지 않습니다");
-            });
-    };
-});
+                alert('등록되지 않은 e-mail 이거나 비밀번호가 일치하지 않습니다');
+            }
+        });
 
-// 로그아웃
-document.getElementById('logoutButton').addEventListener('click', (handleLogout) => {
-    //토큰 제거
-    localStorage.removeItem('myToken');
-});
+    //로그인시 로그인 버튼 -> 로그아웃 버튼으로 변함(반대도)
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginBtn = document.getElementById('loginBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            // 로그인 상태일 때
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'block';
+        } else {
+            // 로그아웃 상태일 때
+            loginBtn.style.display = 'block';
+            logoutBtn.style.display = 'none';
+        }
+    });
+    //로그아웃 처리
+    function logout() {
+        localStorage.removeItem('token');
+        // 로그아웃 후 메인 페이지 새로고침 또는 이동
+        window.location.reload();
+    }
+
+    logoutBtn.addEventListener('click', logout);
+};
