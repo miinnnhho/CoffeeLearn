@@ -45,6 +45,7 @@ function getOrdersByDateRange(startDate, endDate) {
 
     return filteredOrders;
 } // input으로 기간 입력받아서 모든 주문 목록에서 기간에 맞는 필터함수 사용
+// 추후 사용자 아이디랑 연동해서 아이디 && 날짜 해야할듯.
 
 function displayOrders(orders) {
     //기간에 맞는 order 배열입력받음
