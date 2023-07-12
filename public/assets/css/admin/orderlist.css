@@ -7,13 +7,14 @@ body {
     margin: 60px auto 0;
     display: flex;
     justify-content: space-between;
+    min-height: calc(100vh - 310px);
   }
   /* 오른쪽 컨텐츠 */
   #rigthBox {
     width: 976px;
   }
   
-  .order-stepbox li > p {
+  .order-stepbox > p {
     font-weight: 600;
     font-size: 20px;
     margin: 0;

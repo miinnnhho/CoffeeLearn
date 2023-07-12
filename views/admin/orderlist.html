@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <%- include('../components/head.html') -%>
-        <link rel="stylesheet" href="/public/assets/css/admin/orderlist.css" />
-        <link rel="stylesheet" href="/public/assets/css/admin/nav.css" />
+        <link rel="stylesheet" href="/assets/css/admin/orderlist.css" />
+        <link rel="stylesheet" href="/assets/css/admin/nav.css" />
     </head>
     <body>
         <%- include('../components/header.html') -%>
@@ -17,10 +17,10 @@
                         <span>상품관리</span>
                         <ul class="depth1">
                             <li>
-                                <a href="/views/admin/itemlist.html">상품리스트 관리</a>
+                                <a href="/admin/product">상품리스트 관리</a>
                             </li>
                             <li>
-                                <a href="/views/admin/categorylist.html">카테고리 관리</a>
+                                <a href="/admin/category">카테고리 관리</a>
                             </li>
                         </ul>
                     </li>
@@ -28,18 +28,18 @@
                         <span>주문 관리</span>
                         <ul class="depth1">
                             <li>
-                                <a href="/views/admin/orderlist.html">주문 내역 관리</a>
+                                <a href="/admin/order">주문 내역 관리</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <span>사용자관리</span>
                         <ul class="depth1">
                             <li>
                                 <a href="">사용자리스트 관리</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
 
@@ -112,3 +112,4 @@
         <%- include('../components/footer.html') -%>
     </body>
 </html>
+

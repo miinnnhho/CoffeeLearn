@@ -4,68 +4,62 @@ const productList = document.querySelector('#productList');
 insertProductElement();
 
 async function insertProductElement() {
-    const res = await fetch("/assets/products.json", {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-        .then((res) => res.json())
-        .then((data) => data);
+    try {
+        const res = await fetch('/assets/data/products.json');
+        if (!res.ok) {
+            throw new Error('에러가 발생했습니다.');
+        }
+        const products = await res.json();
+
         console.log(res);
-    // const res = await fetch('http://localhost:3000/admin/products', {
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    // });
-    if (!res.ok) {
-        alert('에러가 발생했습니다.');
-        return;
-    }
-    const products = await res.json();
+        console.log(products);
 
-    console.log(res);
-    console.log(products);
+        products.forEach((product) => {
+            const itemNumber = product.id;
+            const categoryName = product.category;
+            const itemName = product.name;
+            const itemPrice = product.price;
 
-    products.forEach((product) => {
-        const itemNumber = product._id;
-        const categogyName = product.Category;
-        const itemName = product.name;
-        const itemPrice = product.price;
-
-        productList.insertAdjacentHTML(
-            'beforeend',
-            `
-            <tbody>
+            productList.insertAdjacentHTML(
+                'beforeend',
+                `
+        <tbody>
             <tr>
                 <td>${itemNumber}</td>
-                <td>${categogyName}</td>
-                <td><a href="#" class = "update-product">${itemName}</a></td>
+                <td>${categoryName}</td>
+                <td><a href="#" class="update-product">${itemName}</a></td>
                 <td>${itemPrice}</td>
                 <td><button id="${itemNumber}" class="delete-button">상품삭제</button></td>
             </tr>
         </tbody>
-    `
-        );
-    });
-}
+        `
+            );
+        });
 
-//상품삭제하기
+        // 상품삭제하기
+        const deleteBtns = document.querySelectorAll('.delete-button');
+        console.log(deleteBtns);
 
-const deleteBtns = document.querySelectorAll('.delete-button');
-
-deleteBtns.forEach((deleteBtn) => {
-    deleteBtn.addEventListener('click', async (e) => {
-        const eventTarget = e.target;
-        if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
-            eventTarget.parentNode.remove();
-            const apiUrl = '';
-            const res = await fetch(apiUrl, {
-                method: 'Delete',
-                body: { id: e.target.id },
+        deleteBtns.forEach((deleteBtn) => {
+            deleteBtn.addEventListener('click', async (e) => {
+                const eventTarget = e.target;
+                if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
+                    eventTarget.parentNode.parentNode.remove();
+                    const apiUrl = `/api/products/${e.target.id}`;
+                    const res = await fetch(apiUrl, {
+                        method: 'DELETE',
+                    });
+                    if (!res.ok) {
+                        throw new Error('상품 삭제 중 에러가 발생했습니다.');
+                    }
+                }
             });
-        }
-    });
-});
+        });
+    } catch (error) {
+        console.error(error);
+        alert('에러가 발생했습니다.');
+    }
+}
 
 //상품수정하기
 
