@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <!-- #ffdb7e #371d1d -->
+    <title>Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('components/head.html') -%>
+    <!-- Cutom CSS & JS -->
+    <link rel="stylesheet" href="/assets/css/cart.css" />
+
+    <script defer src="/assets/js/cart.js"></script>
+    <script defer src="/assets/js/common.js"></script>
+    <style>
+      #wrap {
+        min-height: calc(100vh - 250px);
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('components/header.html') -%>
+    <div id="wrap">
+      <div class="inner">
+        <div class="cart-nav">
+          <strong class="on">장바구니</strong>
+          <span class="material-icons">arrow_forward_ios</span>
+          <strong>주문결제</strong>
+          <span class="material-icons">arrow_forward_ios</span>
+          <strong>주문완료</strong>
+        </div>
+        <div class="cart-container">
+          <!-- Header -->
+          <section class="cart">
+            <div class="cart-inner">
+              <div class="cart-wrap">
+                <div class="cart-header">
+                  <span> <input class="cart-chk-all" type="checkbox" checked />전체선택 <em>4</em>/4 </span>
+                  <div class="buttons">
+                    <button class="cart-btn btn-select-clear">선택삭제</button>
+                    <button class="cart-btn btn-all-clear">전체삭제</button>
+                  </div>
+                </div>
+                <div class="cart-items">
+                  <!-- <div class="cart-item">
+                    <p class="no-items"> ☕ 장바구니에 상품이 없습니다. </p>
+                  </div>
+                   -->
+                  <div class="cart-item">
+                    <div class="check-status">
+                      <input class="cart-chk" type="checkbox" checked />
+                    </div>
+                    <div class="cart-details">
+                      <div class="thum">
+                        <img src="/assets/img/items/item_main_1.jpg" />
+                      </div>
+                      <div class="cart-overview">
+                        <div class="cart-overview-header">
+                          <button class="btn-clear"><span class="material-icons">backspace</span></button>
+                        </div>
+                        <div class="cart-overview-detail">
+                          <div class="cart-overview-info">
+                            <b class="item-name">인도네시아 만델링 G1 수마트라</b>
+                            <span class="option">분쇄 옵션 <em>프렌치프레스 분쇄</em></span>
+                          </div>
+                          <div class="cart-overview-price">
+                            <div>
+                              <span class="sale">10%</span>
+                              <s class="price-prev">10,000원</s>
+                            </div>
+                            <span class="price-current">9,000원</span>
+                          </div>
+                          <div class="amount-select" id="amountSelect">
+                            <button type="button" aria-label="수량내리기" disabled="" class="down-btn">-</button>
+                            <span class="amount-count">1</span>
+                            <button type="button" aria-label="수량올리기" class="up-btn">+</button>
+                          </div>
+                          <div class="item-total-price">
+                            <span class="price-current-total">9,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-item">
+                    <div class="check-status">
+                      <input class="cart-chk" type="checkbox" checked />
+                    </div>
+                    <div class="cart-details">
+                      <div class="thum">
+                        <img src="/assets/img/items/item_main_1.jpg" />
+                      </div>
+                      <div class="cart-overview">
+                        <div class="cart-overview-header">
+                          <button class="btn-clear"><span class="material-icons">backspace</span></button>
+                        </div>
+                        <div class="cart-overview-detail">
+                          <div class="cart-overview-info">
+                            <b class="item-name">아시아어쩌고</b>
+                            <span class="option">분쇄 옵션 <em>프렌치프레스 분쇄</em></span>
+                          </div>
+                          <div class="cart-overview-price">
+                            <div>
+                              <span class="sale">10%</span>
+                              <s class="price-prev">10,000원</s>
+                            </div>
+                            <span class="price-current">9,000원</span>
+                          </div>
+                          <div class="amount-select" id="amountSelect">
+                            <button type="button" aria-label="수량내리기" disabled="" class="down-btn">-</button>
+                            <span class="amount-count">3</span>
+                            <button type="button" aria-label="수량올리기" class="up-btn">+</button>
+                          </div>
+                          <div class="item-total-price">
+                            <span class="price-current-total">27,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart-item">
+                    <div class="check-status">
+                      <input class="cart-chk" type="checkbox" checked />
+                    </div>
+                    <div class="cart-details">
+                      <div class="thum">
+                        <img src="/assets/img/items/item_main_1.jpg" />
+                      </div>
+                      <div class="cart-overview">
+                        <div class="cart-overview-header">
+                          <button class="btn-clear"><span class="material-icons">backspace</span></button>
+                        </div>
+                        <div class="cart-overview-detail">
+                          <div class="cart-overview-info">
+                            <b class="item-name">아프리카 수마트라</b>
+                            <span class="option">분쇄 옵션 <em>프렌치프레스 분쇄</em></span>
+                          </div>
+                          <div class="cart-overview-price">
+                            <div>
+                              <span class="sale">10%</span>
+                              <s class="price-prev">10,000원</s>
+                            </div>
+                            <span class="price-current">9,000원</span>
+                          </div>
+                          <div class="amount-select" id="amountSelect">
+                            <button type="button" aria-label="수량내리기" disabled="" class="down-btn">-</button>
+                            <span class="amount-count">1</span>
+                            <button type="button" aria-label="수량올리기" class="up-btn">+</button>
+                          </div>
+                          <div class="item-total-price">
+                            <span class="price-current-total">9,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="payment">
+                <div class="price-total-wrap">
+                  <h2 class="payment-headline">결제 금액</h2>
+                  <div class="current-price">
+                    <b>총 결제 금액</b>
+                    <span><em>48,000</em>원</span>
+                  </div>
+                  <div class="origin-price">
+                    <b>상품금액</b>
+                    <span>45,000원</span>
+                  </div>
+                  <div class="discount-amount">
+                    <b>배송비</b>
+                    <span>3,000원</span>
+                  </div>
+                </div>
+                <button class="btn-payment-final">결제하기</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <%- include('components/footer.html') -%>
+  </body>
+</html>

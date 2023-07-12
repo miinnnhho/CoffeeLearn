@@ -8,6 +8,8 @@ body {
     color: #333;
     padding-top: 100px;
     box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 a {
     text-decoration: none;
@@ -200,12 +202,14 @@ img {
     margin-left: 180px;
     margin-right: 20px;
 }
+/* admin-header */
 #header.admin-header #navList {
     display: none;
 }
 #header.admin-header .basket-nav {
     display: none;
 }
+/* 공통 */
 #header.admin-header .search-form,
 #header.items-header .search-form {
     display: none;
@@ -213,16 +217,15 @@ img {
 
 #footer {
     border-top: 1px solid #eeeeee;
+    padding: 30px 0;
     background-color: #ffffff;
 }
 #footer .inner {
     margin: auto;
-    width: 1280px;
-    height: 150px;
-    padding: 30px 0;
 }
 #footer .footer-content ul {
     display: flex;
+    width: 1280px;
 }
 #footer div ul li a {
     margin-right: 15px;
@@ -267,4 +270,45 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* select-box CSS */
+.select-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.option-select-box .option-select {
+    width: 75%;
+}
+.option-select-box .option-select .select-menu {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    outline: none;
+}
+.amount-select {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.amount-select .amount-count {
+    font-size: 18px;
+    font-weight: 600;
+}
+.amount-select button {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }

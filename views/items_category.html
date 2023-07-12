@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('components/head.html') -%>
+  <link rel="stylesheet" href="/assets/css/items.css" />
+  <link rel="stylesheet" href="/assets/css/items_category.css" />
+</head>
+
+<body>
+  <!--header-->
+  <%- include('components/header.html') -%>
+
+    <!--top-->
+    <div class="top">
+      <h1>원두 추천</h1>
+      <div class="top-box">
+        <span>당신의 입맛에 맞는 원두를 찾아보세요!</span>
+        <div> </div>
+      </div>
+    </div>
+
+    <!--main-->
+    <container class="items">
+      <!--items가 전체 main 부분에서 제일 부모 요소 -->
+      <div class="inner">
+        <!--side filter-->
+        <div class="side-filter">
+
+          <!--filter_coffee-->
+          <div class="filter-coffee">
+            <h3>필터</h3>
+            <div class="filter-coffee-border"></div>
+            <div class="filter">
+              <span>맛과 풍미</span>
+              <span class="material-symbols-outlined">refresh</span><span id="reset-button">초기화</span>
+              <div class="filter-tast1 hover-element">
+                <div>
+                  <input type="radio" id="option1">
+                  <label for="option1">달콤 쌉싸름</label>
+                </div>
+                <div>
+                  <input type="radio" id="option2">
+                  <label for="option2">고소함/구수함</label>
+                </div>
+                <div>
+                  <input type="radio" id="option3">
+                  <label for="option3">묵직하고 달콤한 여운</label>
+                </div>
+                <div>
+                  <input type="radio" id="option4">
+                  <label for="option4">은은하고 편안한</label>
+                </div>
+                <div>
+                  <input type="radio" id="option5">
+                  <label for="option5">상큼한 산미와 향 </label>
+                </div>
+              </div> <!--filter_tast1-->
+            </div><!--filter-->
+          </div><!--filter_coffee-->
+
+          <!--filter_madein-->
+
+          <div class="filter-madein">
+            <div class="filter-madein-border"></div>
+            <div class="madein">
+              <span>생산지</span>
+              <span class="material-symbols-outlined">refresh</span><span id="reset-button">초기화</span>
+              <div class="filter-tast2 hover-element">
+                <div>
+                  <input type="radio" id="option1">
+                  <label for="option1">아시아</label>
+                </div>
+                <div>
+                  <input type="radio" id="option2">
+                  <label for="option2">중남미</label>
+                </div>
+                <div>
+                  <input type="radio" id="option3">
+                  <label for="option3">아프리카</label>
+                </div>
+                <div>
+                  <input type="radio" id="option4">
+                  <label for="option4">블랜드 커피</label>
+                </div>
+              </div> <!--filter_tast2-->
+            </div><!--madein-->
+          </div> <!--filter_madein-->
+        </div>
+
+        <!--container-->
+        <div class="container">
+          <div class="container-head">
+            <span class="product_num">총 000개의 상품이 있습니다.</span>
+            <span class="select-box">
+              <select name="order" id="order">
+                <option value="30개씩보기">30개씩보기</option>
+                <option value="20개씩보기">20개씩보기</option>
+                <option value="10개씩보기">10개씩보기</option>
+              </select>
+            </span>
+            <div class="container-border"></div>
+          </div>
+          <div class="container-main">
+            <div class="container-box">
+
+              <!--type1-->
+              <div class="product-type1">
+                <div> <img class="product1-img" src="/public/assets/img/item_main_1.jpg" alt="item_main_1"></div>
+                <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <p class="product1-keyword">#해시태그 입력하세요</p>
+                <spanp class="product1-price"> 3,400원</spanp><span
+                  class="material-symbols-outlined">shopping_cart</span>
+              </div>
+              <div class="product-type1">
+                <div> <img class="product1-img" src="/public/assets/img/item_main_2.jpg" alt="item_main_2"></div>
+                <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <p class="product1-keyword">#해시태그 입력하세요</p>
+                <span class="product1-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+              <div class="product-type1">
+                <div> <img class="product1-img" src="/public/assets/img/item_main_3.jpg" alt="item_main_3"></div>
+                <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <p class="product1-keyword">#해시태그 입력하세요</p>
+                <span class="product1-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+
+              <!--type2-->
+              <div class="product-type2">
+                <div> <img class="product2-img" src="/public/assets/img/item_main_4.jpg" alt="item_main_4"></div>
+                <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <p class="product2-discount">#해시태그 입력하세요</p>
+                <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+              <div class="product-type2">
+                <div> <img class="product2-img" src="/public/assets/img/item_main_5.jpg" alt="item_main_5"></div>
+                <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <p class="product2-discount">#해시태그 입력하세요</p>
+                <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+              <div class="product-type2">
+                <div> <img class="product2-img" src="/public/assets/img/item_main_6.jpg" alt="item_main_6"></div>
+                <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <p class="product2-discount">#해시태그 입력하세요</p>
+                <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+
+              <!--type3-->
+              <div class="product-type3">
+                <div> <img class="product3-img" src="/public/assets/img/item_main_7.jpg" alt="item_main_7"></div>
+                <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <span class="discount">30%</span>
+                <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+              <div class="product-type3">
+                <div> <img class="product3-img" src="/public/assets/img/item_main_8.jpg" alt="item_main_8"></div>
+                <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <span class="discount">30%</span>
+                <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+              <div class="product-type3">
+                <div> <img class="product3-img" src="/public/assets/img/item_main_9.jpg" alt="item_main_9"></div>
+                <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
+                <span class="discount">30%</span>
+                <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </container>
+
+    <!--footer-->
+    <footer></footer>
+    <div id="to-top">
+      <div class="material-icons">arrow_upward</div>
+    </div>
+    <%- include('components/footer.html') -%>
+</body>
+</html>
