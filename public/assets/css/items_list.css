@@ -1,6 +1,10 @@
-/* test - coffee.css*/
+/*제일 윗 상단 부분*/
 .pick {
 	min-height: calc(100vh - 250px);
+	display: flex;
+	flex-direction: column;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 section h2 {
 	font-size: 40px;
@@ -8,66 +12,78 @@ section h2 {
 	text-align: center;
 	margin: 40px 0;
 	margin: auto;
+	margin: 50px 0 5px 0;
 }
 .title {
 	display: flex;
 	position: relative;
 	margin-bottom: 40px;
 	flex-direction: column;
-	height: 150px;
+	height: 200px;
 }
-.title a {
-	position: absolute;
+.title span {
+	font-size: 18px;
+	text-align: center;
+}
+.item-head {
 	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	width: 90px;
-	right: 0;
-	bottom: 0;
-	color: 888;
+	flex-direction: row;
+	margin-left: 290px;
+	margin-bottom: -35px;
+	font-size: 20px;
 }
-.title a strong {
-	color: #288341;
+.item-head .item-num {
+	font-size: 20px;
+	padding-top: 10px;
 }
-.title a span {
-	margin-left: 5px;
-	transition: 0.3s;
-	color: #288341;
+.item-head .select-box {
+	flex: none;
+	margin-left: 50px;
 }
-.title a:hover span {
-	margin-left: 15px;
+.item-head #order {
+	width: 150px;
+	height: 36px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+	border-color: #ccc;
 }
-
-/*test - items.css*/
-/*사이드 바로가기 창*/
+.select-box .option {
+	border-radius: 0px;
+}
+/*전체 메인 섹션*/
 .container {
 	display: flex;
 	position: relative;
 	width: 1280px;
-  margin: 0 auto;
-  box-sizing: border-box;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 /*tab-box - 사이드 탭 메뉴 창 (커피 바로가기 & 선물세트 바로가기 둘다)*/
 .tab-border {
-	width: 300px;
+	width: 240px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	line-height: 35px;
 	border: 1px solid #ddd;
-	margin: 5px 0;
+	margin: 3px 0;
 }
 .tab-box h3 {
 	font-size: 26px;
-	padding-top: 15px;
 	padding-bottom: 10px;
 	font-weight: bold;
 }
 .tab-box span {
 	font-size: 18px;
 }
-.tab {
-	width: 280px;
+.tab-label .tab {
+	width: 230px;
 	height: 55px;
 	padding: 10px;
 	border-radius: 5px;
@@ -80,6 +96,7 @@ section h2 {
 	display: flex;
 	transition: 0.4s;
 	align-items: center;
+	margin-top: 10px;
 }
 .tab-box2 {
 	margin-top: 30px;
@@ -116,51 +133,14 @@ section h2 {
 .tab.tab--main > p {
 	margin: auto;
 }
-
 /* 상품 리스트 - 상품들 보이는 곳*/
-
-.item-head {
-	display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.item-head .item-num {
-	margin-left: 15px;
-	font-size: 20px;
-	padding-top: 10px;
-}
-.item-head .select-box {
-	flex: none;
-	margin-left: 550px;
-}
-.item-head #order {
-	width: 150px;
-	height: 36px;
-	text-align: center;
-	font-size: 14px;
-	border-radius: 5px;
-	border-color: #ccc;
-}
-.select-box .option {
-	border-radius: 0px;
-}
-.item-border {
-	width: 960px;
-	border: 1px solid #ddd;
-	margin-bottom: 20px;
-	margin-top: 10px;
-}
-
-
-
 .item-wrap {
 	display: grid;
-	grid-template-columns: repeat(3, 330px);
+	grid-template-columns: repeat(3, 310px);
 	justify-content: space-between;
 	grid-template-rows: repeat(auto, 528px);
 	width: 920px;
-	column-gap: 20px;
+	column-gap: 50px;
 	row-gap: 20px;
 	margin-top: 50px;
 }
@@ -168,18 +148,26 @@ section h2 {
 	display: grid;
 	grid-template-columns: repeat(3, 310px);
 	grid-template-rows: repeat(auto, 528px);
+	column-gap: 40px;
 	line-height: 50px;
-	margin-left: 50px;
+	margin-left: 30px;
+	margin-top: 50px;
 	color: #000;
+	padding-bottom: 15px;
+	border-top: 2px solid #000;
 }
 .item-box img {
 	width: 300px;
 	height: 300px;
 }
+item-list-border {
+	border: 1px solid 1000px;
+}
 .item-list {
 	display: grid;
 	border-radius: 10px;
 	margin-bottom: 30px;
+	padding-top: 30px;
 }
 .item-box a {
 	width: 310px;
@@ -189,7 +177,6 @@ section h2 {
 .item-box .item-list::before {
 	content: '';
 	display: block;
-
 	border-radius: 10px;
 	background: #ffffff;
 	opacity: 1;
@@ -209,23 +196,17 @@ section h2 {
 		z-index: -1;
 	}
 }
-
 .item-box .img-box {
-
 	border-radius: 10px;
 	overflow: hidden;
 }
-
-
 .item-box .img-box .main-img {
 	width: 100%;
 	transition: 0.3s;
 }
-
 .item-box .item-list:hover .main-img {
 	transform: scale(1.03);
 }
-
 .item-box .detail-box {
 	padding: 30px 20px;
 }

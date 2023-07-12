@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%- include('components/head.html') -%>
     <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/items.css" />
+    <link rel="stylesheet" href="/assets/css/items_list.css" />
     <link rel="stylesheet" href="/assets/css/tab.css" />
     <script defer src="/assets/js/test.js"></script>
     <script defer src="/assets/js/totop.js"></script>
@@ -15,14 +15,13 @@
 <body>
   <%- include('components/header.html') -%>
 
-    <!-- 모든 아이템보기 -->
+    <!-- 선물 추천 -->
     <section class="pick" id="pick">
-      <!--banner-->
-      <div class="banner">
-        <h1>전체보기</h1>
-        <div class="box">
-          <img src="/assets/img/banner.png" alt="banner">
-        </div>
+      <!-- <div class="inner">-->
+      <div class="title">
+        <h2>선물 세트</h2>
+        <span>소중한 사람에게 커피선물세트로 마음을 전달해보세요.</span>
+
       </div>
       <!--상품 리스트 갯수 및 리스트 옵션-->
       <div class="item-head">
@@ -40,24 +39,32 @@
         <div class="tab-box">
           <!-- 맛 선택 -->
           <div class="tab-box1">
-            <h3>카테고리</h3>
+            <h3>필터</h3>
             <div class="tab-border"></div>
+            <span>가격대</span>
             <label class="tab-label">
-              <input type="radio" name="stuff" data-stuff="추천원두 모아보기" />
+              <input type="radio" name="price" data-price="~2만원 미만" />
               <div class="tab">
                 <div class="material-icons">radio_button_unchecked</div>
-                <p>추천원두 모아보기</p>
+                <p>~2만원 미만</p>
               </div>
             </label>
             <label class="tab-label">
-              <input type="radio" name="stuff" data-stuff="선물세트 모아보기" />
+              <input type="radio" name="price" data-price="2만원 ~ 3만원" />
               <div class="tab">
                 <div class="material-icons">radio_button_unchecked</div>
-                <p>선물세트 모아보기</p>
+                <p>2만원 ~ 3만원</p>
               </div>
             </label>
-
+            <label class="tab-label">
+              <input type="radio" name="price" data-price="3만원 이상~" />
+              <div class="tab">
+                <div class="material-icons">radio_button_unchecked</div>
+                <p>3만원 이상~</p>
+              </div>
+            </label>
           </div>
+
         </div>
         <!--상품 리스트-->
         <div class="item-box" id="pickItemBox">

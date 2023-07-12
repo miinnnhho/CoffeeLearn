@@ -5,9 +5,9 @@ import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
 import itemsRouter from './routes/items.js';
-import itemsCategoryRouter from './routes/items_category.js';
 import itemsInfoRouter from './routes/items_info.js';
-import testRouter from './routes/test.js';
+import itemsListCoffeeRouter from './routes/items_list_coffee.js';
+import itemsListGiftRouter from './routes/items_list_gift.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -20,7 +20,10 @@ app.set('view engine', 'html');
 app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
-app.use('/test', testRouter);
+app.use('/items', itemsRouter);
+app.use('/items_list_coffee', itemsListCoffeeRouter);
+app.use('/items_list_gift', itemsListGiftRouter);
+app.use('/items_info', itemsInfoRouter);
 
 app.listen(PORT, () => {
   console.log(`✅ Server listening on port ${PORT}`);
