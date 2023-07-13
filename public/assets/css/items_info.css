@@ -103,6 +103,7 @@
 	border: 1px solid #288341;
 	display: inline-block;
 	color: #288341;
+	margin: 5px;
 }
 .buy-now {
 	width: 300px;
@@ -110,6 +111,7 @@
 	border: 1px solid #288341;
 	display: inline-block;
 	color: #288341;
+	margin: 5px;
 }
 .cart:hover {
 	background-color: #288341;
@@ -165,7 +167,7 @@ ul {
 	left: 0;
 	box-sizing: border-box;
 	border: 5px solid #f9f9f9;
-	height: ;
+	height: 100%;
 }
 .tab-con img {
 	margin: auto;
@@ -177,4 +179,9 @@ ul {
 
 .tab-menu input:checked ~ .tab-con {
 	display: block;
+}
+
+#footer {
+	position: relative !important;
+	bottom: auto !important;
 }

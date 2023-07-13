@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 import indexRouter from './routes/index.js';
 import itemsRouter from './routes/items.js';
 import itemsInfoRouter from './routes/items_info.js';
-import itemsListCoffeeRouter from './routes/items_list_coffee.js';
-import itemsListGiftRouter from './routes/items_list_gift.js';
+import itemsCoffeeRouter from './routes/items_coffee.js';
+import itemsGiftRouter from './routes/items_gift.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -21,8 +21,8 @@ app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
 app.use('/items', itemsRouter);
-app.use('/items_list_coffee', itemsListCoffeeRouter);
-app.use('/items_list_gift', itemsListGiftRouter);
+app.use('/items_coffee', itemsCoffeeRouter);
+app.use('/items_gift', itemsGiftRouter);
 app.use('/items_info', itemsInfoRouter);
 
 app.listen(PORT, () => {

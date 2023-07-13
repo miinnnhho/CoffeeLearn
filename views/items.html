@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/tab.css" />
     <script defer src="/assets/js/test.js"></script>
     <script defer src="/assets/js/totop.js"></script>
+
 </head>
 
 <body>
@@ -42,20 +43,17 @@
           <div class="tab-box1">
             <h3>카테고리</h3>
             <div class="tab-border"></div>
-            <label class="tab-label">
-              <input type="radio" name="stuff" data-stuff="추천원두 모아보기" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>추천원두 모아보기</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="stuff" data-stuff="선물세트 모아보기" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>선물세트 모아보기</p>
-              </div>
-            </label>
+
+
+            <a href="http://localhost:3000/items_list_coffee" target="_self">
+              <div id="coffee_link" class="material-symbols-outlined">forward</div>
+              <p class="menu-1">추천원두 모아보기</p>
+            </a>
+            <a href="http://localhost:3000/items_list_gift" target="_self">
+              <div id="gift_link" class="material-symbols-outlined">forward</div>
+              <p class="menu-2">선물세트 모아보기</p>
+            </a>
+
 
           </div>
         </div>
