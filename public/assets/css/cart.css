@@ -79,12 +79,7 @@ button {
     overflow: auto;
     padding-right: 10px;
 }
-.cart .cart-items .cart-item {
-    display: flex;
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-}
+
 .cart .cart-item.empty {
     display: none;
 }
@@ -133,7 +128,7 @@ button {
     color: #999999;
 }
 .cart .cart-overview-header .btn-clear span {
-    font-size: 18px;
+    font-size: 23px;
 }
 .cart .cart-overview-detail {
     display: flex;
@@ -141,6 +136,7 @@ button {
 }
 .cart .cart-inner .cart-overview-info {
     width: 250px;
+    margin-left: 15px;
 }
 .cart .cart-inner .cart-overview-info .option {
     display: block;
@@ -156,6 +152,8 @@ button {
 }
 .cart .cart-overview-detail .cart-overview-price {
     text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .cart .cart-overview-detail .cart-overview-price .sale {
     color: #288341;
@@ -164,23 +162,21 @@ button {
 .price-prev {
     color: #999999;
 }
-.price-current {
-    font-size: 16px;
-    font-weight: 500;
-}
+
 .item-total-price {
     display: flex;
     align-items: center;
+    width: 80px;
 }
 .price-current-total {
     font-size: 18px;
     font-weight: 500;
-    margin-right: 5px;
+    text-align: right;
 }
 .cart .cart-inner .payment {
     flex-basis: 330px;
     font-size: 16px;
-    max-height: 240px;
+    max-height: 230px;
 }
 .cart .cart-inner .payment > div {
     margin-bottom: 30px;
@@ -197,10 +193,18 @@ button {
     margin-bottom: 15px;
     padding-bottom: 10px;
 }
-.all-price span em {
+.all-price b {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+}
+.all-price span {
     font-style: normal;
     color: #2ecc71;
-    font-size: 20px;
+    font-size: 28px;
+}
+.origin-price {
+    margin-bottom: 5px;
 }
 .cart .cart-inner .payment .btn-payment-final {
     background-color: #288341;
@@ -216,3 +220,11 @@ button {
 .cart .amount-select {
     width: 100px;
 }
+
+.cart .cart-items .cart-item {
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+/* border-bottom이 안먹히길래 아래로 내림 */

@@ -36,6 +36,9 @@ if (!Array.isArray(data) || data.length === 0) {
         const option = newItem.querySelector('.option em');
         option.textContent = item.option;
 
+        // 상품 가격 업데이트
+        const price = newItem.querySelector('.cart-overview-price');
+        price.textContent = item.salePrice + ' 원';
         // 수량 업데이트
         const amountCount = newItem.querySelector('.amount-count');
         amountCount.textContent = item.amount;

@@ -94,3 +94,18 @@
     margin-bottom: 15px;
     padding-bottom: 10px;
 }
+.current-price {
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+.current-price b {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 24px;
+}
+.current-price span {
+    font-style: normal;
+    color: #2ecc71;
+    font-size: 28px;
+}
