@@ -1,42 +1,52 @@
 <header id="header">
-  <div class="inner">
-    <h1 class="logo">
-      <a href="/" alt="img "><img src="/assets/img/logo.png" /></a>
-    </h1>
-    <div class="nav">
-      <ul id="navList">
-        <li><a href="#">상품전체</a></li>
-        <li><a href="#">원두추천</a></li>
-        <li><a href="#">선물세트</a></li>
-      </ul>
+    <div class="inner">
+        <h1 class="logo">
+            <a href="/" alt="img "><img src="/assets/img/logo.png" /></a>
+        </h1>
+        <div class="nav">
+            <ul id="navList">
+                <li><a href="#">상품전체</a></li>
+                <li><a href="#">원두추천</a></li>
+                <li><a href="#">선물세트</a></li>
+            </ul>
+        </div>
+        <div class="header-right">
+            <form class="search-form">
+                <input type="text" maxlength="10" />
+                <button type="submit" class="search-btn"></button>
+            </form>
+            <ul class="icon-menu">
+                <li class="login-nav">
+                    <a href="login" class="authBtn">
+                        <img
+                            src="/assets/img/login.png"
+                            style="width: 24px; height: 24px; display: block"
+                            class="header-img"
+                        />
+                        <span class="btn-Span">로그인</span>
+                    </a>
+                </li>
+                <li class="mypage-nav">
+                    <a href="#">
+                        <img
+                            src="/assets/img/mypage.png"
+                            style="width: 24px; height: 24px; display: block"
+                            class="header-img"
+                        />
+                        <span>마이페이지</span>
+                    </a>
+                </li>
+                <li class="basket-nav">
+                    <a href="#">
+                        <img
+                            src="/assets/img/basket.png"
+                            style="width: 24px; height: 24px; display: block"
+                            class="header-img"
+                        />
+                        <span>장바구니</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="header-right">
-      <form class="search-form">
-        <input type="text" maxlength="10" />
-        <button type="submit" class="search-btn"></button>
-      </form>
-      <ul class="icon-menu">
-        <li class="login-nav">
-          <a href="#">
-            <img src="/assets/img/login.png" style="width: 24px; height: 24px; display: block" class="header-img" />
-            <span>로그인</span>
-            <!-- <button id="authBtn">로그인</button> -->
-            <!-- <span id="authBtn">로그인</span> 으로 바꿔도 될듯 -->
-          </a>
-        </li>
-        <li class="mypage-nav">
-          <a href="#">
-            <img src="/assets/img/mypage.png" style="width: 24px; height: 24px; display: block" class="header-img" />
-            <span>마이페이지</span>
-          </a>
-        </li>
-        <li class="basket-nav">
-          <a href="#">
-            <img src="/assets/img/basket.png" style="width: 24px; height: 24px; display: block" class="header-img" />
-            <span>장바구니</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
 </header>

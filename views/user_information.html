@@ -99,7 +99,7 @@
                         </table>
                     </div>
                     <div class="info-button">
-                        <button class="edit-btn">수정완료</button>
+                        <button class="edit-btn" >수정완료</button>
                         <button class="unsubscrib">회원탈퇴</button>
                     </div>
                 </div>
@@ -111,6 +111,15 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- kakao API -->
     <script src="/assets/js/address_kakao.js"></script>
+    <!-- 회원 정보 불러오기 -->
+    <!-- 페이지 로드 -> fetchUserInfo로 불러와서 입력필드 채움 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', fetchUserInfo);
+    </script>
+    <!-- 정보 불러오는 파일 -->
+    <script src="/assets/js/user_infomation.js"></script>
+    <!-- 탈퇴 함수 사용 -->
+    <script src="/assets/js/login.js"></script>
 </html>
 
 <!-- 
