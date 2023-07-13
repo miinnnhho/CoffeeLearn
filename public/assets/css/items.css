@@ -1,3 +1,31 @@
+/*banner*/
+
+.banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 60px;
+}
+
+.banner h1 {
+	margin-bottom: 40px;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.banner .box {
+	width: 1280px;
+	height: 250px;
+	border-radius: 8px;
+	margin: 15px 0;
+}
+
+.banner img {
+	border-radius: 8px;
+}
+
 /*main*/
 
 .inner {
@@ -7,24 +35,22 @@
 
 /*sidemenu*/
 
-.side_menu {
+.side-menu {
 	width: 300px;
 	height: 500px;
-
 	justify-content: flex-start;
 	align-items: flex-start;
-
 	line-height: 35px;
 }
 
-.side_menu h3 {
+.side-menu h3 {
 	font-size: 26px;
 	padding-top: 15px;
 	padding-bottom: 10px;
 	font-weight: bold;
 }
 
-.side_menu_border {
+.side-menu-border {
 	width: 210px;
 	border: 1px solid #ddd;
 }
@@ -34,25 +60,32 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-
+.menu button {
+	border: none;
+	background-color: #fff;
+}
+/*--
 .menu a:hover {
 	color: #288341;
 }
+*/
 
 .menu .material-symbols-outlined {
 	margin: 0;
 	margin-top: 20px;
+	border: none;
+	background-color: #fff;
 }
 
-.menu .menu_1 {
-	width: 210px;
+.menu .menu-1 {
+	width: 165px;
 	margin-top: 10px;
 	margin-left: 10px;
 	font-size: 17px;
 }
 
-.menu .menu_2 {
-	width: 210px;
+.menu .menu-2 {
+	width: 165px;
 	margin-left: 10px;
 	font-size: 17px;
 	margin-top: 10px;
@@ -65,13 +98,13 @@
 	margin-left: 50px;
 }
 
-.container .product_num {
+.container .product-num {
 	margin-left: 15px;
 	font-size: 20px;
 	padding-top: 10px;
 }
 
-.container .select_box {
+.container .select-box {
 	flex: none;
 	margin-left: 550px;
 }
@@ -85,22 +118,22 @@
 	border-color: #ccc;
 }
 
-.select_box .option {
+.select-box .option {
 	border-radius: 0px;
 }
 
-.container_border {
+.container-border {
 	width: 960px;
 	border: 1px solid #ddd;
 	margin-bottom: 20px;
 	margin-top: 10px;
 }
 
-#container_main {
+#container-main {
 	height: 1600px;
 }
 
-.container_box {
+.container-box {
 	display: grid;
 	grid-template-columns: 310px 310px 310px;
 	justify-content: space-between;
@@ -112,103 +145,103 @@
 
 /*type1*/
 
-.product_type1 {
+.product-type1 {
 	width: 300px;
 	height: 528px;
 	justify-content: center;
 }
 
-.product1_img {
+.product1-img {
 	width: 300px;
 	height: 300px;
 	border-radius: 8px;
 	margin: 0;
 }
 
-.product1_name {
+.product1-name {
 	font-size: 20px;
 	line-height: 30px;
 	padding-top: 20px;
 }
 
-.product1_keyword {
+.product1-keyword {
 	font-size: 13px;
 	color: #aaa;
 	line-height: 18px;
 }
 
-.product1_price {
+.product1-price {
 	font-size: 25px;
 	font-weight: bold;
 }
 
-.product_type1 p {
+.product-type1 p {
 	margin: 10px 0;
 }
 
 /*type2*/
 
-.product_type2 {
+.product-type2 {
 	width: 300px;
 	height: 528px;
 	justify-content: center;
 }
 
-.product2_img {
+.product2-img {
 	width: 300px;
 	height: 300px;
 	border-radius: 8px;
 }
 
-.product2_name {
+.product2-name {
 	font-size: 20px;
 	line-height: 30px;
 	padding-top: 20px;
 }
 
-.product2_discount {
+.product2-discount {
 	font-size: 13px;
 	color: #aaa;
 	line-height: 18px;
 }
 
-.product2_price {
+.product2-price {
 	font-size: 25px;
 	font-weight: bold;
 }
 
-.product_type2 p {
+.product-type2 p {
 	margin: 10px 0;
 }
 
 /*type3*/
 
-.product_type3 {
+.product-type3 {
 	width: 300px;
 	height: 528px;
 	justify-content: center;
 }
 
-.product3_img {
+.product3-img {
 	width: 300px;
 	height: 300px;
 	border-radius: 8px;
 }
 
-.product3_name {
+.product3-name {
 	font-size: 20px;
 	line-height: 30px;
 	padding-top: 20px;
 }
 
-.product_type3 .discount {
+.product-type3 .discount {
 	font-size: 25px;
 	font-weight: bold;
 	color: red;
 	line-height: 25px;
 }
 
-.product_type3 .discount_price {
+.product-type3 .discount-price {
 	font-size: 25px;
 	font-weight: bold;
 	color: #000;
@@ -216,11 +249,11 @@
 	grid-column-start: 3;
 }
 
-.product_type3 p {
+.product-type3 p {
 	margin: 10px 0;
 }
 
-.product_type3 span {
+.product-type3 span {
 	margin: 10px 0;
 }
 
@@ -230,6 +263,6 @@
 	margin-left: 150px;
 }
 
-.product_type3 .material-symbols-outlined {
+.product-type3 .material-symbols-outlined {
 	margin-left: 90px;
 }

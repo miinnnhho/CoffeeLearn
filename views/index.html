@@ -1,88 +1,249 @@
 <html>
-    <head>
-        <title>Test</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%- include('components/head.html') -%>
-        <!-- Cutom CSS & JS -->
-        <link rel="stylesheet" href="/assets/css/main.css" />
-        <script defer src="/assets/js/main.js"></script>
-        <script defer src="/assets/js/totop.js"></script>
-    </head>
-    <body>
-        <%- include('components/header.html') -%>
-        <div>
-            <!-- SECTION : VISUAL-->
-            <section class="visual">
-                <div class="youtube-area">
-                    <div id="player"></div>
-                </div>
-                <div class="youtube-cover"></div>
-                <div class="visual-text">
-                    <h2>커피런의 뛰어난 원두로<br />나만의 커피 취향을 발견해보세요</h2>
-                </div>
-            </section>
+  <head>
+    <title>Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('components/head.html') -%>
+    <!-- Cutom CSS & JS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/totop.js"></script>
+  </head>
+  <body>
+    <%- include('components/header.html') -%>
+    <div>
+      <!-- SECTION : VISUAL-->
+      <section class="visual">
+        <div class="youtube-area">
+          <div id="player"></div>
+        </div>
+        <div class="youtube-cover"></div>
+        <div class="visual-text">
+          <h2>커피런의 뛰어난 원두로<br />나만의 커피 취향을 발견해보세요</h2>
+        </div>
+      </section>
 
-            <!-- 원두 추천 -->
-            <section class="pick">
-                <div class="inner">
-                    <h2>추천 원두 PICK!</h2>
-                    <div class="swiper pick-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><a href="#" class="btn on">첫구매 추천</a></div>
-                            <div class="swiper-slide"><a href="#" class="btn">달콤 쌉싸름</a></div>
-                            <div class="swiper-slide"><a href="#" class="btn">고소함, 구수함</a></div>
-                            <div class="swiper-slide"><a href="#" class="btn">묵직, 달콤한 여운</a></div>
-                            <div class="swiper-slide"><a href="#" class="btn">은은하고 편안한</a></div>
-                            <div class="swiper-slide"><a href="#" class="btn">상큼한 산미와 향</a></div>
-                        </div>
+      <!-- 원두 추천 -->
+      <section class="pick" id="pick">
+        <div class="inner">
+          <div class="title">
+            <h2>추천 원두 PICK!</h2>
+            <a href="items.html">
+              <strong>더보기</strong>
+              <span class="material-icons">arrow_right_alt</span>
+            </a>
+          </div>
+          <div class="pick-tab-box">
+            <div class="pick-tab"><a href="#" class="btn on" data-taste="달콤 쌉싸름">달콤 쌉싸름</a></div>
+            <div class="pick-tab"><a href="#" class="btn" data-taste="고소함, 구수함">고소함, 구수함</a></div>
+            <div class="pick-tab">
+              <a href="#" class="btn" data-taste="묵직하고 달콤한 여운">묵직하고 달콤한 여운</a>
+            </div>
+            <div class="pick-tab"><a href="#" class="btn" data-taste="은은하고 편안함">은은하고 편안한</a></div>
+            <div class="pick-tab"><a href="#" class="btn" data-taste="상큼한 산미와 향">상큼한 산미와 향</a></div>
+          </div>
+          <div class="item-box" id="pickItemBox">
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_1.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">기분 좋은 쓴맛</strong>
+                  <h3 class="name">[뉴크롭] 인도네시아 만델링 G1 수마트라</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">5,300원</p>
                     </div>
-                    <ul class="main-ul">
-                        <li class="main-list"></li>
-                        <li class="main-list"></li>
-                        <li class="main-list"></li>
-                        <li class="main-list"></li>
-                    </ul>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">5,300원</p>
                 </div>
-            </section>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_2.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">묵직한 바디와 구수한 단맛</strong>
+                  <h3 class="name">[뉴크롭] 베트남 로부스타 G1 Wet Polished SC18</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">2,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">2,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_3.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">스모키함과 좋은 향나무의 아로마</strong>
+                  <h3 class="name">[뉴크롭] 과테말라 SHB 안티구아</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">4,500원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">4,500원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_4.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">강렬한 바디와 기분 좋은 쓴맛</strong>
+                  <h3 class="name">스타 에스프레소</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">3,200원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">3,200원</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- 블렌드 커피만 모았어요! -->
-            <section class="blend">
-                <div class="inner">
-                    <h2>블렌드 커피만 모았어요!</h2>
-                    <ul class="main-ul">
-                        <li class="main-list"></li>
-                        <li class="main-list"></li>
-                        <li class="main-list"></li>
-                        <li class="main-list"></li>
-                    </ul>
+      <!-- 블렌드 커피만 모았어요! -->
+      <section class="blend" id="blend">
+        <div class="inner">
+          <div class="title">
+            <h2>블렌드 커피만 모았어요!</h2>
+            <a href="#">
+              <strong>더보기</strong>
+              <span class="material-icons">arrow_right_alt</span>
+            </a>
+          </div>
+          <div class="item-box" id="blendItemBox">
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_1.jpg" />
                 </div>
-            </section>
+                <div class="detail-box">
+                  <strong class="description">기분 좋은 쓴맛</strong>
+                  <h3 class="name">[뉴크롭] 인도네시아 만델링 G1 수마트라</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">5,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">5,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_2.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">묵직한 바디와 구수한 단맛</strong>
+                  <h3 class="name">[뉴크롭] 베트남 로부스타 G1 Wet Polished SC18</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">2,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">2,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_3.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">스모키함과 좋은 향나무의 아로마</strong>
+                  <h3 class="name">[뉴크롭] 과테말라 SHB 안티구아</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">4,500원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">4,500원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_4.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">강렬한 바디와 기분 좋은 쓴맛</strong>
+                  <h3 class="name">스타 에스프레소</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">3,200원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">3,200원</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- 배너 -->
-            <section class="banner">
-                <div class="inner">
-                    <a href="#">
-                        <h3>커피런에서 다양한 커피를 만나보세요</h3>
-                        <div>
-                            <p>전체 상품 보기</p>
-                            <span class="material-icons">arrow_forward</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
+      <!-- 배너 -->
+      <section class="banner">
+        <div class="inner">
+          <a href="items">
+            <h3>커피런에서 다양한 커피를 만나보세요</h3>
+            <div>
+              <p>전체 상품 보기</p>
+              <span class="material-icons">arrow_right_alt</span>
+            </div>
+          </a>
+        </div>
+      </section>
 
-            <!-- 나라별 커피 -->
-            <section class="country">
-                <div class="inner">
-                    <h2>나라별 커피원두</h2>
-                    <ul class="country-ul">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </section>
+      <!-- 나라별 커피 -->
+      <section class="country">
+        <div class="inner">
+          <div class="title">
+            <h2>나라별 커피원두</h2>
+            <a href="#">
+              <strong>더보기</strong>
+              <span class="material-icons">arrow_right_alt</span>
+            </a>
+          </div>
+          <ul class="country-ul">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </section>
 
             <section class="gift">
                 <div class="swiper gift-swiper">

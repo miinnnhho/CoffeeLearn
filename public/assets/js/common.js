@@ -11,10 +11,10 @@ function setHeaderClass() {
     const searchParams = new URLSearchParams(window.location.search);
     const header = document.getElementById('header');
 
-    if (path.includes('/items') || path.includes('/admin') || searchParams.toString() !== '') {
-        const className = path.substr(1).split('?')[0] + '-header';
-        header.classList.add(className);
-    }
+  if (path.includes('/items') || path.includes('/admin') || searchParams.toString() !== '') {
+    const className = path.slice(1).split('?')[0] + '-header'; // Replaced substr with slice
+    header.classList.add(className);
+  }
 }
 
 async function getProducts() {
