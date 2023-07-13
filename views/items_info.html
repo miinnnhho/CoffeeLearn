@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('head.html') -%>
+  <%- include('components/head.html') -%>
     <title>Coffee Learn</title>
 
     <!-- Open Graph -->
@@ -31,10 +31,7 @@
     <link rel="stylesheet" href="/public/assets/css/items_info.css" />
 
     <!-- JS -->
-    <script defer src="./js/header.js"></script>
-    <script defer src="./js/footer.js"></script>
-    <script defer src="./js/totop.js"></script>
-    <script defer src="/public/assets/js/items_info.js"></script>
+    <script defer src="/assets/js/items_info.js"></script>
 
 </head>
 
@@ -46,7 +43,7 @@
     <!--sub-top-->
 
     <div class="sub-top">
-      <div class="sub-top-img"><img src="/public/assets/img/item_main_1.jpg" alt="item_main_1"></div>
+      <div class="sub-top-img"><img src="/assets/img/item_main_1.jpg" alt="item_main_1"></div>
 
       <div class="sub-top-detail">
         <span class="items-name">상품명을 여기에 적어주세요.</span><br>
@@ -89,8 +86,18 @@
     </div>
     <!-- footer -->
     <%- include('components/footer.html') -%>
-      <!-- top버튼 -->
-      <%- include('components/totop.html') -%>
+    <!-- top버튼 -->
+    <%- include('components/totop.html') -%>
+
+    <script>
+      const productId = "<%= productId %>";
+      console.log(productId);
+      // 1. productId에 해당하는 상세 페이지 데이터를 호출
+      // 1-1. search params
+      // 1-2. ejs value
+      // 2. 불러온 상세 페이지 데이터를 이용해서 화면에 그려주고
+      // getProducts(productId);
+    </script>
 </body>
 
 </html>

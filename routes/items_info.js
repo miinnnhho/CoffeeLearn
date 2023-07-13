@@ -1,9 +1,10 @@
-import express from 'express';
+import express from "express";
 
 const router = express.Router();
 
-router.get('/', function (req, res) {
-  res.render('items_info');
+router.get("/:productId", function (req, res) {
+  const productId = req.params.productId;
+  res.render("items_info", { productId });
 });
 
 export default router;

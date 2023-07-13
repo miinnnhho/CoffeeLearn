@@ -1,16 +1,15 @@
-// 상품 불러오기 
+// 상품 불러오기
 
 async function getProducts() {
   try {
-    const response = await fetch('/assets/products.json');
+    const response = await fetch("/assets/products.json");
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('상품을 가져오는 동안 오류가 발생했습니다:', error);
+    console.error("상품을 가져오는 동안 오류가 발생했습니다:", error);
     return [];
   }
 }
-
 
 /*
 // 상품 목록 표시 (상품 선택 전)
@@ -67,8 +66,9 @@ var amountCount = document.querySelector(".amount-count");
 var count = 1;
 
 // '+', '-' 버튼에 클릭 이벤트를 추가합니다
-downBtn.addEventListener('click', function () {
-  if (count > 1) { // 수량이 1보다 클 때만 감소
+downBtn.addEventListener("click", function () {
+  if (count > 1) {
+    // 수량이 1보다 클 때만 감소
     count--;
     amountCount.textContent = count;
 
@@ -79,7 +79,7 @@ downBtn.addEventListener('click', function () {
   }
 });
 
-upBtn.addEventListener('click', function () {
+upBtn.addEventListener("click", function () {
   count++;
   amountCount.textContent = count;
 
@@ -97,16 +97,10 @@ var itemPrice = 3400; // 이 값을 실제 상품 가격으로 변경하세요.
 // 초기 주문 합계를 설정합니다.
 var count = 1;
 
-document.querySelector('.items-discount').textContent = product.discount + '%';
-document.querySelector('.items-price').textContent = product.price + '원';
+document.querySelector(".items-discount").textContent = product.discount + "%";
+document.querySelector(".items-price").textContent = product.price + "원";
 
 // 상품 가격 변수 업데이트
 itemPrice = product.price;
 
-
 displayProductDetails();
-
-
-
-
-
