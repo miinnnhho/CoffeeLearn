@@ -1,55 +1,39 @@
-// URL에서 상품 ID 가져오기
-const productId = getProductIdFromURL();
+// 아이디 추출
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
 
-// 상품 정보 가져오기
-fetchProductDetails(productId)
-    .then((product) => {
-        // 상품 정보를 사용하여 페이지 업데이트
-        updatePageWithProductDetails(product);
-    })
-    .catch((error) => {
-        console.error(error);
-        alert('상품 정보를 가져오는 중에 오류가 발생했습니다.');
-    });
-
-// URL에서 상품 ID를 추출하는 함수
-function getProductIdFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('id');
-}
-
-// 상품 상세 정보를 가져오는 함수
+// 서버에 데이터 요청
 async function fetchProductDetails(productId) {
-    const res = await fetch(`/api/products/${productId}`);
-    if (!res.ok) {
-        throw new Error('상품 정보를 가져오는 중에 오류가 발생했습니다.');
+    try {
+        const res = await fetch(`/assets/data/products.json/${productId}`);
+        if (!res.ok) {
+            throw new Error('상품 정보를 불러올 수 없습니다.');
+        }
+        const productDetails = await res.json();
+        return productDetails;
+    } catch (error) {
+        console.error(error);
+        // 오류 처리
     }
-    const product = await res.json();
-    return product;
 }
 
-// 페이지를 상품 상세 정보로 업데이트하는 함수
-function updatePageWithProductDetails(product) {
-    const selectCategory = document.querySelector('.select-category');
-    const selectTaste = document.querySelector('.select-taste');
-    const selectOrigin = document.querySelector('.select-origin');
-    const inputName = document.querySelector('.input-name');
-    const inputPrice = document.querySelector('.input-price');
-    const inputAmounut = document.querySelector('.input-amount');
-    const inputMainImg = document.querySelector('.input-main-img');
-    const inputSubImg = document.querySelector('.input-sub-img');
-    const inputDescription = document.querySelector('.input-description');
-    const selectShow = document.querySelector('.select-show');
+// 폼에 정보 채우기
+async function fillFormWithProductDetails() {
+    const productDetails = await fetchProductDetails(productId);
 
-    selectCategory.value = product.category;
-    selectTaste.value = product.taste;
-    selectOrigin.value = product.origin;
-    inputName.value = product.name;
-    inputPrice.value = product.price;
-    inputAmounut.value = product.price;
-    inputMainImg.value = product.mainImg;
-    inputSubImg.value = product.subImg;
-    inputDescription.value = product.description;
-    selectShow.value = product.show;
+    const form = document.querySelector('#addItemForm');
+    form.querySelector('.select-category').value = productDetails.category;
+    form.querySelector('.select-taste').value = productDetails.taste;
+    form.querySelector('.select-origin').value = productDetails.origin;
+    form.querySelector('.input-name').value = productDetails.name;
+    form.querySelector('.input-price').value = productDetails.price;
+    form.querySelector('.input-amount').value = productDetails.amount;
+    form.querySelector('.input-main-img').value = productDetails.mainImg;
+    form.querySelector('.input-sub-img').value = productDetails.subImg;
+    form.querySelector('.input-description').value = productDetails.description;
+    form.querySelector('.select-show').value = productDetails.show;
+
 }
 
+// 페이지 로드 시 폼 채우기 함수 실행
+window.addEventListener('DOMContentLoaded', fillFormWithProductDetails);

@@ -1,4 +1,4 @@
-const orderList = document.querySelector('.order-table');
+const orderList = document.querySelector('#orderList');
 
 //리스트 불러오기
 insertOrderElement();
@@ -42,13 +42,13 @@ async function insertOrderElement() {
                     <td class="price">5300원</td>
                     <td class="order-status">
                         <select>
-                            <option value="1">${orderStatus}</option>
+                            <option value="1" selected>${orderStatus}</option>
                             <option value="2">상품준비중</option>
                             <option value="3">배송준비중</option>
                             <option value="4">배송완료</option>
                         </select>
                     </td>
-                    <td class="cancel-button"><button>주문 취소</button></td>
+                    <td class="cancel-button"><button id = "${orderNumber}">주문 취소</button></td>
                 </tr>
             </tbody>
         `
@@ -63,7 +63,7 @@ async function insertOrderElement() {
                 const eventTarget = e.target;
                 if (window.confirm('해당 주문을 취소하시겠습니까?')) {
                     eventTarget.parentNode.parentNode.remove();
-                    const apiUrl = `/api/products/${e.target.id}`;
+                    const apiUrl = `/api/orders/${e.target.id}`;
                     const res = await fetch(apiUrl, {
                         method: 'POST',
                     });

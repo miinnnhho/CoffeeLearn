@@ -29,7 +29,7 @@ async function insertProductElement() {
             <tr>
                 <td>${productNumber}</td>
                 <td>${categoryName}</td>
-                <td><a href="#" class="product-name" style="text-decoration:underline">${productName}</a></td>
+                <td><a href="/admin/productdetails" class="product-name" data-product-id="${productNumber}" style="text-decoration: underline">${productName}</a></td>
                 <td>${productPrice}</td>
                 <td><button id="${productNumber}" class="delete-button">상품삭제</button></td>
             </tr>
@@ -58,15 +58,17 @@ async function insertProductElement() {
             });
         });
 
-        const productNames = document.querySelectorAll('.product-name');
+        //상품 상세페이지 이동
 
-        productNames.forEach((productName) => {
-            productName.addEventListener('click', (e) => {
+        const productNames = document.querySelectorAll('.product-name');
+        console.log(productNames);
+
+        productNames.forEach((productLink) => {
+            productLink.addEventListener('click', (e) => {
                 e.preventDefault();
-                const productId = e.target.getAttribute('data-id');
-                // 상품 고유 식별자(ID) 가져오기
-                // 제품 상세 정보 페이지로 이동하는 코드 작성
-                window.location.href = `products/${productId}`;
+                const productId = e.target.dataset.productId; // 상품 아이디 가져오기
+                const url = `/admin/productdetails/${productId}`; // 상세 페이지 URL 생성
+                window.location.href = url; // 상세 페이지로 이동
             });
         });
     } catch (error) {

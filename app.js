@@ -26,7 +26,7 @@ app.use('/admin/additem', addProductRouter);
 app.use('/admin/product', productListRouter);
 app.use('/admin/category', categoryListRouter);
 app.use('/admin/order', orderListRouter);
-app.use('/admin/productdetails', productDetailsRouter);
+app.use('/admin/productdetails/id', productDetailsRouter);
 app.use('/admin/addcategory', addCategoryRouter);
 app.listen(PORT, () => {
     console.log(`✅ Server listening on port ${PORT}`);
