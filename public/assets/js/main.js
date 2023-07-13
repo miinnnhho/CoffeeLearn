@@ -5,6 +5,11 @@ async function getProducts() {
   return data;
 }
 
+// 커피 카테고리인지 확인
+function isCoffeeCategory(product) {
+  return product.category === '커피';
+}
+
 // 공통 함수: 상품 이미지 경로 생성
 function getProductImageSrc(productId) {
   return `/assets/img/items/item_main_${productId}.jpg`;
@@ -13,49 +18,6 @@ function getProductImageSrc(productId) {
 // 공통 함수: 상품 가격 표시 HTML 생성
 function generatePriceHTML(price, category) {
   return category !== '커피' ? `<p class="price">${price.toLocaleString()}원</p>` : '';
-}
-
-// 공통 함수: 상품 할인 가격 계산
-function calculateSalePrice(product) {
-  const salePercent = product.salePercent;
-  const price = product.price;
-  const salePrice = price - (price * salePercent) / 100;
-  return salePrice;
-}
-
-// 공통 함수: 상품 HTML 요소 생성
-function createProductElement(product, itemBoxId) {
-  const mainImgSrc = getProductImageSrc(product.id);
-  const salePrice = calculateSalePrice(product);
-  const originPriceHTML = generatePriceHTML(product.price, product.category);
-  const salePercentHTML = generatePriceHTML(product.salePercent, product.category);
-
-  const itemEl = document.createElement('div');
-  itemEl.className = 'item-list';
-
-  const itemLink = document.createElement('a');
-  itemLink.href = `items_info?id=${product.id}`;
-
-  itemLink.innerHTML = `
-    <div class="img-box">
-      <img class="main-img" src="${mainImgSrc}" />
-    </div>
-    <div class="detail-box">
-      <strong class="description">${product.description}</strong>
-      <h3 class="name">${product.name}</h3>
-      <div class="details">
-        <div class="sale-box">
-          ${salePercentHTML}
-          <p class="sale-price"> ${salePrice.toLocaleString()}원</p>
-        </div>
-        <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-      </div>
-      ${originPriceHTML}
-    </div>
-  `;
-
-  itemEl.appendChild(itemLink);
-  document.getElementById(itemBoxId).appendChild(itemEl);
 }
 
 // 공통 함수: 상품 목록 표시
@@ -71,10 +33,62 @@ function displayProductList(products, itemBoxId, condition) {
   });
 }
 
+// 공통 함수: 상품 할인 가격 계산
+function calculateSalePrice(product) {
+  const salePercent = product.salePercent;
+  const price = product.price;
+  const salePrice = price - (price * salePercent) / 100;
+  return salePrice;
+}
 
-// 커피 카테고리인지 확인
-function isCoffeeCategory(product) {
-  return product.category === '커피';
+// 공통 함수: 상품 HTML 요소 생성
+function createProductElement(product, itemBoxId) {
+  const mainImgSrc = getProductImageSrc(product.id);
+  const amountCount = 1;
+  const salePrice = calculateSalePrice(product, amountCount);
+  const originPriceHTML = generatePriceHTML(product.price, product.category);
+  const salePercentHTML = generatePriceHTML(product.salePercent, product.category);
+
+  const itemEl = document.createElement('div');
+  itemEl.classList.add('item-list');
+
+  const itemLink = document.createElement('a');
+  itemLink.href = `items_info?id=${product.id}`;
+
+  itemLink.innerHTML = `
+    <div class="img-box">
+      <img class="main-img" src="${mainImgSrc}" />
+    </div>
+    <div class="detail-box">
+      <strong class="description">${product.description}</strong>
+      <h3 class="name">${product.name}</h3>
+    </div>
+  `;
+
+  const priceBox = document.createElement('div');
+  priceBox.classList.add('price-box');
+  priceBox.innerHTML = `
+    <div class="details">
+      <p class="sale-price">${salePrice.toLocaleString()}원</p>
+      <button class="cart-btn">
+        <span class="material-symbols-outlined">shopping_cart</span>
+      </button>
+      ${product.salePercent === 0 ? originPriceHTML : salePercentHTML}
+    </div>
+  `;
+
+  itemEl.appendChild(itemLink);
+  itemEl.appendChild(priceBox);
+  document.getElementById(itemBoxId).appendChild(itemEl);
+
+  // cart-btn 클릭 이벤트 처리
+  const cartBtn = itemEl.querySelector('.cart-btn');
+  cartBtn.addEventListener('click', () => {
+    const productName = itemEl.querySelector('.name').textContent;
+    const salePrice = parseFloat(itemEl.querySelector('.sale-price').textContent.replace(/,/g, ''));
+    showCartModal(productName, salePrice);
+    addModalOnClass();
+  });
 }
 
 // 탭을 클릭했을 때 맛 분류에 따라 상품 표시
@@ -111,7 +125,7 @@ function displayOriginItems(products, origin, originId) {
     const mainImgSrc = getProductImageSrc(product.id);
 
     const originItem = document.createElement('li');
-    originItem.className = 'origin-item-list';
+    originItem.classList.add('origin-item-list');
 
     const itemLink = document.createElement('a');
     itemLink.href = `items_info?id=${product.id}`;
@@ -121,10 +135,14 @@ function displayOriginItems(products, origin, originId) {
         <img src="${mainImgSrc}" alt="${product.name}" />
       </div>
       <p class="item-name">${product.name}</p>
-      <button class="cart-btn small"><span class="material-symbols-outlined">shopping_cart</span></button>
     `;
+    
+    const cartBtn = document.createElement('button');
+    cartBtn.classList.add('cart-btn', 'small')
+    cartBtn.innerHTML = `<span class="material-symbols-outlined">shopping_cart</span>`
 
     originItem.appendChild(itemLink);
+    originItem.appendChild(cartBtn);
     originItems.appendChild(originItem);
   });
 }

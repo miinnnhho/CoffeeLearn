@@ -1,135 +1,141 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
+  <title>Test</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%- include('components/head.html') -%>
+    <!-- Cutom CSS & JS -->
     <link rel="stylesheet" href="/assets/css/items.css" />
+    <link rel="stylesheet" href="/assets/css/tab.css" />
+    <script defer src="/assets/js/test.js"></script>
+    <script defer src="/assets/js/totop.js"></script>
 </head>
 
 <body>
   <!--header-->
   <%- include('components/header.html') -%>
-
-    <!--banner-->
-    <div class="banner">
-      <h1>전체보기</h1>
-      <div class="box">
-        <img src="/assets/img/banner.png" alt="banner">
+    <!-- 모든 아이템보기 -->
+    <section class="pick" id="pick">
+      <!--banner-->
+      <div class="banner">
+        <h1>전체보기</h1>
+        <div class="box">
+          <img src="/assets/img/banner.png" alt="banner">
+        </div>
       </div>
-    </div>
-
-    <!--main-->
-    <container class="items">
-      <!--items가 전체 main 부분에서 제일 부모 요소 -->
-      <div class="inner">
-
-        <!--side menu-->
-
-        <div class="side-menu">
-          <h3>카테고리</h3>
-          <div class="side-menu-border"></div>
-          <div class="menu">
-            <a href="items_category.html">
-              <div class="material-symbols-outlined">forward</div>
+      <!--상품 리스트 갯수 및 리스트 옵션-->
+      <div class="item-head">
+        <span class="item-num">총 000개의 상품이 있습니다.</span>
+        <span class="select-box">
+          <select name="order" id="order">
+            <option value="30개씩보기">30개씩보기</option>
+            <option value="20개씩보기">20개씩보기</option>
+            <option value="10개씩보기">10개씩보기</option>
+          </select>
+        </span>
+      </div>
+      <!--전체 메인 섹션-->
+      <div class="container">
+        <div class="tab-box">
+          <!-- 맛 선택 -->
+          <div class="tab-box1">
+            <h3>카테고리</h3>
+            <div class="tab-border"></div>
+            <a href="http://localhost:3000/items_list_coffee" target="_self">
+              <div id="coffee_link" class="material-symbols-outlined">forward</div>
               <p class="menu-1">추천원두 모아보기</p>
             </a>
-            <a href="items_category.html"> <!--여기 파라미터 넣는 방법 물어보기 ㅋㅋㅋ-->
-              <div class="material-symbols-outlined">forward</div>
+            <a href="http://localhost:3000/items_list_gift" target="_self">
+              <div id="gift_link" class="material-symbols-outlined">forward</div>
               <p class="menu-2">선물세트 모아보기</p>
             </a>
           </div>
         </div>
-
-        <!--container-->
-        <div class="container">
-          <div class="container-head">
-            <span class="product-num">총 000개의 상품이 있습니다.</span>
-            <span class="select-box">
-              <select name="order" id="order">
-                <option value="30개씩보기">30개씩보기</option>
-                <option value="20개씩보기">20개씩보기</option>
-                <option value="10개씩보기">10개씩보기</option>
-              </select>
-            </span>
-            <div class="container-border"></div>
-          </div>
-
-          <div class="container-main">
-            <div class="container-box">
-
-              <!--type1-->
-              <div class="product-type1">
-                <div> <img class="product1-img" src="/public/assets/img/item_main_1.jpg" alt="item_main_1"></div>
-                <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <p class="product1-keyword">#해시태그 입력하세요</p>
-                <spanp class="product1-price"> 3,400원</spanp><span
-                  class="material-symbols-outlined">shopping_cart</span>
-              </div>
-              <div class="product-type1">
-                <div> <img class="product1-img" src="/public/assets/img/item_main_2.jpg" alt="item_main_2"></div>
-                <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <p class="product1-keyword">#해시태그 입력하세요</p>
-                <span class="product1-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-              <div class="product-type1">
-                <div> <img class="product1-img" src="/public/assets/img/item_main_3.jpg" alt="item_main_3"></div>
-                <p class="product1-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <p class="product1-keyword">#해시태그 입력하세요</p>
-                <span class="product1-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-
-              <!--type2-->
-              <div class="product-type2">
-                <div> <img class="product2-img" src="/public/assets/img/item_main_4.jpg" alt="item_main_4"></div>
-                <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <p class="product2-discount">#해시태그 입력하세요</p>
-                <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-              <div class="product-type2">
-                <div> <img class="product2-img" src="/public/assets/img/item_main_5.jpg" alt="item_main_5"></div>
-                <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <p class="product2-discount">#해시태그 입력하세요</p>
-                <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-              <div class="product-type2">
-                <div> <img class="product2-img" src="/public/assets/img/item_main_6.jpg" alt="item_main_6"></div>
-                <p class="product2-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <p class="product2-discount">#해시태그 입력하세요</p>
-                <span class="product2-price"> 3,400원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-
-              <!--type3-->
-              <div class="product-type3">
-                <div> <img class="product3-img" src="/public/assets/img/item_main_7.jpg" alt="item_main_7"></div>
-                <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <span class="discount">30%</span>
-                <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-              <div class="product-type3">
-                <div> <img class="product3-img" src="/public/assets/img/item_main_8.jpg" alt="item_main_8"></div>
-                <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <span class="discount">30%</span>
-                <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
-              <div class="product-type3">
-                <div> <img class="product3-img" src="/public/assets/img/item_main_9.jpg" alt="item_main_9"></div>
-                <p class="product3-name">상품명 입력해주세요 <br> 두 줄을 기본으로 합니다.</p>
-                <span class="discount">30%</span>
-                <span class="discount-price">3,500원</span><span class="material-symbols-outlined">shopping_cart</span>
-              </div>
+        <!--상품 리스트-->
+        <div class="item-box" id="pickItemBox">
+          <div class="item-wrap">
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_1.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">기분 좋은 쓴맛</strong>
+                  <h3 class="name">[뉴크롭] 인도네시아 만델링 G1 수마트라</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">5,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">5,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_2.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">묵직한 바디와 구수한 단맛</strong>
+                  <h3 class="name">[뉴크롭] 베트남 로부스타 G1 Wet Polished SC18</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">2,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">2,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_3.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">스모키함과 좋은 향나무의 아로마</strong>
+                  <h3 class="name">[뉴크롭] 과테말라 SHB 안티구아</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">4,500원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">4,500원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_4.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">강렬한 바디와 기분 좋은 쓴맛</strong>
+                  <h3 class="name">스타 에스프레소</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">3,200원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">3,200원</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </container>
-
-    <!--footer-->
-    <div id="to-top">
-      <div class="material-icons">arrow_upward</div>
-    </div>
-    <%- include('components/footer.html') -%>
+    </section>
+    <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
 </body>
 
 </html>

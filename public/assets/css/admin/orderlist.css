@@ -2,20 +2,22 @@ body {
     font-family: "Noto Sans KR", sans-serif;
   }
   
-  #content-wrap {
+  #contentWrap {
     width: 1280px;
-    margin: 100px auto 0;
+    margin: 60px auto 0;
     display: flex;
     justify-content: space-between;
+    min-height: calc(100vh - 310px);
   }
   /* 오른쪽 컨텐츠 */
-  #content-box {
+  #rigthBox {
     width: 976px;
   }
   
   .order-stepbox > p {
     font-weight: 600;
     font-size: 20px;
+    margin: 0;
   }
   .order-step {
     width: 976px;
@@ -48,10 +50,11 @@ body {
   
   /* 리스트 부분 */
   
-  .order-table{
+  #orderList{
       margin-top: 60px;
       background-color: #fafafa;
       width: 100%;
+      border-spacing: 0;
   }
   thead{
       height: 30px;
@@ -86,7 +89,10 @@ body {
   }
   .order-status select{
       height:32px;
+      font-family: "Noto Sans KR", sans-serif;
   }
   .refund-request button{
       height: 32px;
+      font-family: "Noto Sans KR", sans-serif;
   }
+ 

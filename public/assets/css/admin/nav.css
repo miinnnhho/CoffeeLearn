@@ -1,14 +1,18 @@
 /* 왼쪽 nav 영역 */
 .left-nav {
   width: 144px;
+  margin: 0;
 }
 .left-nav ul {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 0;
+  list-style: none;
 }
 .left-nav > ul > li {
   margin-bottom: 30px;
+  list-style: none;
 }
 
 .left-nav ul li > span {
@@ -26,5 +30,5 @@
 }
 .depth1 li a {
   text-decoration: none;
-  color: #000;
+  color: #5C5C5C;
 }
