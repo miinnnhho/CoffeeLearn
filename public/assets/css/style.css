@@ -154,17 +154,17 @@ section h2 {
   background-color: #333;
   overflow: hidden;
 }
-.visual .youtube-area {
+.visual .video-area {
   width: 1920px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.visual .youtube-area video {
+.visual .video-area video {
   width: 100%;
 }
-.visual .youtube-cover {
+.visual .video-cover {
   background-image: url('/assets/img/video_cover_pattern.png');
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0.7;
@@ -174,7 +174,7 @@ section h2 {
   height: 100%;
   position: relative;
 }
-.visual .youtube-cover .text {
+.visual .video-cover .text {
   width: 100%;
   max-width: 1280px;
   position: absolute;
@@ -183,7 +183,7 @@ section h2 {
   margin: auto;
   bottom: 12.5em;
 }
-.visual .youtube-cover .text h2 {
+.visual .video-cover .text h2 {
   color: #fff;
   font-weight: 300;
   text-align: left;
@@ -239,6 +239,7 @@ section h2 {
 }
 
 /* ORIGIN 섹션 */
+/* ORIGIN SECTION */
 .origin-ul {
   display: flex;
   justify-content: space-between;
@@ -258,14 +259,37 @@ section h2 {
 .origin-ul > li:last-child {
   margin-right: 0;
 }
-.origin-ul .img-wrap {
+/* origin-img-wrap */
+/* ORIGIN SECTION */
+.origin-ul {
+  display: flex;
+  justify-content: space-between;
+}
+.origin-ul > li {
+  width: 90%;
+  height: 500px;
+  margin-right: 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.origin-ul > li:last-child {
+  margin-right: 0;
+}
+/* origin-img-wrap */
+.origin-ul .origin-img-wrap {
+  display: block;
   position: relative;
   width: 100%;
   height: 60%;
   overflow: hidden;
   display: flex;
 }
-.origin-ul > li .origin-img {
+.origin-ul .origin-img-wrap .origin-img {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -285,7 +309,7 @@ section h2 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/origin_asia.jpg);
 }
 .origin-ul .origin-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .origins .text-wrap h3 {
   position: absolute;
@@ -306,25 +330,19 @@ section h2 {
   justify-content: space-between;
 }
 .origin-item-list {
+  width: 100%;
   position: relative;
   border-radius: 10px;
   border: 1px solid #ddd;
   overflow: hidden;
 }
-.origin-item-list > div {
+.origin-item-list a {
   display: block;
   display: flex;
   align-items: center;
-  position: relative;
 }
 .prod-img {
   overflow: hidden;
-  margin-right: 10px;
-}
-.origin-item-list .cart-btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 .prod-img img {
   width: 80px;
@@ -334,7 +352,7 @@ section h2 {
 .origin-item-list a:hover {
   color: #288341;
 }
-.origin-item-list:hover .prod-img img {
+.origin-item-list a:hover .prod-img img {
   transform: scale(1.1);
 }
 .origin-item-list .item-name {
@@ -343,6 +361,11 @@ section h2 {
   height: 100%;
   font-weight: bold;
   word-break: keep-all;
+}
+.cart-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* 선물추천 섹션 */
