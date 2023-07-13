@@ -1,17 +1,63 @@
-// document
-//   .getElementById("register_form") //form(register_form)
-//   .addEventListener("submit", async (e) => {
-//     e.preventDefault();
-//     const userId = document.getElementById("id").value; //input(id)
-//     const password = document.getElementById("pw").value; //input(pw)
-//     const phone_number = document.getElementById("phone_number").value; //input(phone_number)
-//     const name = document.getElementById("name").value; //input(name)
-//     const address = document.getElementById("address").value; //input(address)
-//     const detailed_address = document.getElementById("detailed_address").value; //input(detailed_address)
+const userId = document.getElementById('id');
+const userPw = document.getElementById('pw');
+// const userPwCheck = document.getElementById('pwCheck');
+const userName = document.getElementById('name');
+const userPhone_number = document.getElementById('phoneNumber');
+const userAddress = document.getElementById('address');
+const userdetailedAddress = document.getElementById('detailedAddress');
 
-//     await registerUser({userId, password, phone_number, name, address, detailed_address});
-    
-//   });
+const submitBtn = document.querySelector('.btn1');
+
+// submitBtn.addEventListener('click', register);
+
+// async function register() {
+// const req = {
+//     email: userId.value,
+//     password: userPw.value,
+//     // passwordCheck: userPwCheck.value, 필요없으면 빼기
+//     name: userName.value,
+//     phone: userPhone_number.value,
+//     addr: userAddress.value + ' ' + userdetailedAddress.value,
+// };
+// console.log(req);
+//     try {
+//         const responce = await fetch('/user/signup', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(req), //{ email, password, name, phone, addr }
+//         });
+//         // .then((res) => res.json())
+//         // .then((res) => {
+//         const data = await responce.json();
+
+//         if (data.success) {
+//             localStorage.setItem('userId', JSON.stringify(req));
+//             location.href = 'finish_signup'; //성공하면 finish_signup으로 이동
+//         } else {
+//             alert(data.msg);
+//         }
+//     } catch (err) {
+//         console.error('회원가입 중 에러 발생');
+//         alert('회원가입 중 에러 발생');
+//     }
+// }
 
 
-//일부러 주석처리 해논거임!!!
+
+
+// 이거로 로컬에 회원가입정보 들어가는건 확인함
+submitBtn.addEventListener('click', function () {
+    const req = {
+        email: userId.value,
+        password: userPw.value,
+        // passwordCheck: userPwCheck.value, 필요없으면 빼기
+        name: userName.value,
+        phone: userPhone_number.value,
+        addr: userAddress.value + ' ' + userdetailedAddress.value,
+    };
+    console.log(req);
+    localStorage.setItem('userId', JSON.stringify(req));
+    location.href = 'finish_signup';
+});
