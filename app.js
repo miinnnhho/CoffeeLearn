@@ -8,10 +8,10 @@ import orderRouter from './routes/mypage_order.js';
 import practiceAPIRouter from './routes/practiceAPI.js';
 import itemsRouter from './routes/items.js';
 import itemsInfoRouter from './routes/items_info.js';
-import orderCompleteRouter from './routes/order_complete.js';
 import cartRouter from './routes/cart.js';
-import testRouter from './routes/test.js';
 import cartOrderRouter from './routes/cart_order.js';
+import orderCompleteRouter from './routes/order_complete.js';
+import testRouter from './routes/test.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -30,8 +30,8 @@ app.use('/items', itemsRouter);
 app.use('/items_info', itemsInfoRouter);
 app.use('/cart', cartRouter);
 app.use('/cart_order', cartOrderRouter);
-app.use('/order', orderRouter);
 app.use('/order_complete', orderCompleteRouter);
+app.use('/order', orderRouter);
 app.use('/test', testRouter);
 
 app.listen(PORT, () => {
