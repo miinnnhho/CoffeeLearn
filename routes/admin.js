@@ -18,8 +18,9 @@ router.get("/order", function (req, res) {
   res.render("admin/orderlist");
 });
 
-router.get("/productdetails/:id", function (req, res) {
-  res.render("admin/product_details");
+router.get("/productdetails/:productId", function (req, res) {
+  const productId = req.params.productId;
+  res.render("admin/product_details", { productId });
 });
 
 router.get("/addcategory", function (req, res) {
