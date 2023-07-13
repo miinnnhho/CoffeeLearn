@@ -26,7 +26,7 @@ async function insertCategoryElement() {
                 <tr>
                     <td class="category-number">${categoryNumber}</td>
                     <td class="category-name">
-                        <a href="#">${categoryName}</a>
+                        <a href="#" style = "text-decoration:underline">${categoryName}</a>
                     </td>
                     <td class="category-description">${categoryDescription}</td>
                     <td><button class="delete-button">삭제</button></td>

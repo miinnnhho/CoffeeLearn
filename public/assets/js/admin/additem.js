@@ -71,4 +71,3 @@ form.addEventListener('submit', async (e) => {
     const result = await res.json();
     console.log(result);
 });
-
