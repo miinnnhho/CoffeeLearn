@@ -10,6 +10,7 @@
 
         <script defer src="/assets/js/cart.js"></script>
         <script defer src="/assets/js/common.js"></script>
+        <script defer src="/assets/js/cart_save_payment_data.js"></script>
         <style>
             #wrap {
                 min-height: calc(100vh - 250px);
@@ -33,23 +34,12 @@
                         <div class="cart-inner">
                             <div class="cart-wrap">
                                 <div class="cart-header">
-                                    <span>
-                                        <input class="cart-chk-all" type="checkbox" checked />전체선택 <em>4</em>/4
-                                    </span>
                                     <div class="buttons">
-                                        <button class="cart-btn btn-select-clear">선택삭제</button>
                                         <button class="cart-btn btn-all-clear">전체삭제</button>
                                     </div>
                                 </div>
                                 <div class="cart-items">
-                                    <!-- <div class="cart-item">
-                    <p class="no-items"> ☕ 장바구니에 상품이 없습니다. </p>
-                  </div>
-                   -->
                                     <div class="cart-item">
-                                        <div class="check-status">
-                                            <input class="cart-chk" type="checkbox" checked />
-                                        </div>
                                         <div class="cart-details">
                                             <!-- <div class="thum">
                                                 <img src="/assets/img/items/item_main_1.jpg" />
@@ -87,9 +77,9 @@
                             <div class="payment">
                                 <div class="price-total-wrap">
                                     <h2 class="payment-headline">결제 금액</h2>
-                                    <div class="current-price">
+                                    <div class="all-price">
                                         <b>총 결제 금액</b>
-                                        <span><em></em>원</span>
+                                        <span>원</span>
                                     </div>
                                     <div class="origin-price">
                                         <b>상품금액</b>
