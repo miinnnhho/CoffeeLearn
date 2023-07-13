@@ -69,7 +69,7 @@ async function setNav() {
 }
 
 function checkLoginStatus() {
-    const auth_btn = document.querySelector('.authBtn'); //a tag
+    const auth_btn = document.querySelector('.auth-btn'); //a tag
     const btn_span = document.querySelector('.btn-Span'); //버튼
     const isLoggedIn = localStorage.getItem('userId') !== null; //토큰이 있으면
 
