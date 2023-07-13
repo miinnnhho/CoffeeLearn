@@ -12,12 +12,7 @@ async function getProducts() {
 }
 
 
-
-
-
-
-
-
+/*
 // 상품 목록 표시 (상품 선택 전)
 async function displayProductList() {
   const productListElement = document.getElementById('sub-detail');
@@ -60,38 +55,7 @@ async function displayProductDetails(productId) {
 
 // 기본적으로 상품 목록을 표시
 displayProductList();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 //상품 수량 옵션
 // HTML 요소를 선택합니다
@@ -125,8 +89,6 @@ upBtn.addEventListener('click', function () {
   }
 });
 
-
-
 var totalCostElement = document.querySelector(".total-cost");
 
 // 상품의 기본 가격을 설정합니다.
@@ -134,8 +96,6 @@ var itemPrice = 3400; // 이 값을 실제 상품 가격으로 변경하세요.
 
 // 초기 주문 합계를 설정합니다.
 var count = 1;
-
-
 
 document.querySelector('.items-discount').textContent = product.discount + '%';
 document.querySelector('.items-price').textContent = product.price + '원';

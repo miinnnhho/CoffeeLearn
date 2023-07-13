@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="/assets/css/items.css" />
     <link rel="stylesheet" href="/assets/css/items_list.css" />
     <link rel="stylesheet" href="/assets/css/items_info.css" />
-
     <!-- JS -->
     <script defer src="/assets/js/totop.js"></script>
     <script defer src="/assets/js/items_info.js"></script>
-
     <style>
       #wrap {
         min-height: calc(100vh - 250px);
@@ -22,26 +20,17 @@
 </head>
 
 <body>
-
   <!--header-->
   <%- include('components/header.html') -%>
-
     <div id="wrap">
       <!--sub-top-->
-
       <div class="sub-top">
-
         <div class="sub-top-img"><img src="/assets/img/items/item_main_1.jpg" alt="item_main_1"></div>
-
         <div class="sub-detail" id="sub-detail">
-
           <span class="items-name">상품명을 여기에 적어주세요.</span><br>
           <span class="items-discount">31%</span>
           <span class="items-price">3,400원</span><br>
           <span class="delivery-fee">배송비</span><span class="fee-info">택배 3,000원 / 주문시결제(선결제)</span><br>
-
-
-
           <div class="select-box option-select-box" id="optionSelectBox">
             <strong>분쇄 옵션</strong>
             <div class="option-select">
@@ -56,7 +45,6 @@
               </select>
             </div>
           </div>
-
           <div class="select-box amount-select-box" id="amountSelectBox">
             <strong>수량 선택</strong>
             <div class="amount-select" id="amountSelect">
@@ -65,20 +53,15 @@
               <button type="button" aria-label="수량올리기" class="up-btn">+</button>
             </div>
           </div>
-
           <div class="select-box amount-select-box" id="amountSelectBox">
             <strong>합계</strong>
             <div class="total-cost"></div>
           </div>
-
-
           <div class="buy">
             <a href="#" class="cart">장바구니</a>
             <a href="#" class="buy-now">구매하기</a>
           </div>
-
         </div>
-
         <!--tap-->
         <div class="tab-menu out-tab-menu">
           <ul>
