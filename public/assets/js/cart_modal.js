@@ -1,9 +1,12 @@
 // 상품 데이터 호출
-async function getProducts() {
-  const response = await fetch('/assets/products.json');
-  const data = await response.json();
-  return data;
+function getProducts() {
+  return fetch('/assets/products.json').then((res) => res.json());
 }
+
+// async function getProducts() {
+//   const response = await ;
+//   const data = await response.json();
+// }
 
 // 커피 카테고리인지 확인
 function isCoffeeCategory(product) {
@@ -17,10 +20,15 @@ function getProductImageSrc(productId) {
 
 // 공통 함수: 상품 가격 표시 HTML 생성
 function generatePriceHTML(price, category) {
-  return category !== '커피' ? `<p class="price">${price.toLocaleString()}원</p>` : '';
+  if (category === '커피') return "";
+  return `<p class="price">${price.toLocaleString()}원</p>`;
+
+  // return category !== '커피' ? `<p class="price">${price.toLocaleString()}원</p>` : '';
 }
 
 // 공통 함수: 상품 목록 표시
+// itemBoxId 가니라 itemBox 자체도 넣어줄 수 있다.
+// condition은 상품 카테고리인지 아닌지 확인
 function displayProductList(products, itemBoxId, condition) {
   const itemBox = document.getElementById(itemBoxId);
   itemBox.innerHTML = '';
@@ -35,6 +43,10 @@ function displayProductList(products, itemBoxId, condition) {
 
 // 공통 함수: 상품 할인 가격 계산
 function calculateSalePrice(product, amountCount) {
+  // const { price, salePercent } = product;
+  /* 예외처리 생각해서 해보기 */
+  // if (!price) return false;
+  // if (!salePrice) return false;
   const salePercent = product.salePercent;
   const price = product.price;
   const salePrice = price - (price * salePercent) / 100;
@@ -42,6 +54,10 @@ function calculateSalePrice(product, amountCount) {
 }
 
 // 공통 함수: 상품 HTML 요소 생성
+/* 구조분해 활용하기*/
+//const {id, price, category, salePercent} = product;
+//const mainImgSrc = getProductImageSrc(id);
+
 function createProductElement(product, itemBoxId) {
   const mainImgSrc = getProductImageSrc(product.id);
   const amountCount = 1;
