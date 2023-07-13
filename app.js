@@ -5,11 +5,9 @@ import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
 import orderRouter from './routes/mypage_order.js';
-import orderCompleteRouter from './routes/order_complete.js';
 import practiceAPIRouter from './routes/practiceAPI.js';
 import itemsRouter from './routes/items.js';
 import itemsInfoRouter from './routes/items_info.js';
-import orderRouter from './routes/order.js';
 import orderCompleteRouter from './routes/order_complete.js';
 import cartRouter from './routes/cart.js';
 import testRouter from './routes/test.js';
@@ -26,7 +24,6 @@ app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
 app.use('/mypage_order', orderRouter);
-app.use('/order_complete', orderCompleteRouter);
 app.use('/practiceAPI', practiceAPIRouter);
 app.use('/items', itemsRouter);
 app.use('/items_info', itemsInfoRouter);

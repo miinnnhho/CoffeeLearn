@@ -41,15 +41,15 @@
               <div class="select-box amount-select-box" id="amountSelectBox">
                 <strong>수량 선택</strong>
                 <div class="amount-select" id="amountSelect">
-                  <button type="button" aria-label="수량내리기" disabled="" class="down-btn">-</button>
-                  <span class="amount-count">1</span>
+                  <button type="button" aria-label="수량내리기" class="down-btn">-</button>
+                  <span class="amount-count"></span>
                   <button type="button" aria-label="수량올리기" class="up-btn">+</button>
                 </div>
               </div>
             </div>
             <div class="cart-total-price">
               <strong>합계</strong>
-              <div><span class="total-price">2,300</span><span>원</span></div>
+              <div><span class="total-price"></span><span>원</span></div>
             </div>
             <div class="cart-modal-buttons">
               <button type="button" class="btn-cancel"><span>취소</span></button>
@@ -124,7 +124,6 @@
     <!-- footer -->
     <%- include('components/footer.html') -%>
     <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/main_test.js"></script>
     <script src="/assets/js/cart_modal.js"></script>
   </body>
 </html>
