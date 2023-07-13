@@ -5,7 +5,6 @@ import { fileURLToPath } from "url";
 
 import indexRouter from './routes/index.js';
 import myOrderRouter from './routes/mypage_order.js';
-import orderRouter from './routes/order.js';
 import practiceAPIRouter from './routes/practiceAPI.js';
 import itemsRouter from './routes/items.js';
 import itemsInfoRouter from './routes/items_info.js';
@@ -38,7 +37,6 @@ app.use('/practiceAPI', practiceAPIRouter);
 app.use('/cart', cartRouter);
 app.use('/cart_order', cartOrderRouter);
 app.use('/order_complete', orderCompleteRouter);
-app.use('/order', orderRouter);
 app.use('/items', itemsRouter);
 app.use('/items_coffee', itemsCoffeeRouter);
 app.use('/items_gift', itemsGiftRouter);
