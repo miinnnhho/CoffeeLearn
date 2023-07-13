@@ -28,8 +28,6 @@ if (!Array.isArray(data) || data.length === 0) {
         const cartItemTemplate = document.querySelector('.cart-item');
         const newItem = cartItemTemplate.cloneNode(true);
 
-        const chkBox = newItem.querySelector('.cart-chk');
-
         // 상품 이름 업데이트
         const itemName = newItem.querySelector('.item-name');
         itemName.textContent = item.productName;
