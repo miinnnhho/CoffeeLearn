@@ -2,6 +2,8 @@
 // const urlParams = new URLSearchParams(window.location.search);
 // const productId = urlParams.get("id");
 
+const productId = window.location.pathname.split('/').at(-1)
+
 // 서버에 데이터 요청
 async function fetchProductDetails(productId) {
   try {
