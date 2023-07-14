@@ -79,6 +79,7 @@ form.addEventListener('submit', async (e) => {
         alert('에러가 발생했습니다.');
         return;
     }
+    form.reset();
 
     const result = await res.json();
     console.log(result);
