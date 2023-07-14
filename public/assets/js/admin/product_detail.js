@@ -5,7 +5,7 @@ fetch('/assets/data/products.json')
     .then((data) => {
         // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택합니다.
         const product = data.filter((item) => {
-            return item.id === Number(productId);
+            return item.id === productId;
         })[0];
 
         // HTML 폼 요소를 선택하거나 생성하여, 상품 정보를 채웁니다.
