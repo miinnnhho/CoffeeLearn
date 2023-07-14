@@ -16,10 +16,16 @@ form.addEventListener('submit', async (e) => {
 
     const dataJson = JSON.stringify(category);
 
+    const token = localStorage.getItem('token');
+    console.log(token);
+
     const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/categories/admin';
 
     const res = await fetch(apiUrl, {
         method: 'POST',
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
         body: dataJson,
     });
 
