@@ -1,55 +1,31 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
+  <head>
+    <title>커피런</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('components/head.html') -%>
+    <!-- Cutom CSS & JS -->
+    <link rel="stylesheet" href="/assets/css/totop.css" />
+    <link rel="stylesheet" href="/assets/css/items_all.css" />
+    <link rel="stylesheet" href="/assets/css/items_category.css" />
+    <link rel="stylesheet" href="/assets/css/items_info.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('components/head.html') -%>
-    <title>Coffee Learn</title>
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Coffee Learn" />
-    <meta property="og:title" content="Coffee Learn" />
-    <meta property="og:description" content="커피런에서, 커피의 맛을 배우다." />
-    <meta property="og:image" content="./asset/images/coffeeLearn_seo.png" />
-
-    <!-- Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-    <link rel="icon" href="./favicon.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    <link rel="stylesheet" href="/public/assets/css/common.css" />
-    <link rel="stylesheet" href="/public/assets/css/totop.css" />
-    <link rel="stylesheet" href="/public/assets/css/items_all.css" />
-    <link rel="stylesheet" href="/public/assets/css/items_category.css" />
-    <link rel="stylesheet" href="/public/assets/css/items_info.css" />
-
-    <!-- JS -->
-    <script defer src="/assets/js/items_info.js"></script>
-
-</head>
-
-<body>
-  <!--header-->
-  <%- include('components/header.html') -%>
+  <body>
+    <!--header-->
+    <%- include('components/header.html') -%>
     <header></header>
 
     <!--sub-top-->
 
     <div class="sub-top">
-      <div class="sub-top-img"><img src="/assets/img/item_main_1.jpg" alt="item_main_1"></div>
+      <div class="sub-top-img"><img src="/assets/img/item_main_1.jpg" alt="item_main_1" /></div>
 
       <div class="sub-top-detail">
-        <span class="items-name">상품명을 여기에 적어주세요.</span><br>
+        <span class="items-name">상품명을 여기에 적어주세요.</span><br />
         <span class="items-discount">31%</span>
-        <span class="items-price">3,400원</span><br>
-        <span class="delivery-fee">배송비</span><span class="fee-info">택배 3,000원 / 주문시결제(선결제)</span><br>
+        <span class="items-price">3,400원</span><br />
+        <span class="delivery-fee">배송비</span><span class="fee-info">택배 3,000원 / 주문시결제(선결제)</span><br />
         <span class="items-option">옵션</span>
         <select class="grind">
           <option value="value1">=분쇄 옵션 선택=</option>
@@ -68,17 +44,19 @@
         <div class="tab-menu out-tab-menu">
           <ul>
             <li class="btn-con">
-              <input type="radio" checked name="tab-menu" id="tab-menu1">
+              <input type="radio" checked name="tab-menu" id="tab-menu1" />
               <label for="tab-menu1">상품정보</label>
-              <div class="tab-con"><img src="/assets/img/items/item_sub_1.jpg" alt="item_sub_1"></div>
+              <div class="tab-con"><img src="/assets/img/items/item_sub_1.jpg" alt="item_sub_1" /></div>
             </li>
-            <li class="btn-con"><input type="radio" name="tab-menu" id="tab-menu2">
+            <li class="btn-con">
+              <input type="radio" name="tab-menu" id="tab-menu2" />
               <label for="tab-menu2">상품후기(0)</label>
-              <div class="tab-con"><img src="/assets/img/review.png" alt="item_sub_2"> </div>
+              <div class="tab-con"><img src="/assets/img/review.png" alt="item_sub_2" /></div>
             </li>
-            <li class="btn-con"><input type="radio" name="tab-menu" id="tab-menu3">
+            <li class="btn-con">
+              <input type="radio" name="tab-menu" id="tab-menu3" />
               <label for="tab-menu3">상품문의(0)</label>
-              <div class="tab-con"><img src="/assets/img/inquiry.png" alt="item_sub_3"></div>
+              <div class="tab-con"><img src="/assets/img/inquiry.png" alt="item_sub_3" /></div>
             </li>
           </ul>
         </div>
@@ -89,8 +67,10 @@
     <!-- top버튼 -->
     <%- include('components/totop.html') -%>
 
+    <!-- JS -->
+    <script src="/assets/js/items_info.js"></script>
     <script>
-      const productId = "<%= productId %>";
+      const productId = '<%= productId %>';
       console.log(productId);
       // 1. productId에 해당하는 상세 페이지 데이터를 호출
       // 1-1. search params
@@ -98,6 +78,5 @@
       // 2. 불러온 상세 페이지 데이터를 이용해서 화면에 그려주고
       // getProducts(productId);
     </script>
-</body>
-
+  </body>
 </html>
