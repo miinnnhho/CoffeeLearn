@@ -23,7 +23,7 @@ body {
 #addItemForm {
     margin-top: 30px;
 }
-#addItemForm, ul {
+#addItemFormul {
     padding: 0;
 }
 #addItemForm ul li {

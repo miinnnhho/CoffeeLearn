@@ -5,7 +5,7 @@ insertCategoryElement();
 
 async function insertCategoryElement() {
     try {
-        const res = await fetch('/assets/data/categories.json');
+        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/categories');
         if (!res.ok) {
             throw new Error('에러가 발생했습니다.');
         }
@@ -15,7 +15,7 @@ async function insertCategoryElement() {
         console.log(categories);
 
         categories.forEach((category) => {
-            const categoryNumber = category.id;
+            const categoryNumber = category._id;
             const categoryName = category.name;
             const categoryDescription = category.description;
 

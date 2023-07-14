@@ -1,5 +1,5 @@
 let orderList;
-
+const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/mypage/order';
 function getProducts() {
     return fetch('/assets/data/order.json')
         .then((response) => {
@@ -10,6 +10,7 @@ function getProducts() {
         })
         .then((data) => {
             orderList = data;
+            console.log(orderList);
         })
         .catch((error) => {
             console.error('Error fetching product data:', error);
@@ -22,7 +23,7 @@ async function initialize() {
         await getProducts(); // getProducts() 함수를 await하여 데이터를 가져옵니다.
         // 데이터가 할당된 후에 원하는 작업을 수행합니다.
         console.log('Products data has been initialized.');
-        // ...
+        //새로고침 시 7일 자동클릭
         clickSearchBtn();
     } catch (error) {
         console.error('Error initializing products data:', error);
@@ -39,7 +40,7 @@ function clickSearchBtn() {
 
 function getOrdersByDateRange(startDate, endDate) {
     const filteredOrders = orderList.filter(function (order) {
-        return order.orderDate >= startDate && order.orderDate <= endDate;
+        return order.orderDate >= startDate && order.orderDate <= endDate && order.id == 'ehdgns@naver.com';
     });
 
     return filteredOrders;
@@ -131,6 +132,12 @@ function displayOrders(orders) {
         orderAddress.value = address;
         orderDetailedAddress.value = detailedAddress;
         orderContact.value = receiverMessage;
+
+        //수정 버튼 클릭
+        const modifyCompleteBtn = document.querySelector('#modifyComplete');
+        modifyCompleteBtn.addEventListener('click', () => {
+            console.log('click');
+        });
     }
     // 주문 내역의 건수를 가져옵니다.
     const totalOrders = `내역 총 ${orders.length}건`;
@@ -233,4 +240,5 @@ btnYear.addEventListener('click', dateChangeYear); //1년 버튼 클릭 이벤�
 
 // initialize() 함수를 호출하여 초기화 작업을 시작합니다.
 dateChangeWeek();
+
 initialize();

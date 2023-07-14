@@ -109,3 +109,12 @@
     color: #2ecc71;
     font-size: 28px;
 }
+.addr-btn img {
+    width: 35px;
+    height: 30px;
+    margin-left: 8px;
+}
+#address {
+    width: 50%;
+    margin-right: 10px;
+}

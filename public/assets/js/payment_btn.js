@@ -25,8 +25,8 @@ paymentButton.addEventListener('click', function () {
     localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
 
     //  결제 완료 후 처리할 코드 작성: 로컬스토리지 초기화, 페이지 이동
-    // localStorage.removeItem('cartItems');
-    // localStorage.removeItem('paymentItems');
-    // localStorage.removeItem('orderInfo');
+    localStorage.removeItem('cartItems');
+    localStorage.removeItem('paymentItems');
+    localStorage.removeItem('orderInfo');
     window.location.href = '/order_complete';
 });

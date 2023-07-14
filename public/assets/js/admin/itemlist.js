@@ -5,7 +5,7 @@ insertProductElement();
 
 async function insertProductElement() {
     try {
-        const res = await fetch('/assets/data/products.json', {
+        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products', {
             method: 'GET',
         });
         if (!res.ok) {
@@ -17,7 +17,7 @@ async function insertProductElement() {
         console.log(products);
 
         products.forEach((product) => {
-            const productNumber = product.id;
+            const productNumber = product._id;
             const categoryName = product.category;
             const productName = product.name;
             const productPrice = product.price;
@@ -29,7 +29,7 @@ async function insertProductElement() {
             <tr>
                 <td>${productNumber}</td>
                 <td>${categoryName}</td>
-                <td><a href="/admin/productdetails" class="product-name" data-product-id="${productNumber}" style="text-decoration: underline">${productName}</a></td>
+                <td><a href="#" class="product-name" data-product-id="${productNumber}" style="text-decoration: underline">${productName}</a></td>
                 <td>${productPrice}</td>
                 <td><button id="${productNumber}" class="delete-button">상품삭제</button></td>
             </tr>
@@ -47,7 +47,7 @@ async function insertProductElement() {
                 const eventTarget = e.target;
                 if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
                     eventTarget.parentNode.parentNode.remove();
-                    const apiUrl = `/api/products/${e.target.id}`;
+                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/products/admin/${e.target._id}`;
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',
                     });
