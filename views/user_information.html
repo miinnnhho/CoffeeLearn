@@ -64,19 +64,19 @@
                             <tbody>
                                 <tr>
                                     <th><span class="important">이메일</span></th>
-                                    <td><p>이메일 적힘</p></td>
+                                    <td><p class="user-email"></p></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">비밀번호</span></th>
-                                    <td><p>비밀번호 설정</p></td>
+                                    <td><p class="user-password"></p></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">이름</span></th>
-                                    <td><input type="text" value="이름" /></td>
+                                    <td><input type="text" class="user-name" value="이름" /></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">휴대폰번호</span></th>
-                                    <td><input type="text" value="휴대폰번호" /></td>
+                                    <td><input type="text" class="user-phone" value="휴대폰번호" /></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">주소</span></th>
@@ -84,22 +84,18 @@
                                         <input
                                             type="text"
                                             name="address"
-                                            id="address"
+                                            class="user-addr"
                                             autocomplete="off"
                                             required
                                             value="주소적힘"
                                         />
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th><span class="important">상세주소</span></th>
-                                    <td><input type="text" value="상세주소 적힘" /></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="info-button">
-                        <button class="edit-btn" >수정완료</button>
+                        <button class="edit-btn">수정완료</button>
                         <button class="unsubscrib">회원탈퇴</button>
                     </div>
                 </div>
@@ -107,18 +103,19 @@
         </div>
         <%- include('components/footer.html') -%>
     </body>
+    <script src="/assets/js/fetchApi.js"></script>
     <!-- kakao API -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- kakao API -->
     <script src="/assets/js/address_kakao.js"></script>
     <!-- 회원 정보 불러오기 -->
     <!-- 페이지 로드 -> fetchUserInfo로 불러와서 입력필드 채움 -->
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', fetchUserInfo);
-    </script>
+    </script> -->
     <!-- 정보 불러오는 파일 , 탈퇴 -->
     <script src="/assets/js/user_infomation.js"></script>
-    
+    <script src="/assets/js/common.js"></script>
 </html>
 
 <!-- 
