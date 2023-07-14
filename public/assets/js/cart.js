@@ -39,6 +39,7 @@ if (!Array.isArray(data) || data.length === 0) {
         // 상품 가격 업데이트
         const price = newItem.querySelector('.cart-overview-price');
         price.textContent = item.salePrice + ' 원';
+
         // 수량 업데이트
         const amountCount = newItem.querySelector('.amount-count');
         amountCount.textContent = item.amount;
@@ -102,26 +103,31 @@ if (!Array.isArray(data) || data.length === 0) {
         const cartItems = document.querySelectorAll('.cart-item');
         cartItems.forEach((item) => {
             const totalElement = item.querySelector('.price-current-total');
-            const total = parseInt(totalElement.textContent);
+            const total = parseInt(totalElement.innerHTML);
             totalPrice += total;
         });
 
         // 상품금액 업데이트
-        originPrice.textContent = totalPrice + '원';
+        const originPrice = document.querySelector('.origin-price span');
+        originPrice.textContent = totalPrice.toLocaleString() + '원';
 
         // 총 결제 금액 업데이트
+        const totalPriceElement = document.querySelector('.all-price span');
         const totalPayment = totalPrice + deliveryFee;
-        totalPriceElement.textContent = totalPayment + '원';
+        totalPriceElement.textContent = totalPayment.toLocaleString() + '원';
     }
 
     // 항목 전체 삭제 버튼 이벤트 처리
     const allDelBtn = document.querySelector('.btn-all-clear');
     allDelBtn.addEventListener('click', () => {
         localStorage.removeItem('cartItems');
+        const originPrice = document.querySelector('.origin-price span');
+        originPrice.textContent = '원';
+        const totalPriceElement = document.querySelector('.all-price span');
+        totalPriceElement.textContent = '원';
         cartContainer.innerHTML = `<div class="cart-item">
         <p class="no-items"> ☕ 장바구니에 상품이 없습니다. </p>
-      </div>`; // 카트 아이템 컨테이너 비우고 "담은 상품이 없습니다" 메시지 표시
-        updatePaymentInformation(); // 결제 정보 업데이트
+        </div>`; // 카트 아이템 컨테이너 비우고 "담은 상품이 없습니다" 메시지 표시
     });
 
     // 초기 결제 정보 업데이트
