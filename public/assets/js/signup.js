@@ -21,7 +21,7 @@ const req = {
 };
 console.log(req);
     try {
-        const responce = await fetch('/user/signup', {
+        const responce = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,14 +32,13 @@ console.log(req);
         // .then((res) => {
         const data = await responce.json();
 
-        if (data.success) {
+        if (data) {
             localStorage.setItem('userId', JSON.stringify(req));
             location.href = 'finish_signup'; //성공하면 finish_signup으로 이동
         } else {
             alert(data.msg);
         }
     } catch (err) {
-        console.error('회원가입 중 에러 발생');
         alert('회원가입 중 에러 발생');
     }
 }
