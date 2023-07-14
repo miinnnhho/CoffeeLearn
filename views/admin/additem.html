@@ -41,7 +41,6 @@
                         </ul>
                     </li> -->
                 </ul>
-                
             </nav>
             <!-- 오른쪽 컨텐츠영역 -->
             <div id="contentBox">
@@ -50,7 +49,7 @@
                     <p>상품 추가</p>
                 </div>
                 <!-- 인풋 폼 -->
-                <form id="addItemForm" method="get" enctype="multipart/form-data">
+                <form id="addItemForm">
                     <ul>
                         <li>
                             <label>카테고리 선택</label>
@@ -88,11 +87,15 @@
                         </li>
                         <li>
                             <label>가격</label>
-                            <input type="number" class="input-price"  min="1" />
+                            <input type="number" class="input-price" min="1" />
+                        </li>
+                        <li>
+                            <label>할인율</label>
+                            <input type="number" class="input-sale-percent" value="0" />
                         </li>
                         <li>
                             <label>수량</label>
-                            <input type="number" class="input-amount"  min="1" />
+                            <input type="number" class="input-amount" min="1" />
                         </li>
                         <li>
                             <label>이미지</label>
@@ -109,8 +112,8 @@
                         <li>
                             <label>상품노출</label>
                             <select class="select-show" selected>
-                                <option value="예">예</option>
-                                <option value="아니오">아니오</option>
+                                <option value="true">예</option>
+                                <option value="false">아니오</option>
                             </select>
                         </li>
                     </ul>

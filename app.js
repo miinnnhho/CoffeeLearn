@@ -4,7 +4,7 @@ import ejs from 'ejs';
 import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
-import myOrderRouter from './routes/mypage_order.js';
+import mypageRouter from './routes/mypage.js';
 import practiceAPIRouter from './routes/practiceAPI.js';
 import itemsRouter from './routes/items.js';
 import itemsInfoRouter from './routes/items_info.js';
@@ -23,7 +23,7 @@ import adminRouter from './routes/admin.js';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
@@ -31,7 +31,7 @@ app.set('view engine', 'html');
 app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
-app.use('/mypage_order', myOrderRouter);
+app.use('/mypage', mypageRouter);
 app.use('/practiceAPI', practiceAPIRouter);
 app.use('/cart', cartRouter);
 app.use('/cart_order', cartOrderRouter);
