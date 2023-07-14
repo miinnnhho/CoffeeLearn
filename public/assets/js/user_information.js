@@ -18,7 +18,6 @@ async function fetchUserInfo() {
 function fillUserInfo(userInfo) {
     document.getElementById("id").value = userInfo.id;
     document.getElementById("pw").value = userInfo.pw;
-    document.getElementById("pwCheck").value = userInfo.pw;
     document.getElementById("phoneNumber").value = userInfo.phoneNumber;
     document.getElementById("name").value = userInfo.name;
     document.getElementById("address").value = userInfo.address;

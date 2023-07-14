@@ -23,7 +23,6 @@ function createProductElements() {
 }
 
 let paymentItems = JSON.parse(localStorage.getItem('paymentItems'));
-console.log(paymentItems);
 const totalOrderPrice = document.querySelector('#totalOrderPrice');
 const totalProductPrice = document.querySelector('#totalProductPrice');
 const deliveryPrice = document.querySelector('#deliveryPrice');

@@ -1,103 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('components/head.html') -%>
-    <title>Coffee Learn</title>
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Coffee Learn" />
-    <meta property="og:title" content="Coffee Learn" />
-    <meta property="og:description" content="커피런에서, 커피의 맛을 배우다." />
-    <meta property="og:image" content="./asset/images/coffeeLearn_seo.png" />
-
-    <!-- Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-    <link rel="icon" href="./favicon.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    <link rel="stylesheet" href="/public/assets/css/common.css" />
-    <link rel="stylesheet" href="/public/assets/css/totop.css" />
-    <link rel="stylesheet" href="/public/assets/css/items_all.css" />
-    <link rel="stylesheet" href="/public/assets/css/items_category.css" />
-    <link rel="stylesheet" href="/public/assets/css/items_info.css" />
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('components/head.html') -%>
+    <link rel="stylesheet" href="/assets/css/items.css" />
+    <link rel="stylesheet" href="/assets/css/items_info.css" />
     <!-- JS -->
+    <script defer src="/assets/js/totop.js"></script>
     <script defer src="/assets/js/items_info.js"></script>
+    <style>
+      #wrap {
+        min-height: calc(100vh - 250px);
+      }
+    </style>
+  </head>
 
-</head>
-
-<body>
-  <!--header-->
-  <%- include('components/header.html') -%>
-    <header></header>
-
-    <!--sub-top-->
-
-    <div class="sub-top">
-      <div class="sub-top-img"><img src="/assets/img/item_main_1.jpg" alt="item_main_1"></div>
-
-      <div class="sub-top-detail">
-        <span class="items-name">상품명을 여기에 적어주세요.</span><br>
-        <span class="items-discount">31%</span>
-        <span class="items-price">3,400원</span><br>
-        <span class="delivery-fee">배송비</span><span class="fee-info">택배 3,000원 / 주문시결제(선결제)</span><br>
-        <span class="items-option">옵션</span>
-        <select class="grind">
-          <option value="value1">=분쇄 옵션 선택=</option>
-          <option value="value2">원두상태(분쇄안함)</option>
-          <option value="value3">드립용 분쇄(커피메이커 겸용)</option>
-          <option value="value2">모카포트용 분쇄</option>
-          <option value="value3">에스프레소머신용 분쇄</option>
-          <option value="value2">프렌치프레스용 분쇄</option>
-          <option value="value3">더치용 분쇄</option>
-        </select>
-        <div class="buy">
-          <div class="cart">장바구니</div>
-          <div class="buy-now">구매하기</div>
+  <body>
+    <!--header-->
+    <%- include('components/header.html') -%>
+    <div id="wrap">
+      <!--sub-top-->
+      <div class="inner">
+        <div class="sub-top">
+          <div class="sub-top-img"><img src="/assets/img/items/item_main_1.jpg" alt="item_main_1" /></div>
+          <div class="sub-detail" id="sub-detail">
+            <div class="item-name">상품명을 여기에 적어주세요.</div>
+            <div class="item-sale-info">
+              <span class="item-discount">31%</span>
+              <span class="item-price">3,400원</span>
+            </div>
+            <!-- 판매정보(배송비, 분쇄옵션,수량선택, 합계) -->
+            <div class="sale-info-box">
+              <div class="item-delivery-info">
+                <div class="delivery-fee">배송비</div>
+                <div class="fee-info">택배 3,000원 / 주문시결제(선결제)</div>
+              </div>
+              <div class="info-txt option-select-box" id="optionSelectBox">
+                <strong>분쇄 옵션</strong>
+                <div class="option-select">
+                  <select name="optionSnoInput" class="select-menu">
+                    <option value="">= 분쇄 옵션 선택 =</option>
+                    <option value="분쇄 안함(원두상태)">분쇄 안함(원두상태)</option>
+                    <option value="드립용 분쇄(커피메이커 겸용)">드립용 분쇄(커피메이커 겸용)</option>
+                    <option value="모카포트용 분쇄">모카포트용 분쇄</option>
+                    <option value="에스프레소머신용 분쇄">에스프레소머신용 분쇄</option>
+                    <option value="프렌치프레스용 분쇄">프렌치프레스용 분쇄</option>
+                    <option value="더치용 분쇄">더치용 분쇄</option>
+                  </select>
+                </div>
+              </div>
+              <div class="info-txt amount-select-box" id="amountSelectBox">
+                <strong>수량 선택</strong>
+                <div class="amount-select" id="amountSelect">
+                  <button type="button" aria-label="수량내리기" disabled="" class="down-btn">-</button>
+                  <span class="amount-count">1</span>
+                  <button type="button" aria-label="수량올리기" class="up-btn">+</button>
+                </div>
+              </div>
+              <div class="info-txt total-pay-box">
+                <strong>합계</strong>
+                <div class="total-cost"><em>0,000</em><span>원</span></div>
+              </div>
+            </div>
+            <div class="cart-modal-buttons buy-buttons">
+              <button type="button" class="cart" id="carBtn">
+                <span>장바구니</span>
+              </button>
+              <button type="button" class="buy-now" id="buyNowBtn">
+                <span>구매하기</span>
+              </button>
+            </div>
+          </div>
         </div>
         <!--tap-->
         <div class="tab-menu out-tab-menu">
           <ul>
-            <li class="btn-con">
-              <input type="radio" checked name="tab-menu" id="tab-menu1">
+            <li >
+              <input type="radio" checked name="tab-menu" id="tab-menu1" />
               <label for="tab-menu1">상품정보</label>
-              <div class="tab-con"><img src="/assets/img/items/item_sub_1.jpg" alt="item_sub_1"></div>
             </li>
-            <li class="btn-con"><input type="radio" name="tab-menu" id="tab-menu2">
+            <li>
+              <input type="radio" name="tab-menu" id="tab-menu2" />
               <label for="tab-menu2">상품후기(0)</label>
-              <div class="tab-con"><img src="/assets/img/review.png" alt="item_sub_2"> </div>
             </li>
-            <li class="btn-con"><input type="radio" name="tab-menu" id="tab-menu3">
+            <li>
+              <input type="radio" name="tab-menu" id="tab-menu3" />
               <label for="tab-menu3">상품문의(0)</label>
-              <div class="tab-con"><img src="/assets/img/inquiry.png" alt="item_sub_3"></div>
             </li>
           </ul>
+          <div class="tab-content">
+            <div class="tab-con"><img src="/assets/img/items/item_sub_1.jpg" alt="item_sub_1" /></div>
+            <div class="tab-con"><img src="/assets/img/review.png" alt="item_sub_2" /></div>
+            <div class="tab-con"><img src="/assets/img/inquiry.png" alt="item_sub_3" /></div>
+          </div>
         </div>
       </div>
     </div>
     <!-- footer -->
-    <%- include('components/footer.html') -%>
+    <!-- <%- include('components/footer.html') -%> -->
     <!-- top버튼 -->
     <%- include('components/totop.html') -%>
-
-    <script>
-      const productId = "<%= productId %>";
-      console.log(productId);
-      // 1. productId에 해당하는 상세 페이지 데이터를 호출
-      // 1-1. search params
-      // 1-2. ejs value
-      // 2. 불러온 상세 페이지 데이터를 이용해서 화면에 그려주고
-      // getProducts(productId);
-    </script>
-</body>
-
+  </body>
 </html>

@@ -17,9 +17,8 @@ section h2 {
 .title {
 	display: flex;
 	position: relative;
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 	flex-direction: column;
-	height: 200px;
 }
 .title span {
 	font-size: 18px;
