@@ -1,15 +1,13 @@
 <html>
 
 <head>
-  <title>Test</title>
+  <title>커피런</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%- include('components/head.html') -%>
     <!-- Cutom CSS & JS -->
     <link rel="stylesheet" href="/assets/css/items_list.css" />
     <link rel="stylesheet" href="/assets/css/tab.css" />
-    <script defer src="/assets/js/test_copy.js"></script>
-    <script defer src="/assets/js/totop.js"></script>
 </head>
 
 <body>
@@ -23,14 +21,7 @@
       </div>
       <!--상품 리스트 갯수 및 리스트 옵션-->
       <div class="item-head">
-        <span class="item-num">총 000개의 상품이 있습니다.</span>
-        <span class="select-box">
-          <select name="order" id="order">
-            <option value="30개씩보기">30개씩보기</option>
-            <option value="20개씩보기">20개씩보기</option>
-            <option value="10개씩보기">10개씩보기</option>
-          </select>
-        </span>
+        <span class="item-num">☕ 총 <em class="productsCount">00</em>개의 상품이 있습니다.</span>
       </div>
       <!--전체 메인 섹션-->
       <div class="container">
@@ -38,7 +29,6 @@
           <!-- 맛 선택 -->
           <div class="tab-box1">
             <h3>필터</h3>
-            <div class="tab-border"></div>
             <span>맛과 풍미</span>
             <label class="tab-label">
               <input type="radio" name="taste" data-taste="달콤 쌉싸름" />
@@ -193,7 +183,13 @@
         </div>
       </div>
     </section>
-    <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
+    <!-- 푸터 -->
+    <%- include('components/footer.html') -%> 
+    <!-- 탑버튼 -->
+    <%- include('components/totop.html') -%>
+    
+    <script defer src="/assets/js/items_category.js"></script>
+    <script defer src="/assets/js/totop.js"></script>
 </body>
 
 </html>

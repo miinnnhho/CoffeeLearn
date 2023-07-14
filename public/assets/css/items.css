@@ -59,33 +59,26 @@
 .container {
   display: flex;
   position: relative;
-  width: 1280px;
+  justify-content: space-between;
+  width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 /*tab-box - 사이드 탭 메뉴 창 (커피 바로가기 & 선물세트 바로가기 둘다)*/
-.tab-border {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  line-height: 25px;
-  border: 1px solid #ddd;
-  margin: 3px 0;
-}
 .tab-box h3 {
   font-size: 26px;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
 }
 .tab-box1 a {
   display: flex;
   align-items: center;
   padding: 13px 5px;
 }
-.tab-box1 a:hover{
-	color: #288341;
+.tab-box1 a:hover {
+  color: #288341;
 }
 .tab-box1 .material-symbols-outlined {
   margin: 0;
@@ -170,7 +163,7 @@
   margin-top: 50px;
   color: #000;
   padding-bottom: 15px;
-  border-top: 2px solid #ddd;
+  border-top: 1px solid #ddd;
   margin-bottom: 80px;
 }
 .item-box img {
@@ -188,7 +181,7 @@ item-list-border {
   overflow: hidden;
   padding-bottom: 30px;
 }
-.item-list a{
+.item-list a {
   margin-bottom: 20px;
 }
 .item-box a {
@@ -259,7 +252,7 @@ item-list-border {
   align-items: center;
   box-sizing: border-box;
 }
-.item-box .price{
+.item-box .price {
   padding: 0 20px;
 }
 .item-box .sale-price,
@@ -295,39 +288,38 @@ item-list-border {
 }
 
 /* 스크롤 Y높이에 따른 nav위치 고정 */
-.tab-box.on{
-	position: fixed;
-	left: 0;
-	top: 400px;
+.tab-box.on {
+  position: fixed;
+  left: 0;
+  top: 400px;
 }
-.item-box.on{
-	margin-left: 270px;
+.item-box.on {
+  margin-left: 270px;
 }
-
 
 /* 카테고리 페이지 Title 영역 */
 .pick {
-	min-height: calc(100vh - 250px);
-	display: flex;
-	flex-direction: column;
-	max-width: 1280px;
-	margin: 0 auto;
+  min-height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 section h2 {
-	font-size: 40px;
-	font-weight: 600;
-	text-align: center;
-	margin: 40px 0;
-	margin: auto;
-	margin: 50px 0 5px 0;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin: 40px 0;
+  margin: auto;
+  margin: 50px 0 5px 0;
 }
 .title {
-	display: flex;
-	position: relative;
-	margin-bottom: 50px;
-	flex-direction: column;
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+  flex-direction: column;
 }
 .title span {
-	font-size: 18px;
-	text-align: center;
+  font-size: 18px;
+  text-align: center;
 }

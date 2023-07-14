@@ -3,6 +3,11 @@ function getProducts() {
   return fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products').then((res) => res.json());
 }
 
+// 공통 함수: 상품 이미지 경로 생성
+function getProductImageSrc(productId) {
+  return `/assets/img/items/item_main_${productId}.jpg`;
+}
+
 // 공통 함수: 상품 할인가격 표시 Element 생성
 function generatePriceEl(price, category) {
   // 커피 카테고리는 할인하지 않으므로 공백처리
@@ -19,9 +24,9 @@ function calculateSalePrice(product, amountCount) {
 
 // 공통 함수: 상품 Element 생성
 function createProductElement(product, itemBoxId) {
-  const { _id, description, name, price, category, salePercent, mainImg } = product;
+  const { id, description, name, price, category, salePercent } = product;
 
-  const mainImgSrc = mainImg;
+  const mainImgSrc = getProductImageSrc(id);
   const amountCount = 1;
   const salePrice = calculateSalePrice(product, amountCount);
   const originPriceEl = generatePriceEl(price, category);
@@ -31,7 +36,7 @@ function createProductElement(product, itemBoxId) {
   itemEl.classList.add('item-list');
 
   const itemLink = document.createElement('a');
-  itemLink.href = `items_info/${_id}`;
+  itemLink.href = `items_info/${id}`;
 
   itemLink.innerHTML = `
     <div class="img-box">
@@ -118,13 +123,13 @@ function displayOriginItems(products, origin, originId) {
   const filteredProducts = products.filter((product) => product.origin === origin);
 
   filteredProducts.slice(0, 2).forEach((product) => {
-    const mainImgSrc = product.mainImg;
+    const mainImgSrc = getProductImageSrc(product.id);
 
     const originItem = document.createElement('li');
     originItem.classList.add('origin-item-list');
 
     const itemLink = document.createElement('a');
-    itemLink.href = `items_info/${product._id}`;
+    itemLink.href = `items_info/${product.id}`;
 
     itemLink.innerHTML = `
         <div class="prod-img">
@@ -148,13 +153,13 @@ function displayGiftProducts(products) {
 
   giftProducts.slice(0, 5).forEach((product) => {
     const giftSlide = document.createElement('div');
-    giftSlide.classList.add('swiper-slide');
+    giftSlide.className = 'swiper-slide';
 
     const itemLink = document.createElement('a');
-    itemLink.href = `items_info/${product._id}`;
+    itemLink.href = `items_info/${product.id}`;
 
     const giftImage = document.createElement('img');
-    giftImage.src = product.mainImg;
+    giftImage.src = getProductImageSrc(product.id);
     giftImage.alt = `선물세트 추천: ${product.name}`;
 
     itemLink.appendChild(giftImage);
@@ -167,7 +172,6 @@ function displayGiftProducts(products) {
     giftSlide.appendChild(giftName);
   });
 }
-
 
 // 장바구니 모달창 안의 내용 표시
 function showCartModal(productName, salePrice) {

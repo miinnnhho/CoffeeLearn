@@ -200,3 +200,7 @@ ul {
   background: #288341;
   color: #fff;
 }
+
+.option-select-box.on{
+  display: none;
+}
