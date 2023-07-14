@@ -5,7 +5,7 @@ insertOrderElement();
 
 async function insertOrderElement() {
     try {
-        const res = await fetch('/assets/data/admin_order.json', {
+        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/admin/orders', {
             method: 'GET',
         });
         if (!res.ok) {
@@ -59,13 +59,13 @@ async function insertOrderElement() {
         console.log(cancelBtns);
 
         cancelBtns.forEach((cancelBtn) => {
-            cancelBtns.addEventListener('click', async (e) => {
+            cancelBtn.addEventListener('click', async (e) => {
                 const eventTarget = e.target;
                 if (window.confirm('해당 주문을 취소하시겠습니까?')) {
                     eventTarget.parentNode.parentNode.remove();
-                    const apiUrl = `/api/orders/${e.target.id}`;
+                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/admin/orders${e.target._id}`;
                     const res = await fetch(apiUrl, {
-                        method: 'POST',
+                        method: 'DELETE',
                     });
                     if (!res.ok) {
                         throw new Error('주문 취소중 에러가 발생했습니다.');

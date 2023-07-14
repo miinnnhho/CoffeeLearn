@@ -16,7 +16,7 @@ form.addEventListener('submit', async (e) => {
 
     const dataJson = JSON.stringify(category);
 
-    const apiUrl = 'http://localhost:3000/admin/products';
+    const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/categories/admin';
 
     const res = await fetch(apiUrl, {
         method: 'POST',

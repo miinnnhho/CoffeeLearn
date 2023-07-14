@@ -20,6 +20,7 @@ const selectTaste = document.querySelector('.select-taste');
 const selectOrigin = document.querySelector('.select-origin');
 const inputName = document.querySelector('.input-name');
 const inputPrice = document.querySelector('.input-price');
+const inputSalePercent = document.querySelector('.input-sale-percent');
 const inputAmounut = document.querySelector('.input-amount');
 const inputMainImg = document.querySelector('.input-main-img');
 const inputSubImg = document.querySelector('.input-sub-img');
@@ -35,32 +36,43 @@ form.addEventListener('submit', async (e) => {
     const origin = selectOrigin.value;
     const name = inputName.value;
     const price = inputPrice.value;
+    const salePercent = inputSalePercent.value;
     const amount = inputAmounut.value;
-    const mainImg = inputMainImg.value;
-    const subImg = inputSubImg.value;
+    const mainImg = inputMainImg.files[0];
+    console.log(inputMainImg.files[0]);
+    const subImg = inputSubImg.files[0];
     const description = inputDescription.value;
     const show = selectShow.value;
 
-    const product = {
+    const product = JSON.stringify({
         category,
         taste,
         origin,
         name,
         price,
+        salePercent,
         amount,
-        mainImg,
-        subImg,
+        // mainImg,
+        // subImg,
         description,
         show,
-    };
+    });
 
-    const dataJson = JSON.stringify(product);
-
+    const token = localStorage.getItem('token');
+    console.log(token);
     const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/products/admin';
+
+    const payload = new FormData();
+    payload.append('data', product);
+    payload.append('main', mainImg);
+    payload.append('sub', subImg);
 
     const res = await fetch(apiUrl, {
         method: 'POST',
-        body: dataJson,
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+        body: payload,
     });
 
     if (!res.ok) {

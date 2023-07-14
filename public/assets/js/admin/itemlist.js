@@ -17,7 +17,7 @@ async function insertProductElement() {
         console.log(products);
 
         products.forEach((product) => {
-            const productNumber = products;
+            const productNumber = product._id;
             const categoryName = product.category;
             const productName = product.name;
             const productPrice = product.price;
