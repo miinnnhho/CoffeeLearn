@@ -13,27 +13,31 @@ const loginBtn = document.querySelector('.btn1');
 //     location.href = '/';
 // });
 
-
 window.handleLoginSubmit = function (event) {
     event.preventDefault();
 
+    const loginData = {
+        email: useremail.value,
+        password: userpassword.value,
+    };
+
     // 로그인 API 호출 예시
-    fetch('/user/login', {
+    fetch('http://kdt-sw-5-team07.elicecoding.com:3000/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(loginData),
     })
         .then((response) => response.json())
         .then((data) => {
-            if (data.success) {
+            if (data.token) {
                 // 로그인 성공 후 처리
                 localStorage.setItem('token', data.token);
                 window.location.href = '/'; //홈으로 이동
             } else {
                 // 로그인 실패 처리
-                console.error('로그인 실패:', error.message);
+                // console.error('로그인 실패:', error.message);
                 alert('회원정보를 찾을 수 없습니다.');
             }
         });
@@ -62,7 +66,5 @@ window.handleLoginSubmit = function (event) {
         window.location.reload();
     }
 
-    unsubscrib.addEventListener('click', logout);
+    // unsubscrib.addEventListener('click', logout);
 };
-
-
