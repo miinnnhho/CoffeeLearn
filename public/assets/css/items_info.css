@@ -1,155 +1,187 @@
 /*sub-top*/
 .sub-top {
-	display: grid;
-	grid-template-columns: 600px 600px;
-	justify-content: center;
-	padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
 }
 .sub-top-img {
-	width: 600px;
-	height: 600px;
+  width: 40%;
 }
 .sub-top-img img {
-	width: 550px;
-	height: 550px;
-	margin-right: 10px;
+  width: 100%;
 }
 .sub-detail {
-	width: 650px;
-	height: 650px;
-	line-height: 60px;
+  width: 55%;
+  padding-top: 70px;
+  padding-right: 10px;
 }
-.sub-detail .items-name {
-	font-size: 32px;
-	font-weight: 700;
+.sub-detail .item-name {
+  font-size: 32px;
+  font-weight: 700;
 }
-.sub-detail .items-discount {
-	font-size: 30px;
-	font-weight: 700;
-	color: red;
-	width: 65px;
+.sub-detail .item-sale-info {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-.sub-detail .items-price {
-	font-size: 30px;
-	font-weight: 700;
-	width: 120px;
-	margin-left: 20px;
+.sub-detail .item-discount {
+  font-size: 30px;
+  font-weight: 700;
+  color: red;
+  width: 65px;
 }
+.sub-detail .item-price {
+  font-size: 30px;
+  font-weight: 700;
+  width: 120px;
+  margin-left: 20px;
+}
+
+/* 판매정보 */
+.sale-info-box {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+.sub-detail .item-delivery-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .sub-detail .delivery-fee {
-	font-size: 18px;
-	font-weight: 500;
-	color: #555;
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
 }
-.fee-info {
-	margin-left: 50px;
+.option-select-box {
+  display: flex;
+  justify-content: space-between;
 }
 .option-select-box .option-select .select-menu {
-	width: 100%;
-	height: 55px !important;
-	font-size: 16px;
-	font-weight: 500;
-	padding-left: 10px;
-	border: 1px solid #999;
-	border-radius: 5px;
-	outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #999;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
 }
-.select-box .amount-select button {
-	width: 35px !important;
-	height: 25px !important;
-	font-size: 18px;
-	border: none;
-	background: transparent;
-	cursor: pointer;
+
+.info-txt {
+  display: flex;
+  justify-content: space-between;
 }
-.select-box strong {
-	font-size: 18px;
-	font-weight: 500;
-	color: #555;
+.info-txt .amount-select {
+  padding: 6px;
 }
-.buy {
-	text-align: center;
-	margin-top: 80px;
-	font-size: 22px;
+.info-txt .amount-select button {
+  width: 35px !important;
+  height: 25px !important;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.info-txt strong {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+}
+/* 합계 */
+.total-pay-box .total-cost {
+  font-size: 20px;
+}
+.total-pay-box .total-cost em {
+  font-size: 25px;
+  font-weight: 600;
+  margin-right: 5px;
+}
+/* 버튼-장바구니, 구매하기 */
+.buy-buttons {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+  box-sizing: border-box;
+}
+.buy-buttons button {
+  width: 48%;
+  height: 60px;
+  border: 1px solid #288341;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s;
+  font-size: 20px;
 }
 .cart {
-	width: 300px;
-	height: 60px;
-	border: 1px solid #288341;
-	display: inline-block;
-	color: #288341;
-	margin: 5px;
+  background-color: #fff;
+  color: #288341;
 }
 .buy-now {
-	width: 300px;
-	height: 60px;
-	border: 1px solid #288341;
-	display: inline-block;
-	color: #288341;
-	margin: 5px;
+  background-color: #288341;
+  color: #fff;
 }
-.cart:hover {
-	background-color: #288341;
-	color: #fff;
+.buy-buttons button:hover {
+  background-color: #215d31;
+  color: #fff;
 }
-.buy-now:hover {
-	background-color: #288341;
-	color: #fff;
-}
+
 /*tab*/
 .tab-menu out-tabmenu {
-	height: 100vh;
+  height: 100vh;
 }
 ul {
-	list-style: none;
+  list-style: none;
 }
 .tab-menu {
-	width: 1280px;
-	margin: 0 auto;
-	position: relative;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 .btn-con {
-	height: 80px;
+  height: 80px;
+  cursor: pointer;
 }
 .tab-menu ul {
-	position: relative;
-	height: 80px;
+  position: relative;
+  height: 80px;
+  display: flex;
+  box-sizing: border-box;
 }
 .tab-menu ul li {
-	display: inline-block;
-	width: 33.33%;
-	height: 80px;
-	float: left;
-	text-align: center;
-	line-height: 40px;
-	font-size: 25px;
-	font-weight: 700;
+  width: 33.33%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 22px;
+  font-weight: 700;
 }
 .tab-menu label {
-	display: block;
-	width: 100%;
-	height: 80px;
-	line-height: 80px;
+  display: block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
 }
 .tab-menu input {
-	display: none;
+  display: none;
 }
-.tab-con {
-	display: none;
-	width: 100%;
-	text-align: left;
-	position: absolute;
-	left: 0;
-	box-sizing: border-box;
-	border: 5px solid #f9f9f9;
-	height: 100%;
+
+.tab-content {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
 }
-.tab-con img {
-	margin: auto;
+.tab-content .tab-con img {
+  width: 100%;
+}
+.tab-menu label {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 .tab-menu input:checked ~ label {
-	background: #288341;
-	color: #fff;
-}
-.tab-menu input:checked ~ .tab-con {
-	display: block;
+  background: #288341;
+  color: #fff;
 }

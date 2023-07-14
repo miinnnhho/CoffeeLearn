@@ -1,7 +1,7 @@
-import path from "path";
-import express from "express";
-import ejs from "ejs";
-import { fileURLToPath } from "url";
+import path from 'path';
+import express from 'express';
+import ejs from 'ejs';
+import { fileURLToPath } from 'url';
 
 import indexRouter from './routes/index.js';
 import myOrderRouter from './routes/mypage_order.js';
@@ -18,18 +18,17 @@ import loginRouter from './routes/login.js';
 import signupRouter from './routes/signup.js';
 import finishSignupRouter from './routes/finish_signup.js';
 import userInformationRouter from './routes/user_information.js';
-import adminRouter from "./routes/admin.js";
+import adminRouter from './routes/admin.js';
 
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, "public")));
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "html");
-app.engine(".html", ejs.__express);
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+app.engine('.html', ejs.__express);
 
 app.use('/', indexRouter);
 app.use('/mypage_order', myOrderRouter);
@@ -46,8 +45,7 @@ app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/finish_signup', finishSignupRouter);
 app.use('/user_information', userInformationRouter);
-app.use("/admin", adminRouter);
-
+app.use('/admin', adminRouter);
 
 app.listen(PORT, () => {
     console.log(`✅ Server listening on port ${PORT}`);
