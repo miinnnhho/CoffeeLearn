@@ -24,7 +24,7 @@ fetch('/assets/data/products.json')
     .catch((error) => console.log(error));
 
 function handleChangeCategory() {
-    var select = document.querySelector('.select-category');
+    const select = document.querySelector('.select-category');
 
     checkCategory(select.value);
 }

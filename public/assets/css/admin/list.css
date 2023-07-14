@@ -33,7 +33,13 @@ body {
 a {
     color: black;
 }
-#productList,
+#productList {
+    margin-top: 20px;
+    background-color: #fafafa;
+    width: 100%;
+    border-spacing: 0;
+}
+
 #categoryList {
     margin-top: 20px;
     background-color: #fafafa;
@@ -62,4 +68,3 @@ tbody tr td {
 .delete-button {
     font-family: 'Noto Sans KR', sans-serif;
 }
-

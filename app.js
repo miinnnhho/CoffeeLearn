@@ -19,6 +19,7 @@ import signupRouter from './routes/signup.js';
 import finishSignupRouter from './routes/finish_signup.js';
 import userInformationRouter from './routes/user_information.js';
 import adminRouter from './routes/admin.js';
+import  mypageRouter from './routes/mypage.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -46,6 +47,7 @@ app.use('/signup', signupRouter);
 app.use('/finish_signup', finishSignupRouter);
 app.use('/user_information', userInformationRouter);
 app.use('/admin', adminRouter);
+app.use('/mypage', mypageRouter);
 
 app.listen(PORT, () => {
     console.log(`✅ Server listening on port ${PORT}`);
