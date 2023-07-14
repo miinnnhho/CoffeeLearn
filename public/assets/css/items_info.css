@@ -1,19 +1,19 @@
 /*sub-top*/
 .sub-top {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  justify-content: center;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
 }
-.sub-top-img{
-	width: 80%;
+.sub-top-img {
+  width: 40%;
 }
 .sub-top-img img {
   width: 100%;
 }
 .sub-detail {
-  width: 650px;
+  width: 55%;
   padding-top: 70px;
+  padding-right: 10px;
 }
 .sub-detail .item-name {
   font-size: 32px;
@@ -35,6 +35,7 @@
   width: 120px;
   margin-left: 20px;
 }
+
 /* 판매정보 */
 .sale-info-box {
   min-height: 200px;
@@ -88,13 +89,13 @@
   color: #555;
 }
 /* 합계 */
-.total-pay-box .total-cost{
-	font-size: 20px;
+.total-pay-box .total-cost {
+  font-size: 20px;
 }
-.total-pay-box .total-cost em{
-	font-size: 25px;
-	font-weight: 600;
-	margin-right: 5px;
+.total-pay-box .total-cost em {
+  font-size: 25px;
+  font-weight: 600;
+  margin-right: 5px;
 }
 /* 버튼-장바구니, 구매하기 */
 .buy-buttons {
@@ -136,7 +137,7 @@ ul {
   list-style: none;
 }
 .tab-menu {
-  width: 1280px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -147,12 +148,11 @@ ul {
 .tab-menu ul {
   position: relative;
   height: 80px;
+  display: flex;
+  box-sizing: border-box;
 }
 .tab-menu ul li {
-  display: inline-block;
   width: 33.33%;
-  height: 80px;
-  float: left;
   text-align: center;
   line-height: 40px;
   font-size: 22px;
@@ -167,23 +167,21 @@ ul {
 .tab-menu input {
   display: none;
 }
-.tab-con {
-  width: 100%;
-  text-align: left;
+
+.tab-content {
   position: absolute;
   left: 0;
-  top: 0;
-  box-sizing: border-box;
-  border: 5px solid #f9f9f9;
-  height: 100%;
+  top: 80px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
 }
-.tab-con img {
-  margin: auto;
+.tab-content .tab-con img {
+  width: 100%;
+}
+.tab-menu label {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 .tab-menu input:checked ~ label {
   background: #288341;
   color: #fff;
-}
-.tab-menu input:checked ~ .tab-con {
-  display: block;
 }

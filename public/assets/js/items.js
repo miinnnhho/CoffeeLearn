@@ -178,7 +178,8 @@ function handleConfirmBtnClick(confirmBtn) {
       const quantity = parseInt(document.querySelector('.amount-count').innerHTML);
       const totalPrice = parseInt(document.querySelector('.total-price').textContent.replace(/,/g, ''));
       const option = document.querySelector('.option-select select').value;
-
+      
+      saveToLocalStorage(productName, quantity, totalPrice, option);
       toggleCartContent(true);
     }
   } else if (confirmBtn.id === 'btnGoCart') {
@@ -198,6 +199,28 @@ function handleCancelBtnClick(btn) {
 // 배경 클릭 이벤트 처리
 function handleCartBackgroundClick() {
   toggleCartContent(false);
+}
+
+// 저장할 정보를 localStorage에 저장하는 함수
+function saveToLocalStorage(productName, amount, totalPrice, option) {
+  const cartItem = {
+    productName: productName,
+    amount: amount,
+    totalPrice: totalPrice,
+    option: option,
+    salePrice: totalPrice / amount,
+  };
+
+  // 이전에 저장된 장바구니 정보가 있다면 가져온 후, 새로운 상품 정보를 추가합니다.
+  let cartItems = localStorage.getItem('cartItems');
+  if (cartItems) {
+    cartItems = JSON.parse(cartItems);
+    cartItems.push(cartItem);
+  } else {
+    cartItems = [cartItem];
+  }
+
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 // 페이지 로드 시 상품 표시
