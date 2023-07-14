@@ -1,11 +1,11 @@
 const productId = window.location.pathname.split('/').at(-1);
 
-fetch('/assets/data/products.json')
+fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products')
     .then((response) => response.json())
     .then((data) => {
         // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택합니다.
         const product = data.filter((item) => {
-            return item.id === Number(productId);
+            return item._id === productId;
         })[0];
 
         // HTML 폼 요소를 선택하거나 생성하여, 상품 정보를 채웁니다.
@@ -16,7 +16,7 @@ fetch('/assets/data/products.json')
         document.querySelector('.input-price').value = product.price;
         //document.querySelector('.input-amount').value = product.amount;
         //document.querySelector('.input-main-img').value = product.mainImg;
-       // document.querySelector('.input-sub-img').value = product.subImg;
+        // document.querySelector('.input-sub-img').value = product.subImg;
         document.querySelector('.input-description').value = product.description;
         //document.querySelector('.select-show').value = product.show;
         checkCategory(product.category);
