@@ -2,8 +2,6 @@ const useremail = document.getElementById('id');
 const userpassword = document.getElementById('pw');
 const loginBtn = document.querySelector('.btn1');
 
-
-
 window.addEventListener('load', () => {
     checkLoginStatus();
 });
@@ -18,7 +16,6 @@ window.handleLoginSubmit = function (event) {
     };
 
     // 로그인 API 호출 예시
-
     fetchApi('/users/login', {
         method: 'POST',
         body: JSON.stringify(loginData),
