@@ -1,38 +1,40 @@
-// 아이디 추출
-// const urlParams = new URLSearchParams(window.location.search);
-// const productId = urlParams.get("id");
+const productId = window.location.pathname.split('/').at(-1);
 
-// 서버에 데이터 요청
-async function fetchProductDetails(productId) {
-  try {
-    const res = await fetch(`/assets/data/products.json/${productId}`);
-    if (!res.ok) {
-      throw new Error("상품 정보를 불러올 수 없습니다.");
+fetch('/assets/data/products.json')
+    .then((response) => response.json())
+    .then((data) => {
+        // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택합니다.
+        const product = data.filter((item) => {
+            return item.id === Number(productId);
+        })[0];
+
+        // HTML 폼 요소를 선택하거나 생성하여, 상품 정보를 채웁니다.
+        document.querySelector('.select-category').value = product.category;
+        document.querySelector('.select-taste').value = product.taste;
+        document.querySelector('.select-origin').value = product.origin;
+        document.querySelector('.input-name').value = product.name;
+        document.querySelector('.input-price').value = product.price;
+        //document.querySelector('.input-amount').value = product.amount;
+        //document.querySelector('.input-main-img').value = product.mainImg;
+       // document.querySelector('.input-sub-img').value = product.subImg;
+        document.querySelector('.input-description').value = product.description;
+        //document.querySelector('.select-show').value = product.show;
+        checkCategory(product.category);
+    })
+    .catch((error) => console.log(error));
+
+function handleChangeCategory() {
+    const select = document.querySelector('.select-category');
+
+    checkCategory(select.value);
+}
+
+function checkCategory(target) {
+    if (target === '커피') {
+        document.querySelector('.select-taste').disabled = false;
+        document.querySelector('.select-origin').disabled = false;
+    } else {
+        document.querySelector('.select-taste').disabled = true;
+        document.querySelector('.select-origin').disabled = true;
     }
-    const productDetails = await res.json();
-    return productDetails;
-  } catch (error) {
-    console.error(error);
-    // 오류 처리
-  }
 }
-
-// 폼에 정보 채우기
-async function fillFormWithProductDetails(productId) {
-  const productDetails = await fetchProductDetails(productId);
-
-  const form = document.querySelector("#addItemForm");
-  form.querySelector(".select-category").value = productDetails.category;
-  form.querySelector(".select-taste").value = productDetails.taste;
-  form.querySelector(".select-origin").value = productDetails.origin;
-  form.querySelector(".input-name").value = productDetails.name;
-  form.querySelector(".input-price").value = productDetails.price;
-  form.querySelector(".input-amount").value = productDetails.amount;
-  form.querySelector(".input-main-img").value = productDetails.mainImg;
-  form.querySelector(".input-sub-img").value = productDetails.subImg;
-  form.querySelector(".input-description").value = productDetails.description;
-  form.querySelector(".select-show").value = productDetails.show;
-}
-
-// 페이지 로드 시 폼 채우기 함수 실행
-// window.addEventListener("DOMContentLoaded", fillFormWithProductDetails);

@@ -29,7 +29,7 @@ async function insertProductElement() {
             <tr>
                 <td>${productNumber}</td>
                 <td>${categoryName}</td>
-                <td><a href="/admin/productdetails" class="product-name" data-product-id="${productNumber}" style="text-decoration: underline">${productName}</a></td>
+                <td><a href="#" class="product-name" data-product-id="${productNumber}" style="text-decoration: underline">${productName}</a></td>
                 <td>${productPrice}</td>
                 <td><button id="${productNumber}" class="delete-button">상품삭제</button></td>
             </tr>
