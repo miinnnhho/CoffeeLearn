@@ -56,9 +56,9 @@
         "orderInfo": {
             "receiverName": "김동훈",
             "receiverPhone": "1121112",
-            "address": "부산",
-            "detailedAddress": "남구",
-            "receiverMessage": "총알배송"
+            "address": "서울",
+            "detailedAddress": "강서구",
+            "receiverMessage": "문앞"
         },
         "deliverFee": 3000,
         "totalPriceEl": 28000
