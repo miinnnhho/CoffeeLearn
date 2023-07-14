@@ -1,39 +1,36 @@
 <html>
-
-<head>
-  <title>Test</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%- include('components/head.html') -%>
+  <head>
+    <title>Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('components/head.html') -%>
     <!-- Cutom CSS & JS -->
     <link rel="stylesheet" href="/assets/css/items.css" />
+    <link rel="stylesheet" href="/assets/css/cart_modal.css" />
     <link rel="stylesheet" href="/assets/css/tab.css" />
-    <script defer src="/assets/js/test.js"></script>
-    <script defer src="/assets/js/totop.js"></script>
-</head>
+  </head>
 
-<body>
-  <!--header-->
-  <%- include('components/header.html') -%>
+  <body>
+    <!--header-->
+    <%- include('components/header.html') -%>
     <!-- 모든 아이템보기 -->
     <section class="pick" id="pick">
       <!--banner-->
       <div class="banner">
-        <h1>전체보기</h1>
         <div class="box">
-          <img src="/assets/img/banner.png" alt="banner">
+          <img src="/assets/img/banner.png" alt="banner" />
         </div>
       </div>
       <!--상품 리스트 갯수 및 리스트 옵션-->
       <div class="item-head">
-        <span class="item-num">총 000개의 상품이 있습니다.</span>
-        <span class="select-box">
+        <span class="item-num">☕ 총 <em class="productsCount">00</em>개의 상품이 있습니다.</span>
+        <!-- <span class="select-box">
           <select name="order" id="order">
-            <option value="30개씩보기">30개씩보기</option>
-            <option value="20개씩보기">20개씩보기</option>
-            <option value="10개씩보기">10개씩보기</option>
+            <option value="30">30개씩보기</option>
+            <option value="20">20개씩보기</option>
+            <option value="10">10개씩보기</option>
           </select>
-        </span>
+        </span> -->
       </div>
       <!--전체 메인 섹션-->
       <div class="container">
@@ -42,11 +39,11 @@
           <div class="tab-box1">
             <h3>카테고리</h3>
             <div class="tab-border"></div>
-            <a href="http://localhost:3000/items_list_coffee" target="_self">
+            <a href="/items_coffee">
               <div id="coffee_link" class="material-symbols-outlined">forward</div>
               <p class="menu-1">추천원두 모아보기</p>
             </a>
-            <a href="http://localhost:3000/items_list_gift" target="_self">
+            <a href="/items_gift">
               <div id="gift_link" class="material-symbols-outlined">forward</div>
               <p class="menu-2">선물세트 모아보기</p>
             </a>
@@ -54,88 +51,68 @@
         </div>
         <!--상품 리스트-->
         <div class="item-box" id="pickItemBox">
-          <div class="item-wrap">
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_1.jpg" />
-                </div>
-                <div class="detail-box">
-                  <strong class="description">기분 좋은 쓴맛</strong>
-                  <h3 class="name">[뉴크롭] 인도네시아 만델링 G1 수마트라</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">5,300원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">5,300원</p>
-                </div>
-              </a>
-            </div>
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_2.jpg" />
-                </div>
-                <div class="detail-box">
-                  <strong class="description">묵직한 바디와 구수한 단맛</strong>
-                  <h3 class="name">[뉴크롭] 베트남 로부스타 G1 Wet Polished SC18</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">2,300원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">2,300원</p>
-                </div>
-              </a>
-            </div>
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_3.jpg" />
-                </div>
-                <div class="detail-box">
-                  <strong class="description">스모키함과 좋은 향나무의 아로마</strong>
-                  <h3 class="name">[뉴크롭] 과테말라 SHB 안티구아</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">4,500원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">4,500원</p>
-                </div>
-              </a>
-            </div>
-            <div class="item-list">
-              <a href="#">
-                <div class="img-box">
-                  <img class="main-img" src="/assets/img/items/item_main_4.jpg" />
-                </div>
-                <div class="detail-box">
-                  <strong class="description">강렬한 바디와 기분 좋은 쓴맛</strong>
-                  <h3 class="name">스타 에스프레소</h3>
-                  <div class="details">
-                    <div class="sale-box">
-                      <p class="sale-percent">0%</p>
-                      <p class="sale-price">3,200원</p>
-                    </div>
-                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
-                  </div>
-                  <p class="price">3,200원</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          <div class="item-wrap"></div>
         </div>
       </div>
     </section>
-    <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
-</body>
 
+    <!-- 장바구니 모달 -->
+    <div class="modal cart-modal" id="cartModal">
+      <div class="cart-modal-bg" id="cartBackground"></div>
+      <div class="cart-modal-content">
+        <div class="cart-content-wrap git">
+          <div class="cart-modal-text">
+            <p class="cart-item-name"><!-- 상품명 --></p>
+            <div class="select-box option-select-box" id="optionSelectBox">
+              <strong>분쇄 옵션</strong>
+              <div class="option-select">
+                <select name="optionSnoInput" class="select-menu">
+                  <option value="">= 분쇄 옵션 선택 =</option>
+                  <option value="분쇄 안함(원두상태)">분쇄 안함(원두상태)</option>
+                  <option value="드립용 분쇄(커피메이커 겸용)">드립용 분쇄(커피메이커 겸용)</option>
+                  <option value="모카포트용 분쇄">모카포트용 분쇄</option>
+                  <option value="에스프레소머신용 분쇄">에스프레소머신용 분쇄</option>
+                  <option value="프렌치프레스용 분쇄">프렌치프레스용 분쇄</option>
+                  <option value="더치용 분쇄">더치용 분쇄</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-box amount-select-box" id="amountSelectBox">
+              <strong>수량 선택</strong>
+              <div class="amount-select" id="amountSelect">
+                <button type="button" aria-label="수량내리기" class="down-btn">-</button>
+                <span class="amount-count">1</span>
+                <button type="button" aria-label="수량올리기" class="up-btn">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-total-price">
+            <strong>합계</strong>
+            <div><span class="total-price">0</span><span>원</span></div>
+          </div>
+          <div class="cart-modal-buttons">
+            <button type="button" class="btn-cancel"><span>취소</span></button>
+            <button type="button" class="btn-confirm" id="btnCartConfirm"><span>확인</span></button>
+          </div>
+        </div>
+        <div class="cart-complete-content on">
+          <p class="cart-complete-text">👜 상품을 장바구니에 담았습니다.</p>
+          <div class="cart-modal-buttons complete">
+            <button type="button" class="btn-cancel"><span>쇼핑 계속하기</span></button>
+            <button type="button" class="btn-confirm" id="btnGoCart">
+              <span>장바구니로 이동</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <%- include('components/footer.html') -%>
+    <!-- top버튼 -->
+    <%- include('components/totop.html') -%>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/items.js"></script>
+    <script src="/assets/js/totop.js"></script>
+  </body>
 </html>
