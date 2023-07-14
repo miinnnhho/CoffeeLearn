@@ -6,9 +6,6 @@
     <%- include('components/head.html') -%>
     <link rel="stylesheet" href="/assets/css/items.css" />
     <link rel="stylesheet" href="/assets/css/items_info.css" />
-    <!-- JS -->
-    <script defer src="/assets/js/totop.js"></script>
-    <script defer src="/assets/js/items_info.js"></script>
     <style>
       #wrap {
         min-height: calc(100vh - 250px);
@@ -27,8 +24,9 @@
           <div class="sub-detail" id="sub-detail">
             <div class="item-name">상품명을 여기에 적어주세요.</div>
             <div class="item-sale-info">
-              <span class="item-discount">31%</span>
-              <span class="item-price">3,400원</span>
+              <span class="item-discount"><em class="sale-percent">31</em>%</span>
+              <span><em class="sale-price">3,400</em>원</span>
+              <span class="origin-price-wrap"><em class="origin-price">3,400</em>원</span>
             </div>
             <!-- 판매정보(배송비, 분쇄옵션,수량선택, 합계) -->
             <div class="sale-info-box">
@@ -60,7 +58,7 @@
               </div>
               <div class="info-txt total-pay-box">
                 <strong>합계</strong>
-                <div class="total-cost"><em>0,000</em><span>원</span></div>
+                <div class="total"><em class="total-price">0,000</em><span>원</span></div>
               </div>
             </div>
             <div class="cart-modal-buttons buy-buttons">
@@ -76,30 +74,34 @@
         <!--tap-->
         <div class="tab-menu out-tab-menu">
           <ul>
-            <li >
+            <li>
               <input type="radio" checked name="tab-menu" id="tab-menu1" />
               <label for="tab-menu1">상품정보</label>
             </li>
             <li>
               <input type="radio" name="tab-menu" id="tab-menu2" />
-              <label for="tab-menu2">상품후기(0)</label>
+              <label for="tab-menu2">상품후기(6)</label>
             </li>
             <li>
               <input type="radio" name="tab-menu" id="tab-menu3" />
-              <label for="tab-menu3">상품문의(0)</label>
+              <label for="tab-menu3">상품문의(2)</label>
             </li>
           </ul>
           <div class="tab-content">
-            <div class="tab-con"><img src="/assets/img/items/item_sub_1.jpg" alt="item_sub_1" /></div>
-            <div class="tab-con"><img src="/assets/img/review.png" alt="item_sub_2" /></div>
-            <div class="tab-con"><img src="/assets/img/inquiry.png" alt="item_sub_3" /></div>
+            <div class="tab-con con1 on"><img src="/assets/img/items/item_sub_1.jpg" alt="item_sub_1" /></div>
+            <div class="tab-con con2"><img src="/assets/img/review.png" alt="item_sub_2" /></div>
+            <div class="tab-con con3"><img src="/assets/img/inquiry.png" alt="item_sub_3" /></div>
           </div>
         </div>
       </div>
     </div>
     <!-- footer -->
-    <!-- <%- include('components/footer.html') -%> -->
+    <%- include('components/footer.html') -%>
     <!-- top버튼 -->
     <%- include('components/totop.html') -%>
+    <!-- JS -->
+
+    <script src="/assets/js/totop.js"></script>
+    <script src="/assets/js/items_info.js"></script>
   </body>
 </html>

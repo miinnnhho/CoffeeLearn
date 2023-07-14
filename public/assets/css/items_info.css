@@ -1,5 +1,6 @@
 /*sub-top*/
 .sub-top {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
@@ -13,7 +14,6 @@
 .sub-detail {
   width: 55%;
   padding-top: 70px;
-  padding-right: 10px;
 }
 .sub-detail .item-name {
   font-size: 32px;
@@ -29,13 +29,17 @@
   color: red;
   width: 65px;
 }
-.sub-detail .item-price {
+.sub-detail .sale-price {
   font-size: 30px;
   font-weight: 700;
   width: 120px;
   margin-left: 20px;
 }
-
+.sub-detail .origin-price-wrap{
+  margin-left: 10px;
+  color: #999;
+  text-decoration: line-through;
+}
 /* 판매정보 */
 .sale-info-box {
   min-height: 200px;
@@ -89,10 +93,10 @@
   color: #555;
 }
 /* 합계 */
-.total-pay-box .total-cost {
+.total-pay-box .total {
   font-size: 20px;
 }
-.total-pay-box .total-cost em {
+.total-pay-box .total em {
   font-size: 25px;
   font-weight: 600;
   margin-right: 5px;
@@ -169,17 +173,22 @@ ul {
 }
 
 .tab-content {
-  position: absolute;
-  left: 0;
-  top: 80px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  padding: 10px 30px;
+	width: 100%;
+	min-height: 300px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 80px;
+	box-sizing: border-box;
+	padding: 30px;
+}
+.tab-content .tab-con.on img {
+	display: block;
 }
 .tab-content .tab-con img {
-  width: 100%;
+	width: 100%;
+	display: none;
 }
 .tab-menu label {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 .tab-menu input:checked ~ label {
   background: #288341;

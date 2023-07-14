@@ -27,11 +27,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: #ffdb7e;
+  background: #288341;
   border: none;
   margin: auto;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  color: white;
 }
 
 .order-btn {
@@ -46,7 +47,7 @@
   border: none;
   margin: auto;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
   margin-top: 15px;
 }
