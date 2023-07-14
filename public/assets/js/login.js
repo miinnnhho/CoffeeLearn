@@ -2,17 +2,6 @@ const useremail = document.getElementById('id');
 const userpassword = document.getElementById('pw');
 const loginBtn = document.querySelector('.btn1');
 
-// loginBtn.addEventListener('click', function handleLoginSubmit(event) {
-//     event.preventDefault();
-//     const loginData = {
-//         email: useremail.value,
-//         password: userpassword.value,
-//     };
-//     console.log(loginData);
-//     localStorage.setItem('userId', JSON.stringify(loginData));
-//     location.href = '/';
-// });
-
 window.handleLoginSubmit = function (event) {
     event.preventDefault();
 
@@ -22,11 +11,9 @@ window.handleLoginSubmit = function (event) {
     };
 
     // 로그인 API 호출 예시
-    fetch('http://kdt-sw-5-team07.elicecoding.com:3000/users/login', {
+
+    fetchApi('/users/login', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify(loginData),
     })
         .then((response) => response.json())
@@ -37,7 +24,6 @@ window.handleLoginSubmit = function (event) {
                 window.location.href = '/'; //홈으로 이동
             } else {
                 // 로그인 실패 처리
-                // console.error('로그인 실패:', error.message);
                 alert('회원정보를 찾을 수 없습니다.');
             }
         });
@@ -68,3 +54,6 @@ window.handleLoginSubmit = function (event) {
 
     // unsubscrib.addEventListener('click', logout);
 };
+
+// get API 만들어서 패치를 사용하는데 로컬에서 꺼내서 쓰지 않도록 항상 나오게?
+// 관리자로그인 들어가면 admin/product로 연결되게?

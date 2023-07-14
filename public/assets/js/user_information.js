@@ -1,25 +1,34 @@
+const userId = document.getElementById('id');
+const userPw = document.getElementById('pw');
+const userPwCheck = document.getElementById('pwCheck');
+const userName = document.getElementById('name');
+const userPhone_number = document.getElementById('phoneNumber');
+const userAddress = document.getElementById('address');
+const userdetailedAddress = document.getElementById('detailedAddress');
+
+
 async function fetchUserInfo() {
-    const response = await fetch('/users/mypage', { 
+    const response = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/users/mypage', { 
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }
     });
 
-    if (response.ok) {
+    if (response) {
         const userInfo = await response.json();
         // 사용자 정보를 input 필드에 채우기
         fillUserInfo(userInfo);
     } else {
-        console.error('서버로부터 사용자 정보를 가져오는 데 실패했습니다.');
+        alert('서버로부터 사용자 정보를 가져오는 데 실패했습니다.');
     }
 }
 
 function fillUserInfo(userInfo) {
-    document.getElementById("id").value = userInfo.id;
-    document.getElementById("pw").value = userInfo.pw;
-    document.getElementById("phoneNumber").value = userInfo.phoneNumber;
-    document.getElementById("name").value = userInfo.name;
-    document.getElementById("address").value = userInfo.address;
-    document.getElementById("detailedAddress").value = userInfo.detailedAddress;
+    userId.value = userInfo.id;
+    userPw.value = userInfo.pw;
+    userPhone_number.value = userInfo.phoneNumber;
+    userName.value = userInfo.name;
+    userAddress.value = userInfo.address;
+    userdetailedAddress.value = userInfo.detailedAddress;
 }
