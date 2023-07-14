@@ -188,6 +188,9 @@ item-list-border {
   overflow: hidden;
   padding-bottom: 30px;
 }
+.item-list a{
+  margin-bottom: 20px;
+}
 .item-box a {
   width: 310px;
 }
@@ -232,7 +235,8 @@ item-list-border {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
+  margin-top: 20px;
 }
 .item-box .detail-box .description {
   font-size: 13px;
