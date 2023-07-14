@@ -30,7 +30,6 @@ async function initialize() {
 }
 
 function clickSearchBtn() {
-    console.log(orderList);
     const startDate = document.getElementById('start-date').value;
     const endDate = document.getElementById('end-date').value;
     const orders = getOrdersByDateRange(startDate, endDate);
@@ -49,7 +48,7 @@ function getOrdersByDateRange(startDate, endDate) {
 
 function displayOrders(orders) {
     //기간에 맞는 order 배열입력받음
-    orders.reverse();
+    // orders.reverse();
     const emptyOrder = document.querySelector('.empty-order');
     const cancleBtn = document.createElement('input');
     cancleBtn.type = 'button';
@@ -60,22 +59,20 @@ function displayOrders(orders) {
     modifyBtn.className = 'cancle-btn';
     modifyBtn.value = '주문 수정';
 
-    // 해야될거
-    // 3. 각 parentschild랑 연결해서 수정 가능하게 만들기
-
     const orderRows = orders
         .map((order) => {
-            const deliveryStatusCell = order.deliveryStatus === '배송준비중' ? cancleBtn.outerHTML : '-';
-            const orderModifyCell = order.deliveryStatus === '배송준비중' ? modifyBtn.outerHTML : '-';
+            const deliveryStatusCell = order.orderStatus === '배송준비중' ? cancleBtn.outerHTML : '-';
+            const orderModifyCell = order.orderStatus === '배송준비중' ? modifyBtn.outerHTML : '-';
+            let nProduct = order.productInfo.length > 1 ? `..외 ${order.productInfo.length - 1}건` : '';
             //배송준비중 일 때만 취소버튼 생성 취소버튼 구현은 다음에
             return `
+
       <tr>
         <td><span>${order.orderNumber}</span><p> <span style="color: gray;">${order.orderDate}</span></td>
-        <td>${order.name}</td>
-        <td>${order.quantity}</td>
-        <td>${order.salePrice}</td>
+        <td>${order.productInfo[0].productName}<p><span style="color: gray;">${order.productInfo[0].option}${nProduct}</span></td>
+        <td>${order.productInfo[0].amount}</td>
+        <td>${order.totalPriceEl}</td>
         <td>${order.orderStatus}</td>
-        <td>${order.deliveryStatus}</td>
         <td>${deliveryStatusCell}</td>
         <td>${orderModifyCell}</td>
       </tr>
@@ -105,21 +102,42 @@ function displayOrders(orders) {
         const orderProducts = document.getElementById('orderProducts');
         const orderName = document.getElementById('orderName');
         const orderHp = document.getElementById('orderHp');
+        const orderAddress = document.getElementById('address');
+        const orderDetailedAddress = document.getElementById('detailedAddress');
+        const orderContact = document.getElementById('contact');
 
         const target = event.currentTarget;
         const rowElem = target.closest('tr');
         let orderNumberModifyrow = rowElem.querySelector('td:nth-child(1)');
         let orderNumberModify = orderNumberModifyrow.querySelector('span');
         let orderProductsModify = rowElem.querySelector('td:nth-child(2)');
-        // const orderNameModify = ;
-        // const orderHpModify = ;
+
         orderNumber.innerHTML = orderNumberModify.innerHTML;
         orderProducts.innerHTML = orderProductsModify.innerHTML;
-        orderName.value = '동훈';
-        orderHp.value = '112';
+
+        // 주문 번호를 기준으로 해당 주문 객체를 찾습니다.
+        const order = orders.find((o) => o.orderNumber === orderNumberModify.innerHTML);
+
+        // 주문 정보(orderInfo)에서 receiverName과 receiverPhone 값을 가져옵니다.
+        const receiverName = order.orderInfo.receiverName;
+        const receiverPhone = order.orderInfo.receiverPhone;
+        const address = order.orderInfo.address;
+        const detailedAddress = order.orderInfo.detailedAddress;
+        const receiverMessage = order.orderInfo.receiverMessage;
+
+        // orderName과 orderHp 입력 필드에 값을 할당합니다.
+        orderName.value = receiverName;
+        orderHp.value = receiverPhone;
+        orderAddress.value = address;
+        orderDetailedAddress.value = detailedAddress;
+        orderContact.value = receiverMessage;
     }
+    // 주문 내역의 건수를 가져옵니다.
+    const totalOrders = `내역 총 ${orders.length}건`;
+    // strong 태그에 내역 총 건수를 업데이트합니다.
+    totalOrdersCls.innerHTML = totalOrders;
 }
-// curr
+
 //조회 기간 버튼 - 오늘
 function dateChangeToday() {
     const today = new Date().toISOString().split('T')[0];
@@ -203,7 +221,7 @@ const btnWeek = document.getElementById('btnWeek');
 const btnMonth = document.getElementById('btnMonth');
 const btn3Month = document.getElementById('btn3Month');
 const btnYear = document.getElementById('btnYear');
-
+const totalOrdersCls = document.querySelector('.total-orders'); //내역 총 n건 사용
 searchBtn.addEventListener('click', clickSearchBtn); //조회 버튼 클릭 이벤트 등록
 btnToday.addEventListener('click', dateChangeToday); //오늘 버튼 클릭 이벤트 등록
 btnWeek.addEventListener('click', dateChangeWeek); //7일 버튼 클릭 이벤트 등록
