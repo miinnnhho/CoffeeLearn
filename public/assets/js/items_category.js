@@ -1,14 +1,8 @@
-// JSON 데이터를 가져옴
-async function getProducts() {
-  try {
-    const response = await fetch("/assets/products.json");
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("상품을 가져오는 동안 오류가 발생했습니다:", error);
-    return [];
-  }
+// 상품 데이터 호출
+function getProducts() {
+  return fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products').then((res) => res.json());
 }
+
 // 상품을 그리드에 표시
 function displayProducts(products, itemBoxId) {
   const itemBox = document.getElementById(itemBoxId);
@@ -19,7 +13,7 @@ function displayProducts(products, itemBoxId) {
   );
 
   filteredProducts.forEach((product) => {
-    const mainImgSrc = `/assets/img/items/item_main_${product.id}.jpg`;
+    const mainImgSrc = product.mainImg;
     const salePrice = calculateSalePrice(product);
 
     let originPrice = "";
