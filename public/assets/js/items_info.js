@@ -22,6 +22,13 @@ function updateProductInfo(product) {
   const salePrice = document.querySelector('.sale-price');
   const originPrice = document.querySelector('.origin-price');
   const amountCount = document.querySelector('.amount-count');
+  const productMainImg = document.querySelector('.main-img');
+  const originPriceWrap = document.querySelector('.origin-price-wrap');
+  const itemDiscount = document.querySelector('.item-discount');
+
+  // 이미지 src 업데이트
+  productMainImg.src = product.mainImg;
+  productMainImg.alt = product.name;
 
   // name 업데이트
   itemName.innerText = product.name;
@@ -38,6 +45,12 @@ function updateProductInfo(product) {
 
   // amountCount 업데이트
   amountCount.innerText = product.amount;
+
+  // salePercent가 0인 경우 클래스 추가
+  if (product.salePercent === 0) {
+    originPriceWrap.classList.add('on');
+    itemDiscount.classList.add('on');
+  }
 }
 
 // 수량 버튼 이벤트 핸들러
@@ -113,3 +126,26 @@ function updateTotalPrice(product) {
 
 // 초기화 함수 호출
 init();
+
+// 탭 메뉴 전환(상품정보, 상품푸기, 상품문의 탭)
+function handleTabMenuClick() {
+  const tabMenus = document.querySelectorAll('.tab-menu input[type="radio"]');
+  const tabCons = document.querySelectorAll('.tab-con');
+
+  tabMenus.forEach(function(menu, index) {
+    menu.addEventListener('click', function() {
+      // Remove 'on' class from all tab-cons
+      tabCons.forEach(function(tabCon) {
+        tabCon.classList.remove('on');
+      });
+
+      const conNumber = index + 1;
+      const targetTabCon = document.querySelector('.tab-con.con' + conNumber);
+      targetTabCon.classList.add('on');
+    });
+  });
+}
+
+window.onload = function() {
+  handleTabMenuClick();
+};

@@ -1,11 +1,6 @@
 // 상품 데이터 호출
 function getProducts() {
-  return fetch('/assets/products.json').then((res) => res.json());
-}
-
-// 공통 함수: 상품 이미지 경로 생성
-function getProductImageSrc(productId) {
-  return `/assets/img/items/item_main_${productId}.jpg`;
+  return fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products').then((res) => res.json());
 }
 
 // 공통 함수: 상품 할인 가격 계산
@@ -23,9 +18,9 @@ function displayProducts(products, itemBoxId) {
 
   // 상품 Element 생성
   filteredProducts.forEach((product) => {
-    const { id, description, name, price, category, salePercent } = product;
+    const { _id, description, name, price, category, salePercent, mainImg } = product;
 
-    const mainImgSrc = getProductImageSrc(id);
+    const mainImgSrc = mainImg;
     const amountCount = 1;
     const salePrice = calculateSalePrice(product, amountCount);
 
@@ -54,7 +49,7 @@ function displayProducts(products, itemBoxId) {
     itemEl.classList.add('item-list');
 
     const itemLink = document.createElement('a');
-    itemLink.href = `/items_info/${id}`;
+    itemLink.href = `/items_info/${_id}`;
 
     itemLink.innerHTML = `
       <div class="img-box">

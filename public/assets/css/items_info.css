@@ -28,17 +28,23 @@
   font-weight: 700;
   color: red;
   width: 65px;
+  margin-right: 20px;
+}
+.sub-detail .item-discount.on{
+  display: none;
 }
 .sub-detail .sale-price {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
   width: 120px;
-  margin-left: 20px;
 }
 .sub-detail .origin-price-wrap{
   margin-left: 10px;
   color: #999;
   text-decoration: line-through;
+}
+.sub-detail .origin-price-wrap.on{
+  display: none;
 }
 /* 판매정보 */
 .sale-info-box {
