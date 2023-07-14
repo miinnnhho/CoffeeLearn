@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/public/assets/css/login.css" />
+        <link rel="stylesheet" href="/assets/css/login.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-        <link rel="icon" href="/public/assets/img/favicon.png" />
+        <link rel="icon" href="/assets/img/favicon.png" />
         <!-- 오류 처리 이벤트 jquery -->
         <script
             src="https://code.jquery.com/jquery-3.7.0.js"
@@ -21,7 +21,7 @@
         <div id="wrap">
             <section class="login-form">
                 <h1>회원가입</h1>
-                <form name="form" id="registerForm" onsubmit="return SignUp()">
+                <form name="form" id="registerForm" onsubmit="return SignUp()" style="width: 430px">
                     <!-- 필요시 사용:onsubmit="return SignUp()" -->
                     <!-- 아이디 -->
                     <div class="int-area">
@@ -58,9 +58,19 @@
                         <label for="name" class="user-idtext"> 이름 <span class="required-asterisk">*</span></label>
                     </div>
                     <!-- 주소 -->
-                    <div class="int-area">
-                        <input type="text" name="address" id="address" autocomplete="off" required />
+                    <div class="int-area " style="width: 417px">
+                        <input
+                            type="text"
+                            name="address"
+                            id="address"
+                            autocomplete="off"
+                            required
+                            style="width: 346px"
+                        />
                         <label for="address" class="address">주소 <span class="required-asterisk">*</span></label>
+                        <button class="addr-btn">
+                            <img src="/assets/img/addr-btn.png" alt="주소 버튼" />
+                        </button>
                     </div>
                     <!-- 상세 주소 -->
                     <div class="int-area">
@@ -83,11 +93,11 @@
     <!-- kakao API -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- kakao API -->
-    <script src="/public/assets/js/address_kakao.js"></script>
+    <script src="/assets/js/address_kakao.js"></script>
     <!-- 빈칸 경고(흔들림) 근데 버튼 비활성화 있어서 필요 없을 거 같기도  -->
-    <script src="/public/assets/js/signup_warning.js"></script>
+    <script src="/assets/js/signup_warning.js"></script>
     <!-- pw <-> pw_check 일치 여부 , 모든 칸 작성시 버튼 활성화-->
-    <script src="/public/assets/js/correct_password.js"></script>
+    <script src="/assets/js/correct_password.js"></script>
     <!-- 정보 데이터 백으로 넘기기 -->
     <script src="/assets/js/signup.js"></script>
 </html>

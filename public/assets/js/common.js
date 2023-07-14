@@ -2,7 +2,7 @@
 window.onload = function () {
     setHeaderClass();
     setNav();
-    alertMessage()
+    alertMessage();
     checkLoginStatus();
 };
 
@@ -12,19 +12,19 @@ function setHeaderClass() {
     const searchParams = new URLSearchParams(window.location.search);
     const header = document.getElementById('header');
 
-  if (path.includes('/items') || path.includes('/admin') || searchParams.toString() !== '') {
-    const className = path.slice(1).split('?')[0] + '-header'; // Replaced substr with slice
-    header.classList.add(className);
-  }
+    if (path.includes('/items') || path.includes('/admin') || searchParams.toString() !== '') {
+        const className = path.slice(1).split('?')[0] + '-header'; // Replaced substr with slice
+        header.classList.add(className);
+    }
 }
 
 // 기능 준비중 메세지 alert
 function alertMessage() {
-  const searchBtn = document.querySelector('.search-btn');
-  searchBtn.addEventListener('click', function (event) {
-    event.preventDefault();
-    alert('☕ 상품 검색 기능 준비중입니다.');
-  });
+    const searchBtn = document.querySelector('.search-btn');
+    searchBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        alert('☕ 상품 검색 기능 준비중입니다.');
+    });
 }
 async function getProducts() {
     try {
@@ -68,8 +68,8 @@ async function setNav() {
     }
 }
 
-function checkLoginStatus() {
-    const auth_btn = document.querySelector('.authBtn'); //a tag
+function checkLoginStatus(rdirect) {
+    const auth_btn = document.querySelector('.auth-btn'); //a tag
     const btn_span = document.querySelector('.btn-Span'); //버튼
     const isLoggedIn = localStorage.getItem('userId') !== null; //토큰이 있으면
 
@@ -77,10 +77,9 @@ function checkLoginStatus() {
         btn_span.textContent = '로그아웃'; //로그아웃로 글 변경
         auth_btn.onclick = () => {
             //a태그전체 클릭하면
-            localStorage.removeItem(''); //토큰 제거 -> 로그아웃
+            localStorage.removeItem('userId'); //토큰 제거 -> 로그아웃
             alert('로그아웃이 되었습니다.'); //알림
-            location.href = '/'; //홈으로 이동함
-            checkLoginStatus();
+            location.href = '/';
         };
     } else {
         btn_span.textContent = '로그인';
@@ -89,7 +88,7 @@ function checkLoginStatus() {
             location.href = 'login'; //login.html로 넘어감
         };
     }
-  }
-  window.addEventListener('load', () => {
-      checkLoginStatus();
-  });
+}
+window.addEventListener('load', () => {
+    checkLoginStatus();
+});

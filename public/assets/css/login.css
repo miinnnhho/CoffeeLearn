@@ -40,11 +40,15 @@ body::before {
     position: relative;
     margin-top: 20px;
 }
-.div-phone {
-    width: 400px;
+
+
+/* .div_phone {
     position: relative;
-    margin-top: 0px;
 }
+
+.div_phone label {
+    left: calc(100% - 60px);
+} */
 
 .int-area:first-child {
     margin-top: 0;
@@ -73,22 +77,6 @@ body::before {
     animation-iteration-count: 3;
 }
 
-/* 오류시 글씨 흔들림 */
-
-/* @keyframes warning {
-  0% {
-    transform: translateX(-8px);
-  }
-  25% {
-    transform: translateX(8px);
-  }
-  50% {
-    transform: translateX(-8px);
-  }
-  75% {
-    transform: translateX(8px);
-  }
-} */
 
 .int-area input:focus + label,
 .int-area input:valid + label {
@@ -172,4 +160,18 @@ body::before {
 /* *표시한 글씨 */
 .required-asterisk {
     color: red;
+}
+
+/* 주소 버튼 */
+.addr-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.addr-btn img {
+    width: 35px;
+    height: 30px;
+    margin-left: 8px;
 }

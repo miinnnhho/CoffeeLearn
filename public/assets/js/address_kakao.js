@@ -1,5 +1,5 @@
 window.onload = function () {
-  document.getElementById("address").addEventListener("click", function () {
+  document.querySelector(".addr-btn").addEventListener("click", function () {
     //주소입력칸을 클릭하면
     //카카오 지도 발생
     new daum.Postcode({
