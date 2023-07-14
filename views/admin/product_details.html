@@ -49,11 +49,11 @@
                     <p>상품 상세</p>
                 </div>
                 <!-- 인풋 폼 -->
-                <form id="addItemForm" method="get" enctype="multipart/form-data">
+                <form id="productForm" method="get" enctype="multipart/form-data">
                     <ul>
                         <li>
                             <label>카테고리 선택</label>
-                            <select class="select-category" selected>
+                            <select class="select-category" selected onchange="handleChangeCategory()">
                                 <option value="">카테고리 선택</option>
                                 <option value="커피">커피</option>
                                 <option value="선물세트">선물세트</option>
@@ -125,3 +125,4 @@
         <script src="/assets/js/admin/additem.js"></script>
     </body>
 </html>
+
