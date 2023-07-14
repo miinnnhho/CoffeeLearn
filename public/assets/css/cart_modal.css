@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%);
   width: 600px;
   height: 400px;
-  background: #fff;
+  background: var(--white);
   border-radius: 10px;
   padding: 40px 30px 30px 30px;
   box-sizing: border-box;
@@ -73,13 +73,13 @@
   font-weight: 600;
 }
 .btn-cancel {
-  border: 1px solid #999;
-  background-color: #fff;
+  border: 1px solid var(--black-4);
+  background-color: var(--white);
 }
 .btn-confirm {
   border: none;
-  background-color: #288341;
-  color: #fff;
+  background-color: var(--green);
+  color: var(--white);
 }
 .cart-total-price {
   display: flex;
