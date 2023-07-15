@@ -69,6 +69,11 @@ function createProductElement(product, itemBoxId) {
   });
 }
 
+// 상품 데이터 호출
+function getProducts() {
+  return fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products').then((res) => res.json());
+}
+
 // 공통 함수: 상품 목록 표시
 // condition은 커피 카테고리여부를 확인하기 위함
 function displayProductList(products, itemBoxId, condition) {
