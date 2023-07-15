@@ -52,8 +52,6 @@ form.addEventListener('submit', async (e) => {
         price,
         salePercent,
         amount,
-        // mainImg,
-        // subImg,
         description,
         show,
     });
@@ -80,6 +78,9 @@ form.addEventListener('submit', async (e) => {
         return;
     }
 
+    form.reset();
+
     const result = await res.json();
     console.log(result);
 });
+
