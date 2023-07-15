@@ -1,25 +1,28 @@
-#Main {
-  text-align: center;
-  margin-top: 300px;
+#main {
+    text-align: center;
+    margin-top: 300px;
 }
-#Text {
-  color: #000;
-  font-size: 20px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-top: 60px;
+.text {
+    color: #000;
+    font-size: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 60px;
 }
-#LoginButton {
-  width: 300px;
-  height: 50px;
-  background: #ffdb7e;
-  color: #282828;
-  font-size: 14px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 30px;
+#loginButton {
+    width: 300px;
+    height: 50px;
+    background: #ffdb7e;
+    color: #282828;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+.pic {
+    margin-left: 895px;
 }

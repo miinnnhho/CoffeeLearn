@@ -1,0 +1,72 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#contentWrap {
+    width: 1280px;
+    margin: 60px auto 0;
+    display: flex;
+    justify-content: space-between;
+    min-height: calc(100vh - 310px);
+}
+/* 오른쪽 컨텐츠 */
+#contentBox {
+    width: 976px;
+}
+.product-box,
+.category-box > p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#productForm {
+    margin-top: 30px;
+}
+#productForm ul {
+    padding: 0;
+}
+#productForm ul li {
+    list-style: none;
+}
+
+#productForm ul li label {
+    display: inline-block;
+    width: 140px;
+    font-size: 14px;
+    margin: 0 30px 16px 0;
+}
+select,
+input {
+    width: 300px;
+    height: 30px;
+    padding: 0 30px 0 10px;
+    font-size: 12px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.button-wrap {
+    width: 470px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.button-wrap button {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 10px;
+}
+
+.save-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+.input-price,
+.input-amount {
+    padding: 0 10px 0 10px;
+}

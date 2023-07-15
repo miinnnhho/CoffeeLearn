@@ -1,10 +1,10 @@
 //입력하지 않으면 붉은 글씨로 변하면서 흔들림 효과
 let id = $("#id");
 let pw = $("#pw");
-let pw_check = $("#pw_check");
-let phone_number = $("#phone_number");
+let pwCheck = $("#pwCheck");
+let phoneNumber = $("#phoneNumber");
 let address = $("#address");
-let detailed_address = $("#detailed_address");
+let detailedAddress = $("#detailedAddress");
 let btn = $(".btn1");
 
 $(btn).on("click", function () {
@@ -18,13 +18,13 @@ $(btn).on("click", function () {
     setTimeout(function () {
       $("label").removeClass("warning");
     }, 1500);
-  } else if ($(pw_check).val() == "") {
-    $(pw_check).next("label").addClass("warning");
+  } else if ($(pwCheck).val() == "") {
+    $(pwCheck).next("label").addClass("warning");
     setTimeout(function () {
       $("label").removeClass("warning");
     }, 1500);
-  } else if ($(phone_number).val() == "") {
-    $(phone_number).next("label").addClass("warning");
+  } else if ($(phoneNumber).val() == "") {
+    $(phoneNumber).next("label").addClass("warning");
     setTimeout(function () {
       $("label").removeClass("warning");
     }, 1500);
@@ -33,8 +33,8 @@ $(btn).on("click", function () {
     setTimeout(function () {
       $("label").removeClass("warning");
     }, 1500);
-  } else if ($(detailed_address).val() == "") {
-    $(detailed_address).next("label").addClass("warning");
+  } else if ($(detailedAddress).val() == "") {
+    $(detailedAddress).next("label").addClass("warning");
     setTimeout(function () {
       $("label").removeClass("warning");
     }, 1500);
