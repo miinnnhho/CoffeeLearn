@@ -31,7 +31,7 @@ function createProductElement(product, itemBoxId) {
   itemEl.classList.add('item-list');
 
   const itemLink = document.createElement('a');
-  itemLink.href = `items_info/${_id}`;
+  itemLink.href = `/items/coffee_learn/${_id}`;
 
   itemLink.innerHTML = `
     <div class="img-box">
@@ -129,7 +129,7 @@ function displayOriginItems(products, origin, originId) {
     originItem.classList.add('origin-item-list');
 
     const itemLink = document.createElement('a');
-    itemLink.href = `items_info/${product._id}`;
+    itemLink.href = `/items/coffee_learn/${product._id}`;
 
     itemLink.innerHTML = `
         <div class="prod-img">
@@ -156,7 +156,7 @@ function displayGiftProducts(products) {
     giftSlide.classList.add('swiper-slide');
 
     const itemLink = document.createElement('a');
-    itemLink.href = `items_info/${product._id}`;
+    itemLink.href = `/items/coffee_learn/${product._id}`;
 
     const giftImage = document.createElement('img');
     giftImage.src = product.mainImg;
