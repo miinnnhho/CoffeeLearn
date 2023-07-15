@@ -1,0 +1,152 @@
+<html>
+
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('components/head.html') -%>
+    <!-- Cutom CSS & JS -->
+    <link rel="stylesheet" href="/assets/css/items.css" />
+    <link rel="stylesheet" href="/assets/css/tab.css" />
+    <script defer src="/assets/js/test_copy.js"></script>
+    <script defer src="/assets/js/totop.js"></script>
+</head>
+
+<body>
+  <%- include('components/header.html') -%>
+    <!-- 선물 추천 -->
+    <section class="pick" id="pick">
+      <!-- <div class="inner">-->
+      <div class="title">
+        <h2>선물 세트</h2>
+        <span>소중한 사람에게 커피선물세트로 마음을 전달해보세요.</span>
+      </div>
+      <!--상품 리스트 갯수 및 리스트 옵션-->
+      <div class="item-head">
+        <span class="item-num">총 000개의 상품이 있습니다.</span>
+        <span class="select-box">
+          <select name="order" id="order">
+            <option value="30개씩보기">30개씩보기</option>
+            <option value="20개씩보기">20개씩보기</option>
+            <option value="10개씩보기">10개씩보기</option>
+          </select>
+        </span>
+      </div>
+      <!--전체 메인 섹션-->
+      <div class="container">
+        <div class="tab-box">
+          <!-- 맛 선택 -->
+          <div class="tab-box1">
+            <h3>필터</h3>
+            <div class="tab-border"></div>
+            <span>가격대</span>
+            <label class="tab-label">
+              <input type="radio" name="price" data-price="~2만원 미만" />
+              <div class="tab">
+                <div class="material-icons">radio_button_unchecked</div>
+                <p>~2만원 미만</p>
+              </div>
+            </label>
+            <label class="tab-label">
+              <input type="radio" name="price" data-price="2만원 ~ 3만원" />
+              <div class="tab">
+                <div class="material-icons">radio_button_unchecked</div>
+                <p>2만원 ~ 3만원</p>
+              </div>
+            </label>
+            <label class="tab-label">
+              <input type="radio" name="price" data-price="3만원 이상~" />
+              <div class="tab">
+                <div class="material-icons">radio_button_unchecked</div>
+                <p>3만원 이상~</p>
+              </div>
+            </label>
+          </div>
+        </div>
+        <!--상품 리스트-->
+        <div class="item-box" id="pickItemBox">
+          <div class="item-wrap">
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_1.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">기분 좋은 쓴맛</strong>
+                  <h3 class="name">[뉴크롭] 인도네시아 만델링 G1 수마트라</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">5,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">5,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_2.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">묵직한 바디와 구수한 단맛</strong>
+                  <h3 class="name">[뉴크롭] 베트남 로부스타 G1 Wet Polished SC18</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">2,300원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">2,300원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_3.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">스모키함과 좋은 향나무의 아로마</strong>
+                  <h3 class="name">[뉴크롭] 과테말라 SHB 안티구아</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">4,500원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">4,500원</p>
+                </div>
+              </a>
+            </div>
+            <div class="item-list">
+              <a href="#">
+                <div class="img-box">
+                  <img class="main-img" src="/assets/img/items/item_main_4.jpg" />
+                </div>
+                <div class="detail-box">
+                  <strong class="description">강렬한 바디와 기분 좋은 쓴맛</strong>
+                  <h3 class="name">스타 에스프레소</h3>
+                  <div class="details">
+                    <div class="sale-box">
+                      <p class="sale-percent">0%</p>
+                      <p class="sale-price">3,200원</p>
+                    </div>
+                    <button class="cart-btn"><span class="material-symbols-outlined">shopping_cart</span></button>
+                  </div>
+                  <p class="price">3,200원</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include('components/footer.html') -%> <%- include('components/totop.html') -%>
+</body>
+
+</html>

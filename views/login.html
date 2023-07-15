@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/views/css/login.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
-    />
-    <!-- 오류 처리 이벤트 jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"
-    ></script>
-    <link rel="icon" href="views/img/favicon.png" />
-
-    <title>로그인</title>
-  </head>
-  <body>
-    <section class="login_form">
-      <h1>로그인</h1>
-      <form name="form" onsubmit="return alert1()">
-        <div class="int_area">
-          <input type="text" name="id" id="id" autocomplete="off" required />
-          <label for="id" class="user_idtext">E-mail</label>
-          <!-- <div id="id_error">아이디를 입력해주세요.</div> -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/assets/css/login.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+        <!-- 오류 처리 이벤트 jquery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.js"
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+            crossorigin="anonymous"
+        ></script>
+        <link rel="icon" href="/assets/img/favicon.png" />
+        <!-- 로그인 관련 axios 설치 -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <%- include('components/head.html') -%>
+        <title>로그인</title>
+        <style>
+            #wrap {
+                min-height: calc(100vh - 250px);
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('components/header.html') -%>
+        <div id="wrap">
+            <section class="login-form">
+                <h1>로그인</h1>
+                <form name="form">
+                    <div class="int-area">
+                        <input type="text" name="id" id="id" autocomplete="off" required />
+                        <label for="id" class="user-idtext">E-mail</label>
+                    </div>
+                    <div class="int-area">
+                        <input type="password" name="pw" id="pw" autocomplete="off" required />
+                        <label for="pw">PASSWORD</label>
+                    </div>
+                    <div class="btn-area">
+                        <!-- 로그인 버튼 이벤트 추가 -->
+                        <button type="submit" class="btn1" onclick="handleLoginSubmit(event)">로그인</button>
+                        <!-- onclick="handleLoginSubmit(event)" -->
+                        <button onclick="location.href='signup'" type="submit" class="btn2">회원가입</button>
+                    </div>
+                </form>
+                <div class="caption"><a href="">아이디 찾기</a> <a>|</a><a href=""> 비밀번호 찾기</a></div>
+            </section>
         </div>
-        <div class="int_area">
-          <input
-            type="password"
-            name="pw"
-            id="pw"
-            autocomplete="off"
-            required
-          />
-          <label for="pw">PASSWORD</label>
-          <!-- <div id="pw_error">비밀번호를 입력해주세요.</div> -->
-        </div>
-        <div class="btn_area">
-          <button type="submit" class="btn1">로그인</button>
-          <!-- 현재 페이지에서 새로운 창 여는 방식 -->
-          <button
-            onclick="location.href='signup.html'"
-            type="submit"
-            class="btn2"
-          >
-            회원가입
-          </button>
-        </div>
-      </form>
-      <div class="caption">
-        <a href="">아이디 찾기</a> <a>|</a><a href=""> 비밀번호 찾기</a>
-      </div>
-    </section>
-  </body>
-  <script src="/views/js/alert.js"></script>
+        <%- include('components/footer.html') -%>
+    </body>
+    <script src="/assets/js/fetchApi.js"></script>
+    <!-- 로그인 실패시 경고창 -->
+    <script src="/assets/js/alert.js"></script>
+    <!-- 로그인 관련 js파일 -->
+    <script src="/assets/js/login.js"></script>
+    <script src="/assets/js/common.js"></script>
 </html>
+
 <!-- 추가로 해야할 거 
 1. 메인 컴폰넌트 추가해서 화면 다시 조정
-2. 회원가입 창 만들기.
-3. 개인 페이지 만들기.
  -->
