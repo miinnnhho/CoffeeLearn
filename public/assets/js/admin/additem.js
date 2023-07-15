@@ -52,8 +52,6 @@ form.addEventListener('submit', async (e) => {
         price,
         salePercent,
         amount,
-        // mainImg,
-        // subImg,
         description,
         show,
     });
@@ -61,6 +59,7 @@ form.addEventListener('submit', async (e) => {
     const token = localStorage.getItem('token');
     console.log(token);
     const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/products/admin';
+
 
     const payload = new FormData();
     payload.append('data', product);
@@ -79,6 +78,8 @@ form.addEventListener('submit', async (e) => {
         alert('에러가 발생했습니다.');
         return;
     }
+
+    form.reset();
 
     const result = await res.json();
     console.log(result);

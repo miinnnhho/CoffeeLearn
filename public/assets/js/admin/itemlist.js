@@ -45,15 +45,24 @@ async function insertProductElement() {
         deleteBtns.forEach((deleteBtn) => {
             deleteBtn.addEventListener('click', async (e) => {
                 const eventTarget = e.target;
+
+                const token = localStorage.getItem('token');
+                console.log(token);
+
                 if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
-                    eventTarget.parentNode.parentNode.remove();
-                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/products/admin/${e.target._id}`;
+                    const productNumber = eventTarget.id;
+                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/products/admin/${productNumber}`;
+
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
                     });
                     if (!res.ok) {
                         throw new Error('상품 삭제 중 에러가 발생했습니다.');
                     }
+                    eventTarget.parentNode.parentNode.remove();
                 }
             });
         });
