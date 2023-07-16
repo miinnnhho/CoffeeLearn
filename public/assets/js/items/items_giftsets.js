@@ -1,16 +1,16 @@
-// 상품 데이터 호출
+// 상품 데이터를 가져오는 함수
 function getProducts() {
   return fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products').then((res) => res.json());
 }
 
-// 공통 함수: 상품 할인 가격 계산
+// 상품 할인 가격을 계산하는 함수
 function calculateSalePrice(product, amountCount) {
   const { price, salePercent } = product;
   const salePrice = Math.round((price - (price * salePercent) / 100) / 10) * 10;
   return salePrice * amountCount;
 }
 
-// 상품을 그리드에 표시
+// 상품을 그리드에 표시하는 함수
 function displayProducts(products, itemBoxId) {
   const itemBox = document.getElementById(itemBoxId);
   itemBox.innerHTML = '';
@@ -21,24 +21,14 @@ function displayProducts(products, itemBoxId) {
     const mainImgSrc = mainImg;
     const amountCount = 1;
     const salePrice = calculateSalePrice(product, amountCount);
-    const originPriceEl = generatePriceEl(price, category);
-    const salePriceEl = generateSalePriceEl(price, category, salePercent);
-
-    // 원가를 표시하는 함수
-    function generatePriceEl(price, category) {
-      // 커피 카테고리는 할인하지 않으므로 공백처리
-      if (category === '커피') return '';
-      return `<p class='price'>${price.toLocaleString()}원</p>`;
-    }
+    const salePriceEl = generateSalePriceEl();
 
     // 할인가(판매가)를 표시하는 함수
-    function generateSalePriceEl(price, category) {
-      // 커피 카테고리는 할인하지 않으므로 공백처리
-      if (category === '커피') return `<p class='sale-price'>${price.toLocaleString()}원</p>`;
+    function generateSalePriceEl() {
       return `
         <p class="sale-percent">${salePercent}%</p>
         <p class='sale-price'>${salePrice.toLocaleString()}원</p>
-        `;
+      `;
     }
 
     const itemEl = document.createElement('div');
@@ -67,7 +57,7 @@ function displayProducts(products, itemBoxId) {
           <span class="material-symbols-outlined">shopping_cart</span>
         </button>
       </div>
-      ${originPriceEl}
+     <p class='price'>${price.toLocaleString()}원</p>
     `;
     itemEl.appendChild(itemLink);
     itemEl.appendChild(priceBox);
@@ -76,15 +66,17 @@ function displayProducts(products, itemBoxId) {
 }
 
 // 탭을 클릭했을 때 상품 표시
-function displayProductsByTaste(products, taste, itemBoxId) {
-  const filteredProducts = products.filter((product) => product.category === '커피' && product.taste === taste);
-  displayProducts(filteredProducts, itemBoxId);
-  // ...
-}
+function displayProductsByPrice(products, priceRange, itemBoxId) {
+  let filteredProducts;
 
-// 탭을 클릭했을 때 상품 표시
-function displayProductsByTaste(products, taste, itemBoxId) {
-  const filteredProducts = products.filter((product) => product.category === '커피' && product.taste === taste);
+  if (priceRange === 'under-20000') {
+    filteredProducts = products.filter((product) => product.category === '선물세트' && calculateSalePrice(product, 1) < 20000);
+  } else if (priceRange === '20000-30000') {
+    filteredProducts = products.filter((product) => product.category === '선물세트' && calculateSalePrice(product, 1) >= 20000 && calculateSalePrice(product, 1) < 30000);
+  } else if (priceRange === 'over-30000') {
+    filteredProducts = products.filter((product) => product.category === '선물세트' && calculateSalePrice(product, 1) >= 30000);
+  }
+
   displayProducts(filteredProducts, itemBoxId);
 
   // 모든 탭에서 "on" 클래스 제거
@@ -94,45 +86,39 @@ function displayProductsByTaste(products, taste, itemBoxId) {
   });
 
   // 클릭한 탭에 "on" 클래스 추가
-  const clickedTabLabel = document.querySelector(`.tab-label input[data-taste="${taste}"]`).parentElement;
+  const clickedTabLabel = document.querySelector(`.tab-label input[data-price="${priceRange}"]`).parentElement;
   clickedTabLabel.classList.add('on');
 }
 
-// 페이지 로드 시 상품 표시
-document.addEventListener('DOMContentLoaded', async () => {
+window.onload = async function () {
   const itemBoxId = 'pickItemBox';
 
   try {
-    //선물세트 상품의 개수 표시
+    // 상품 데이터를 가져옴
     const products = await getProducts();
+
+    // 선물세트 상품만 필터링하여 표시
     const giftSetProducts = products.filter((product) => product.category === '선물세트');
     displayProducts(giftSetProducts, itemBoxId);
 
+    // 선물세트 상품 개수를 표시하는 요소를 가져와 개수를 설정
     const productsCountEl = document.querySelector('.productsCount');
     productsCountEl.innerHTML = giftSetProducts.length;
 
-    // 탭 클릭 이벤트 처리
+    // 탭 레이블을 가져와 이벤트를 처리
     const tabLabels = document.querySelectorAll('.tab-label');
     tabLabels.forEach((label) => {
       const input = label.querySelector('input');
-      const taste = input.getAttribute('data-taste');
+      const priceRange = input.getAttribute('data-price');
 
       label.addEventListener('click', (event) => {
-        displayProductsByTaste(coffeeProducts, taste, itemBoxId);
+        displayProductsByPrice(giftSetProducts, priceRange, itemBoxId);
 
         // 화면 맨 위로 올라가는 기본 동작 방지
         event.preventDefault();
-
-        // 모든 탭에서 "on" 클래스 제거
-        tabLabels.forEach((tabLabel) => {
-          tabLabel.classList.remove('on');
-        });
-
-        // 클릭한 탭에 "on" 클래스 추가
-        label.classList.add('on');
       });
 
-      // input의 checked 상태에 따라 아이콘 변경 ** 동작 안함
+      // input의 checked 상태에 따라 아이콘 변경
       input.addEventListener('change', () => {
         const icon = label.querySelector('.material-icons');
         if (input.checked) {
@@ -141,10 +127,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           icon.innerText = 'radio_button_unchecked';
         }
       });
-
-      
     });
   } catch (error) {
     console.error('상품을 가져오는 동안 오류가 발생했습니다:', error);
   }
-});
+};

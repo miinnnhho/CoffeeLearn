@@ -79,13 +79,6 @@ function displayProducts(products, itemBoxId) {
 function displayProductsByTaste(products, taste, itemBoxId) {
   const filteredProducts = products.filter((product) => product.category === '커피' && product.taste === taste);
   displayProducts(filteredProducts, itemBoxId);
-  // ...
-}
-
-// 탭을 클릭했을 때 상품 표시
-function displayProductsByTaste(products, taste, itemBoxId) {
-  const filteredProducts = products.filter((product) => product.category === '커피' && product.taste === taste);
-  displayProducts(filteredProducts, itemBoxId);
 
   // 모든 탭에서 "on" 클래스 제거
   const tabLabels = document.querySelectorAll('.tab-label');
@@ -99,7 +92,7 @@ function displayProductsByTaste(products, taste, itemBoxId) {
 }
 
 // 페이지 로드 시 상품 표시
-document.addEventListener('DOMContentLoaded', async () => {
+window.onload = async () => {
   const itemBoxId = 'pickItemBox';
 
   try {
@@ -145,4 +138,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (error) {
     console.error('상품을 가져오는 동안 오류가 발생했습니다:', error);
   }
-});
+};
