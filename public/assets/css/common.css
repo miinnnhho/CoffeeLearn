@@ -194,6 +194,11 @@ img {
 #header .header-right ul li a:hover .header-img {
     margin-bottom: 10px;
 }
+.header-right li span{
+    width: 60px;
+    height: 15px;
+    text-align: center;
+}
 
 /* 푸터 */
 #footer {
@@ -251,6 +256,9 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#to-top.on{
+    display: none;
 }
 
 /* select-box CSS */
