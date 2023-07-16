@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>커피런</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../components/head.html') -%>
+    <!-- Cutom CSS & JS -->
+    <link rel="stylesheet" href="/assets/css/items/items.css" />
+    <link rel="stylesheet" href="/assets/css/cart/cart_modal.css" />
+    <link rel="stylesheet" href="/assets/css/items/tab.css" />
+  </head>
+  <body>
+    <!--header-->
+    <%- include('../components/header.html') -%>
+    <!-- 모든 아이템보기 -->
+    <section class="pick" id="pick">
+      <!--banner-->
+      <div class="banner">
+        <div class="box">
+          <img src="/assets/img/banner.png" alt="banner" />
+        </div>
+      </div>
+      <!--상품 리스트 갯수 및 리스트 옵션-->
+      <div class="item-head">
+        <span class="item-num">☕ 총 <em class="productsCount">00</em>개의 상품이 있습니다.</span>
+        <!-- 추가기능 (n개씩 보기) 
+          <span class="select-box">
+          <select name="order" id="order">
+            <option value="30">30개씩보기</option>
+            <option value="20">20개씩보기</option>
+            <option value="10">10개씩보기</option>
+          </select>
+        </span> -->
+      </div>
+      <!--전체 메인 섹션-->
+      <div class="container">
+        <div class="tab-box">
+          <!-- 맛 선택 -->
+          <div class="tab-box1">
+            <h3>카테고리</h3>
+            <a href="/items/coffee">
+              <div id="coffee_link" class="material-symbols-outlined">forward</div>
+              <p class="menu-1">추천원두 모아보기</p>
+            </a>
+            <a href="/items/giftset">
+              <div id="gift_link" class="material-symbols-outlined">forward</div>
+              <p class="menu-2">선물세트 모아보기</p>
+            </a>
+          </div>
+        </div>
+        <!--상품 리스트-->
+        <div class="item-box" id="pickItemBox">
+          <div class="item-wrap"></div>
+        </div>
+      </div>
+    </section>
+    <!-- 장바구니 모달 -->
+    <%- include('../components/modal_cart.html') -%>
+    <!-- footer -->
+    <%- include('../components/footer.html') -%>
+    <!-- top버튼 -->
+    <%- include('../components/totop.html') -%>
+    <script src="/assets/js/scroll_top.js"></script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/items/items.js"></script>
+  </body>
+</html>
