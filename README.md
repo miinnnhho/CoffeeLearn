@@ -11,9 +11,6 @@
 
 <h2>사용한 기술 스텍</h2>
 
-<p>Front-End</p>
+<img width="600" src="https://github.com/miinnnhho/CoffeeLearn/assets/102772287/381ea616-8347-4f71-b17e-0b4989bb33c1"/>
 
-<img src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=flat&logo=HTML5&logoColor=white"/> <img src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=flat&logo=CSS3&logoColor=white"/> <img src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=flat&logo=JavaScript&logoColor=black"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
-
-<p>Back-End</p>
 
