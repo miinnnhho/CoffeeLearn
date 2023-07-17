@@ -7,10 +7,12 @@
 </blockquote>
 
 <h2>소개</h2>
-<p>쉽고, 빠르게 내 취향에 맞는 커피 원두를 찾고 구매할 수 있는 쇼핑몰</p>
+
+<img width="700" src="https://github.com/miinnnhho/CoffeeLearn/assets/102772287/994cabf9-f0c2-4824-8be0-90395cd54b78" />
 
 <h2>사용한 기술 스텍</h2>
 
 <img width="600" src="https://github.com/miinnnhho/CoffeeLearn/assets/102772287/381ea616-8347-4f71-b17e-0b4989bb33c1"/>
+
 
 
